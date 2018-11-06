@@ -26,7 +26,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _integerGenerator = new RandomIntegerGenerator(0, _genderSetGenerators.Count);
         }
 
-        public string GetData()
+        public string Generate()
         {
             if (IsNull())
             {

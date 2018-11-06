@@ -12,12 +12,12 @@ namespace RandomDataGenerator.Net.Randomizers
         {
         }
 
-        public string GetData()
+        public string Generate()
         {
-            return IsNull() ? null : Generate();
+            return IsNull() ? null : GenerateInternal();
         }
 
-        private string Generate()
+        private string GenerateInternal()
         {
             var list = new string[6];
             for (int idx = 0; idx < list.Length; idx++)

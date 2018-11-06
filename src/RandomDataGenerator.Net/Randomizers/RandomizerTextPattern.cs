@@ -10,10 +10,10 @@ namespace RandomDataGenerator.Net.Randomizers
         public RandomizerTextPattern(FieldOptionsTextPattern options)
             : base(options)
         {
-            _generator = new RandomStringGenerator(options.UseUppercase, options.UseLowercase, options.UseNumber, options.UseSpecial, options.UseSpace);
+            _generator = new RandomStringGenerator();
         }
 
-        public string GetData()
+        public string Generate()
         {
             return IsNull() ? null : _generator.Generate(Options.Pattern);
         }

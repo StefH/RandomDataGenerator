@@ -2,6 +2,6 @@
 {
     public interface IRandomizerString
     {
-        string GetData();
+        string Generate();
     }
 }

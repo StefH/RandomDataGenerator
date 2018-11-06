@@ -11,7 +11,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _fieldOptions = options;
         }
 
-        public int? GetData()
+        public int? Generate()
         {
             return _fieldOptions.Value;
         }

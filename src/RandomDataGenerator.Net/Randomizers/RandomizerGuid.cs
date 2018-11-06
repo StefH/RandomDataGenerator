@@ -10,7 +10,7 @@ namespace RandomDataGenerator.Net.Randomizers
         {
         }
 
-        public Guid? GetData()
+        public Guid? Generate()
         {
             if (IsNull())
             {
@@ -20,7 +20,7 @@ namespace RandomDataGenerator.Net.Randomizers
            return Guid.NewGuid();
         }
 
-        public string GetDataAsString()
+        public string GenerateAsString()
         {
             if (IsNull())
             {

@@ -12,7 +12,7 @@ namespace RandomDataGenerator.Net.Randomizers
         {
         }
 
-        public string GetData()
+        public string Generate()
         {
             // Example 2001:0:5ef5:79fd:38e2:30c1:ad54:e6f8
             return IsNull() ? null : $"2001:0:{_generator.Generate():X}:{_generator.Generate():X}:{_generator.Generate():X}:{_generator.Generate():X}:{_generator.Generate():X}:{_generator.Generate():X}";

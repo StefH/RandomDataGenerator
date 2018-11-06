@@ -9,32 +9,40 @@ namespace ConsoleAppClassic
     {
         public static void Run()
         {
-            var f = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
-            Write(f.GetData());
+            var randomizerTextPattern = RandomizerFactory.GetRandomizer(new FieldOptionsTextPattern { Pattern = "\\xLLnn_**ss\\x" });
+            string textPattern = randomizerTextPattern.Generate();
+            Write(randomizerTextPattern, textPattern);
 
-            var g = RandomizerFactory.GetRandomizer(new FieldOptionsGuid());
-            Write(g.GetData());
-            Write(g.GetDataAsString());
+            var randomizerText = RandomizerFactory.GetRandomizer(new FieldOptionsText { UseNumber = false, UseSpecial = false });
+            string text = randomizerText.Generate();
+            Write(randomizerText, text);
 
-            var i = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
-            Write(i.GetData());
+            var randomizerFirstName = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
+            Write(randomizerFirstName, randomizerFirstName.Generate());
 
-            var d = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { DateFrom = DateTime.Today.AddDays(-1888) });
-            Write(d.GetData());
+            var randomizerGuid = RandomizerFactory.GetRandomizer(new FieldOptionsGuid());
+            Write(randomizerGuid, randomizerGuid.Generate());
+            Write(randomizerGuid, randomizerGuid.GenerateAsString());
 
-            var s = RandomizerFactory.GetRandomizer(new FieldOptionsStringList { Values = new[] { "1", "b" }.ToList() });
-            Write(s.GetData());
+            var randomizerInteger = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
+            Write(randomizerInteger, randomizerInteger.Generate());
 
-            var t = RandomizerFactory.GetRandomizer(new FieldOptionsTextWords { Min = 10, Max = 10 });
-            Write(t.GetData());
+            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { DateFrom = DateTime.Today.AddDays(-1888) });
+            Write(randomizerDateTime, randomizerDateTime.Generate());
 
-            var ip = RandomizerFactory.GetRandomizer(new FieldOptionsTextLipsum { Paragraphs = 1 });
-            Write(ip.GetData());
+            var randomizerStringList = RandomizerFactory.GetRandomizer(new FieldOptionsStringList { Values = new[] { "1", "b" }.ToList() });
+            Write(randomizerStringList, randomizerStringList.Generate());
+
+            var randomizerTextWords = RandomizerFactory.GetRandomizer(new FieldOptionsTextWords { Min = 10, Max = 10 });
+            Write(randomizerTextWords, randomizerTextWords.Generate());
+
+            var randomizerTextLipsum = RandomizerFactory.GetRandomizer(new FieldOptionsTextLipsum { Paragraphs = 1 });
+            Write(randomizerTextLipsum, randomizerTextLipsum.Generate());
         }
 
-        private static void Write<T>(T value)
+        private static void Write<T>(object randomizer, T value)
         {
-            Console.WriteLine("--> '{0}'", value);
+            Console.WriteLine("{0} --> '{1}'", randomizer.GetType().Name, value);
         }
     }
 }

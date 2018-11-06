@@ -4,8 +4,8 @@ namespace RandomDataGenerator.Net.Randomizers
 {
     public interface IRandomizerGuid
     {
-        Guid? GetData();
+        Guid? Generate();
 
-        string GetDataAsString();
+        string GenerateAsString();
     }
 }

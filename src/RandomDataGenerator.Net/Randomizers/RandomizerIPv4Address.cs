@@ -13,7 +13,7 @@ namespace RandomDataGenerator.Net.Randomizers
         {
         }
 
-        public string GetData()
+        public string Generate()
         {
             return IsNull() ? null : $"{_firstOctet.Generate()}:{_otherOctets.Generate()}:{_otherOctets.Generate()}:{_otherOctets.Generate()}";
         }

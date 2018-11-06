@@ -15,7 +15,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _generator = new RandomDateTimeGenerator(options.DateFrom, options.DateTo);
         }
 
-        public DateTime? GetData()
+        public DateTime? Generate()
         {
             if (IsNull())
             {
@@ -28,7 +28,7 @@ namespace RandomDataGenerator.Net.Randomizers
 
         public string GetDataAsString()
         {
-            DateTime? date = GetData();
+            DateTime? date = Generate();
             return date?.ToString(Format);
         }
     }

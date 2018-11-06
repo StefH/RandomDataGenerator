@@ -14,7 +14,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _lastNamesGenerator = new RandomStringFromListGenerator(Texts.Instance.LastNames);
         }
 
-        public string GetData()
+        public string Generate()
         {
             return IsNull() ? null : _lastNamesGenerator.Generate();
         }

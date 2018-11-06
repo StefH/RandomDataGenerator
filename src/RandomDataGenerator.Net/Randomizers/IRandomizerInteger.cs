@@ -2,6 +2,6 @@
 {
     public interface IRandomizerInteger
     {
-        int? GetData();
+        int? Generate();
     }
 }

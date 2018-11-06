@@ -15,7 +15,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _integerGenerator = new RandomIntegerGenerator(Math.Min(options.Min, options.Max), Math.Max(options.Min, options.Max) + 1);
         }
 
-        public string GetData()
+        public string Generate()
         {
             return IsNull() ? null : string.Join(" ", _generator.GenerateWords(_integerGenerator.Generate()));
         }

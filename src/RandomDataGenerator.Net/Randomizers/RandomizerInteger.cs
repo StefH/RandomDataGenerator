@@ -12,7 +12,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _generator = new RandomIntegerGenerator(options.Min, options.Max);
         }
 
-        public int? GetData()
+        public int? Generate()
         {
             return IsNull() ? null : (int?)_generator.Generate();
         }

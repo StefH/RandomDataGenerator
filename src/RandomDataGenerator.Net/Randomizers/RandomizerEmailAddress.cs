@@ -10,9 +10,9 @@ namespace RandomDataGenerator.Net.Randomizers
 {
     class RandomizerEmailAddress : RandomizerAbstract<FieldOptionsEmailAddress>, IRandomizerString
     {
-        private readonly RandomIntegerGenerator _integerGenerator;
         private readonly LipsumGenerator _generator = new LipsumGenerator();
-        private readonly RandomStringFromListGenerator _topLevelDomainsGenerator;
+        private readonly RandomIntegerGenerator _integerGenerator;
+        private readonly RandomStringFromListGenerator _topLevelDomainGenerator;
         private readonly RandomStringFromListGenerator _lastNamesGenerator;
         private readonly List<RandomStringFromListGenerator> _genderSetGenerators = new List<RandomStringFromListGenerator>();
 
@@ -20,7 +20,7 @@ namespace RandomDataGenerator.Net.Randomizers
             : base(options)
         {
             _lastNamesGenerator = new RandomStringFromListGenerator(Texts.Instance.LastNames.Select(l => l.ToLower()));
-            _topLevelDomainsGenerator = new RandomStringFromListGenerator(Texts.Instance.TopLevelDomains.Select(l => l.ToLower()));
+            _topLevelDomainGenerator = new RandomStringFromListGenerator(Texts.Instance.TopLevelDomains.Select(l => l.ToLower()));
 
             if (options.Male)
             {
@@ -35,7 +35,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _integerGenerator = new RandomIntegerGenerator(0, _genderSetGenerators.Count);
         }
 
-        public string GetData()
+        public string Generate()
         {
             if (IsNull())
             {
@@ -48,7 +48,7 @@ namespace RandomDataGenerator.Net.Randomizers
             string firstName = firstNamesSet.Generate();
             string lastname = _lastNamesGenerator.Generate();
             string company = _generator.GenerateWord();
-            string domain = _topLevelDomainsGenerator.Generate();
+            string domain = _topLevelDomainGenerator.Generate();
 
             return $"{firstName}.{lastname}@{company}.{domain}";
         }

@@ -13,7 +13,7 @@ namespace RandomDataGenerator.Net.Randomizers
             _generator = new RandomStringFromListGenerator(options.Values);
         }
 
-        public string GetData()
+        public string Generate()
         {
             return IsNull() ? null : _generator.Generate();
         }

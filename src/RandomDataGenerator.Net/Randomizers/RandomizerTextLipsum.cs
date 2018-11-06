@@ -12,7 +12,7 @@ namespace RandomDataGenerator.Net.Randomizers
             
         }
 
-        public string GetData()
+        public string Generate()
         {
             return IsNull() ? null : _generator.GenerateLipsum(Options.Paragraphs);
         }
