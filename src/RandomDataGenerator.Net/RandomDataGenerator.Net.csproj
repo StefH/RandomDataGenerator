@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TextData\CityNames.txt" />
+    <EmbeddedResource Include="TextData\CountryNames.txt" />
+    <EmbeddedResource Include="TextData\FemaleNames.txt" />
+    <EmbeddedResource Include="TextData\LastNames.txt" />
+    <EmbeddedResource Include="TextData\MaleNames.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLipsum" Version="1.1.0" />
+  </ItemGroup>
+
+  <!--<ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+  </ItemGroup>-->
+
+  <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net20' ">
+    <PackageReference Include="LinqBridge" Version="1.3.0" />
+  </ItemGroup>-->
+
+</Project>
