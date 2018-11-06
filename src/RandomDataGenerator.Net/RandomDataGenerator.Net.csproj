@@ -1,16 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.0.0.0</Version>
+    <AssemblyTitle>Random Data Generator</AssemblyTitle>
+    <Description>This is a configurable generator to create random data like Lorum Ipsum Text, Words, Text Patterns, First/Last Names, IP-Addresses, Guids and DateTime.</Description>
+    <Copyright>Stef Heyenrath</Copyright>
+    <Authors>Stef Heyenrath</Authors>
     <TargetFrameworks>net20;net35;net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <PackageId>RandomDataGenerator.Net</PackageId>
+    <PackageTags>Random;Data;Text</PackageTags>
+    <PackageReleaseNotes>See ReleaseNotes.md</PackageReleaseNotes>
+    <!--<PackageIconUrl>https://raw.githubusercontent.com/StefH/XPath2.Net/master/resources/XPath2-icon-64x64.png</PackageIconUrl>-->
+    <PackageProjectUrl>https://github.com/StefH/RandomDataGenerator</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/StefH/RandomDataGenerator</RepositoryUrl>
+    <DebugType>full</DebugType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Resources.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Resources.resx" />
-  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PathMap>$(MSBuildProjectDirectory)=/</PathMap>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="TextData\CityNames.txt" />
@@ -31,10 +46,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
     <PackageReference Include="NetLegacySupport.ConcurrentDictionary" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Compatibility\" />
   </ItemGroup>
 
 </Project>

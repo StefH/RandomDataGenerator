@@ -1,7 +1,11 @@
-# RandomDataGenerator
-This is a configurable generator to create random data.
+# RandomDataGenerator.Net
+This is a simple generator to create random data.
 
-### Random Data 
+## NuGet
+
+[![NuGet Badge](https://buildstats.info/nuget/RandomDataGenerator.Net)](https://www.nuget.org/packages/RandomDataGenerator.Net)
+
+## Supported Random Data 
 
 - Text Patterns
 - Lorum Ipsum Text
