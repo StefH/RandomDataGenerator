@@ -17,7 +17,7 @@ namespace RandomDataGenerator.Gui
 
             var form = new MainForm
             {
-                Text = $"RandomDataGenerator {VersionInfo.AssemblyVersion}"
+                Text = $"RandomDataGenerator.Gui {VersionInfo.AssemblyVersion}"
             };
             Application.Run(form);
         }

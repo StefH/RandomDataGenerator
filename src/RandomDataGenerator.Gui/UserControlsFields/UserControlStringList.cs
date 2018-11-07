@@ -6,13 +6,13 @@ using RandomDataGenerator.Gui.UserControls;
 
 namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    public sealed partial class UserControlFixedSet : UserControlFixedSetDesignable, INotifyPropertyChanged
+    public sealed partial class UserControlStringList : UserControlFixedSetDesignable, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly BindingList<string> _values = new BindingList<string>();
 
-        public UserControlFixedSet()
+        public UserControlStringList()
         {
             InitializeComponent();
 

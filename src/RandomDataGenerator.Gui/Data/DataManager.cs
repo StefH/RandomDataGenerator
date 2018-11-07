@@ -68,9 +68,10 @@ namespace RandomDataGenerator.Gui.Data
             {
                 FieldType = FieldType.Text,
                 SubFields = new[] {
+                    new SubField { SubFieldType = SubFieldType.Text },
+                    new SubField { SubFieldType = SubFieldType.TextPattern },
                     new SubField { SubFieldType = SubFieldType.TextWords },
-                    new SubField { SubFieldType = SubFieldType.TextRandomLength },
-                    new SubField { SubFieldType = SubFieldType.TextPattern }
+                    // new SubField { SubFieldType = SubFieldType.TextLipsum }
                 }
             });
 

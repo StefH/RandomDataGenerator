@@ -53,11 +53,14 @@ namespace RandomDataGenerator.Enums
         [Description("Words")]
         TextWords,
 
-        [Description("Random Pattern")]
+        [Description("Text Pattern")]
         TextPattern,
 
-        [Description("Random Length")]
-        TextRandomLength,
+        [Description("Text Lipsum")]
+        TextLipsum,
+
+        [Description("Random Text")]
+        Text,
 
         [Description("Date / Time")]
         DateTime,

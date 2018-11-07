@@ -1,6 +1,6 @@
 ﻿namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    partial class UserControlGUID
+    partial class UserControlGuid
     {
         /// <summary> 
         /// Required designer variable.

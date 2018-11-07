@@ -102,11 +102,11 @@
     <Compile Include="UserControlsFields\UserControlIPv6Address.Designer.cs">
       <DependentUpon>UserControlIPv6Address.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlGUID.cs">
+    <Compile Include="UserControlsFields\UserControlGuid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlGUID.Designer.cs">
-      <DependentUpon>UserControlGUID.cs</DependentUpon>
+    <Compile Include="UserControlsFields\UserControlGuid.Designer.cs">
+      <DependentUpon>UserControlGuid.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsFields\UserControlIPv4Address.cs">
       <SubType>UserControl</SubType>
@@ -144,11 +144,11 @@
     <Compile Include="UserControlsFields\UserControlCountry.Designer.cs">
       <DependentUpon>UserControlCountry.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlFixedSet.cs">
+    <Compile Include="UserControlsFields\UserControlStringList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlFixedSet.Designer.cs">
-      <DependentUpon>UserControlFixedSet.cs</DependentUpon>
+    <Compile Include="UserControlsFields\UserControlStringList.Designer.cs">
+      <DependentUpon>UserControlStringList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlOutputSQL.cs">
       <SubType>UserControl</SubType>
@@ -162,11 +162,11 @@
     <Compile Include="UserControlsFields\UserControlTextPattern.Designer.cs">
       <DependentUpon>UserControlTextPattern.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlTextRandomLength.cs">
+    <Compile Include="UserControlsFields\UserControlText.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlTextRandomLength.Designer.cs">
-      <DependentUpon>UserControlTextRandomLength.cs</DependentUpon>
+    <Compile Include="UserControlsFields\UserControlText.Designer.cs">
+      <DependentUpon>UserControlText.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsFields\UserControlTextWords.cs">
       <SubType>UserControl</SubType>
@@ -174,11 +174,11 @@
     <Compile Include="UserControlsFields\UserControlTextWords.Designer.cs">
       <DependentUpon>UserControlTextWords.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlFixedInteger.cs">
+    <Compile Include="UserControlsFields\UserControlIntegerFixed.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlFixedInteger.Designer.cs">
-      <DependentUpon>UserControlFixedInteger.cs</DependentUpon>
+    <Compile Include="UserControlsFields\UserControlIntegerFixed.Designer.cs">
+      <DependentUpon>UserControlIntegerFixed.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsFields\UserControlCity.cs">
       <SubType>UserControl</SubType>
@@ -245,11 +245,11 @@
     <EmbeddedResource Include="UserControlsFields\UserControlCountry.resx">
       <DependentUpon>UserControlCountry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsFields\UserControlFixedSet.resx">
-      <DependentUpon>UserControlFixedSet.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlsFields\UserControlStringList.resx">
+      <DependentUpon>UserControlStringList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsFields\UserControlGUID.resx">
-      <DependentUpon>UserControlGUID.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlsFields\UserControlGuid.resx">
+      <DependentUpon>UserControlGuid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlMACAddress.resx">
       <DependentUpon>UserControlMACAddress.cs</DependentUpon>
@@ -260,14 +260,14 @@
     <EmbeddedResource Include="UserControlsFields\UserControlTextPattern.resx">
       <DependentUpon>UserControlTextPattern.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsFields\UserControlTextRandomLength.resx">
-      <DependentUpon>UserControlTextRandomLength.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlsFields\UserControlText.resx">
+      <DependentUpon>UserControlText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlTextWords.resx">
       <DependentUpon>UserControlTextWords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsFields\UserControlFixedInteger.resx">
-      <DependentUpon>UserControlFixedInteger.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlsFields\UserControlIntegerFixed.resx">
+      <DependentUpon>UserControlIntegerFixed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlCity.resx">
       <DependentUpon>UserControlCity.cs</DependentUpon>

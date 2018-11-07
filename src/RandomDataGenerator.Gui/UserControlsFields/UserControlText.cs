@@ -4,9 +4,9 @@ using RandomDataGenerator.Gui.UserControls;
 
 namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    public sealed partial class UserControlTextRandomLength : UserControlTextRandomLengthDesignable
+    public sealed partial class UserControlText : UserControlTextRandomLengthDesignable
     {
-        public UserControlTextRandomLength()
+        public UserControlText()
         {
             InitializeComponent();
 

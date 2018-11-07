@@ -1,6 +1,6 @@
 ﻿namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    sealed partial class UserControlFixedSet
+    sealed partial class UserControlStringList
     {
         /// <summary> 
         /// Required designer variable.

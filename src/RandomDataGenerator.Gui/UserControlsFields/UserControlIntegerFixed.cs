@@ -3,9 +3,9 @@ using RandomDataGenerator.Gui.UserControls;
 
 namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    public sealed partial class UserControlFixedInteger : UserControlFixedIntegerDesignable
+    public sealed partial class UserControlIntegerFixed : UserControlFixedIntegerDesignable
     {
-        public UserControlFixedInteger()
+        public UserControlIntegerFixed()
         {
             InitializeComponent();
 

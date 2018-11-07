@@ -6,7 +6,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public static class RandomizerFactory
     {
-        private static readonly ConcurrentDictionary<Type, object> Cache = new ConcurrentDictionary<Type, object>();
+        private static readonly ConcurrentDictionary<string, object> Cache = new ConcurrentDictionary<string, object>();
 
         public static IRandomizerString GetRandomizer(IFieldOptionsString fieldOptions)
         {
@@ -46,12 +46,13 @@ namespace RandomDataGenerator.Randomizers
 #endif
         private static T Create<T>(object fieldOptions)
         {
-            Type key = fieldOptions.GetType();
+            string fieldOptionsFullName = fieldOptions.GetType().FullName;
+            string key = fieldOptionsFullName + fieldOptions.GetHashCode();
 
             if (!Cache.ContainsKey(key))
             {
                 // ReSharper disable once PossibleNullReferenceException
-                string typeName = key.FullName.Replace("FieldOptions.FieldOptions", "Randomizers.Randomizer");
+                string typeName = fieldOptionsFullName.Replace("FieldOptions.FieldOptions", "Randomizers.Randomizer");
                 var type = Type.GetType(typeName);
 
                 // ReSharper disable once AssignNullToNotNullAttribute

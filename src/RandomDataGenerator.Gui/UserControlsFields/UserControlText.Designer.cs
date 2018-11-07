@@ -1,6 +1,6 @@
 ﻿namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    sealed partial class UserControlTextRandomLength
+    sealed partial class UserControlText
     {
         /// <summary> 
         /// Required designer variable.
