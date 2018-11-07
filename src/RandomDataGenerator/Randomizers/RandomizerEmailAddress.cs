@@ -8,7 +8,7 @@ using RandomDataGenerator.TextData;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerEmailAddress : RandomizerAbstract<FieldOptionsEmailAddress>, IRandomizerString
+    public class RandomizerEmailAddress : RandomizerAbstract<FieldOptionsEmailAddress>, IRandomizerString
     {
         private readonly LipsumGenerator _generator = new LipsumGenerator();
         private readonly RandomIntegerGenerator _integerGenerator;

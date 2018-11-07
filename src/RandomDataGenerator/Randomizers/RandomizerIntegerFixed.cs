@@ -2,7 +2,7 @@
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerIntegerFixed : IRandomizerInteger
+    public class RandomizerIntegerFixed : IRandomizerInteger
     {
         private readonly FieldOptionsIntegerFixed _fieldOptions;
 

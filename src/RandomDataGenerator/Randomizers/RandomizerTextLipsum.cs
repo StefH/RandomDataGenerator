@@ -3,7 +3,7 @@ using RandomDataGenerator.FieldOptions;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerTextLipsum : RandomizerAbstract<FieldOptionsTextLipsum>, IRandomizerString
+    public class RandomizerTextLipsum : RandomizerAbstract<FieldOptionsTextLipsum>, IRandomizerString
     {
         private readonly LipsumGenerator _generator = new LipsumGenerator();
 

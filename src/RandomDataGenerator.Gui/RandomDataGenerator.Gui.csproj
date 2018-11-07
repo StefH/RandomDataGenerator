@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36D5822C-791D-4F72-9ED4-7DBC164A7E24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RandomDataGenerator.Gui</RootNamespace>
+    <AssemblyName>RandomDataGenerator.Gui</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RandomDataGenerator.Gui.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Entities\IListItem.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\LinqExtensions.cs" />
+    <Compile Include="Extensions\ListBoxExtensions.cs" />
+    <Compile Include="Generation\BaseGenerateOptions.cs" />
+    <Compile Include="Generation\Generate.cs" />
+    <Compile Include="Generation\GenerateSQL.cs" />
+    <Compile Include="Generation\GenerateOptionsSQL.cs" />
+    <Compile Include="Generation\IGenerate.cs" />
+    <Compile Include="MainForm.Fields.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Fields.ListBox.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Output.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Project.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\ProjectHelper.cs" />
+    <Compile Include="Project\ProjectSettings.cs" />
+    <Compile Include="Entities\Field.cs" />
+    <Compile Include="Entities\IDataField.cs" />
+    <Compile Include="Entities\DataField.cs" />
+    <Compile Include="Entities\SubField.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlsFields\UserControlMACAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlMACAddress.Designer.cs">
+      <DependentUpon>UserControlMACAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlIPv6Address.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlIPv6Address.Designer.cs">
+      <DependentUpon>UserControlIPv6Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlGuid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlGuid.Designer.cs">
+      <DependentUpon>UserControlGuid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlIPv4Address.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlIPv4Address.Designer.cs">
+      <DependentUpon>UserControlIPv4Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BaseUserControlOutput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlCommonOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlCommonOptions.Designer.cs">
+      <DependentUpon>UserControlCommonOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlDateTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlDateTime.Designer.cs">
+      <DependentUpon>UserControlDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlEmailAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlEmailAddress.Designer.cs">
+      <DependentUpon>UserControlEmailAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlCountry.Designer.cs">
+      <DependentUpon>UserControlCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlStringList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlStringList.Designer.cs">
+      <DependentUpon>UserControlStringList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlOutputSQL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlOutputSQL.Designer.cs">
+      <DependentUpon>UserControlOutputSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextPattern.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextPattern.Designer.cs">
+      <DependentUpon>UserControlTextPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlText.Designer.cs">
+      <DependentUpon>UserControlText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextWords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextWords.Designer.cs">
+      <DependentUpon>UserControlTextWords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlIntegerFixed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlIntegerFixed.Designer.cs">
+      <DependentUpon>UserControlIntegerFixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlCity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlCity.Designer.cs">
+      <DependentUpon>UserControlCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlFullName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlFullName.Designer.cs">
+      <DependentUpon>UserControlFullName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\IUserControl.cs" />
+    <Compile Include="UserControls\UserControlExample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlExample.Designer.cs">
+      <DependentUpon>UserControlExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlFactory.cs" />
+    <Compile Include="UserControlsFields\UserControlFirstName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlFirstName.Designer.cs">
+      <DependentUpon>UserControlFirstName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlInteger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlInteger.Designer.cs">
+      <DependentUpon>UserControlInteger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlLastName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlLastName.Designer.cs">
+      <DependentUpon>UserControlLastName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\StringUtils.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControlsFields\UserControlCommonOptions.resx">
+      <DependentUpon>UserControlCommonOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlDateTime.resx">
+      <DependentUpon>UserControlDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlEmailAddress.resx">
+      <DependentUpon>UserControlEmailAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlCountry.resx">
+      <DependentUpon>UserControlCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlStringList.resx">
+      <DependentUpon>UserControlStringList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlGuid.resx">
+      <DependentUpon>UserControlGuid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlMACAddress.resx">
+      <DependentUpon>UserControlMACAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlOutputSQL.resx">
+      <DependentUpon>UserControlOutputSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlTextPattern.resx">
+      <DependentUpon>UserControlTextPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlText.resx">
+      <DependentUpon>UserControlText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlTextWords.resx">
+      <DependentUpon>UserControlTextWords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlIntegerFixed.resx">
+      <DependentUpon>UserControlIntegerFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlCity.resx">
+      <DependentUpon>UserControlCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlFullName.resx">
+      <DependentUpon>UserControlFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlExample.resx">
+      <DependentUpon>UserControlExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlFirstName.resx">
+      <DependentUpon>UserControlFirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlInteger.resx">
+      <DependentUpon>UserControlInteger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlLastName.resx">
+      <DependentUpon>UserControlLastName.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_go.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RandomDataGenerator\RandomDataGenerator.csproj">
+      <Project>{d23eb0aa-1eb0-45d6-8985-14cf01cedd10}</Project>
+      <Name>RandomDataGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

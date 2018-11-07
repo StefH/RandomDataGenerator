@@ -3,10 +3,9 @@ using RandomDataGenerator.FieldOptions;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerGuid : RandomizerAbstract<FieldOptionsGuid>, IRandomizerGuid
+    public class RandomizerGuid : RandomizerAbstract<FieldOptionsGuid>, IRandomizerGuid
     {
-        public RandomizerGuid(FieldOptionsGuid options)
-            : base(options)
+        public RandomizerGuid(FieldOptionsGuid options) : base(options)
         {
         }
 
@@ -17,7 +16,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-           return Guid.NewGuid();
+            return Guid.NewGuid();
         }
 
         public string GenerateAsString()

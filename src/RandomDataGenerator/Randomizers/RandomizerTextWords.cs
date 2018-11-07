@@ -5,7 +5,7 @@ using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerTextWords : RandomizerAbstract<FieldOptionsTextWords>, IRandomizerString
+    public class RandomizerTextWords : RandomizerAbstract<FieldOptionsTextWords>, IRandomizerString
     {
         private readonly LipsumGenerator _generator = new LipsumGenerator();
         private readonly RandomIntegerGenerator _integerGenerator;

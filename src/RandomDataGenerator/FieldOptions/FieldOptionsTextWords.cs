@@ -5,6 +5,6 @@ namespace RandomDataGenerator.FieldOptions
     {
         public int Min { get; set; } = 1;
 
-        public int Max { get; set; } = 99;
+        public int Max { get; set; } = 10;
     }
 }

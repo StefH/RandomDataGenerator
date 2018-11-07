@@ -17,7 +17,7 @@ namespace RandomDataGenerator.Generators
 
         public string Generate()
         {
-            return _list[_rnd.Next(_list.Length)];
+            return _list.Length > 0 ? _list[_rnd.Next(_list.Length)] : string.Empty;
         }
     }
 }
