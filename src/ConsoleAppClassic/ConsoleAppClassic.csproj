@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RandomDataGenerator.Net\RandomDataGenerator.Net.csproj">
+    <ProjectReference Include="..\RandomDataGenerator\RandomDataGenerator.csproj">
       <Project>{d23eb0aa-1eb0-45d6-8985-14cf01cedd10}</Project>
-      <Name>RandomDataGenerator.Net</Name>
+      <Name>RandomDataGenerator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RandomDataGenerator.Net\RandomDataGenerator.Net.csproj" />
+    <ProjectReference Include="..\RandomDataGenerator\RandomDataGenerator.csproj" />
   </ItemGroup>
 
 </Project>

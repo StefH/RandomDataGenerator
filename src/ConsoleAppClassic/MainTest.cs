@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using RandomDataGenerator.Net.FieldOptions;
-using RandomDataGenerator.Net.Randomizers;
+using RandomDataGenerator.FieldOptions;
+using RandomDataGenerator.Randomizers;
 
 namespace ConsoleAppClassic
 {
