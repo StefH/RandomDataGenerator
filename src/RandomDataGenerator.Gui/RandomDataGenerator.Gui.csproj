@@ -36,6 +36,9 @@
   <PropertyGroup>
     <StartupObject>RandomDataGenerator.Gui.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -336,6 +339,9 @@
       <Project>{d23eb0aa-1eb0-45d6-8985-14cf01cedd10}</Project>
       <Name>RandomDataGenerator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

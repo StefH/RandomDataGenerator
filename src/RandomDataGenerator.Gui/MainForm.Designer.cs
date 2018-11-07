@@ -49,7 +49,7 @@ namespace RandomDataGenerator.Gui
             this.lblHiddenId = new System.Windows.Forms.Label();
             this.boxOptions = new System.Windows.Forms.GroupBox();
             this.panelFieldOptions = new System.Windows.Forms.Panel();
-            this.userControlExample = new UserControlExample();
+            this.userControlExample = new RandomDataGenerator.Gui.UserControls.UserControlExample();
             this.btnSaveField = new System.Windows.Forms.Button();
             this.boxFieldType = new System.Windows.Forms.GroupBox();
             this.lblSubType = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@ namespace RandomDataGenerator.Gui
             this.fileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(712, 24);
+            this.menuStrip.Size = new System.Drawing.Size(704, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -102,14 +102,14 @@ namespace RandomDataGenerator.Gui
             this.loadToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.fileToolStripMenuItem.Text = "&Project";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Image = global::RandomDataGenerator.Gui.Properties.Resources.table_save;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.ClickEventMenuSave);
             // 
@@ -117,14 +117,14 @@ namespace RandomDataGenerator.Gui
             // 
             this.loadToolStripMenuItem.Image = global::RandomDataGenerator.Gui.Properties.Resources.folder_database;
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "&Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.ClickEventMenuLoad);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ClickEventMenuExit);
             // 
@@ -136,7 +136,7 @@ namespace RandomDataGenerator.Gui
             this.tabTotal.Location = new System.Drawing.Point(0, 24);
             this.tabTotal.Name = "tabTotal";
             this.tabTotal.SelectedIndex = 0;
-            this.tabTotal.Size = new System.Drawing.Size(712, 609);
+            this.tabTotal.Size = new System.Drawing.Size(704, 597);
             this.tabTotal.TabIndex = 1;
             this.tabTotal.Text = "Output";
             // 
@@ -152,7 +152,7 @@ namespace RandomDataGenerator.Gui
             this.tabFields.Location = new System.Drawing.Point(4, 22);
             this.tabFields.Name = "tabFields";
             this.tabFields.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFields.Size = new System.Drawing.Size(704, 583);
+            this.tabFields.Size = new System.Drawing.Size(696, 571);
             this.tabFields.TabIndex = 0;
             this.tabFields.Text = "Fields";
             this.tabFields.UseVisualStyleBackColor = true;
@@ -484,9 +484,9 @@ namespace RandomDataGenerator.Gui
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 611);
+            this.statusStrip.Location = new System.Drawing.Point(0, 599);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(712, 22);
+            this.statusStrip.Size = new System.Drawing.Size(704, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -500,7 +500,7 @@ namespace RandomDataGenerator.Gui
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(712, 633);
+            this.ClientSize = new System.Drawing.Size(704, 621);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.tabTotal);
             this.Controls.Add(this.menuStrip);
@@ -509,7 +509,7 @@ namespace RandomDataGenerator.Gui
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(720, 660);
             this.Name = "MainForm";
-            this.Text = "SqlDataGenerator x.x.x.x";
+            this.Text = "RandomDataGenerator x.x.x.x";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabTotal.ResumeLayout(false);

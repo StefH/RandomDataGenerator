@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using RandomDataGenerator.Enums;
 
 namespace RandomDataGenerator.Gui
 {
