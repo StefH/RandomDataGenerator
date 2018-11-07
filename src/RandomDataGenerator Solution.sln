@@ -26,6 +26,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataGenerator.Gui", "
 		{D23EB0AA-1EB0-45D6-8985-14CF01CEDD10} = {D23EB0AA-1EB0-45D6-8985-14CF01CEDD10}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example Project Files", "Example Project Files", "{E32DF9EB-603F-494D-A4BB-34CF2321F545}"
+	ProjectSection(SolutionItems) = preProject
+		..\Example Project Files\My Table.xml = ..\Example Project Files\My Table.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
