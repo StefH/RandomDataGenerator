@@ -47,7 +47,7 @@ namespace RandomDataGenerator.Gui.Generation
                 var fieldData = new List<string>();
                 foreach (var field in fields)
                 {
-                    object randomValue = field.GetData();
+                    object randomValue = field.Generate();
                     string value = field.FieldOptions.ValueAsString ? StringUtils.AddSQLQuotes(randomValue) : StringUtils.MakeSafeSQL(randomValue);
 
                     fieldData.Add(value);

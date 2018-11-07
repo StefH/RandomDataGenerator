@@ -74,7 +74,7 @@ namespace RandomDataGenerator.Gui
         private void UpdateUserControlExampleText(BaseUserControl baseUserControl)
         {
             var dummyDataField = new DataField(null, baseUserControl.GetFieldOptions(), null, null);
-            var value = dummyDataField.GetData();
+            var value = dummyDataField.Generate();
             userControlExample.txtExample.Text = value != null ? value.ToString() : "NULL";
         }
         #endregion

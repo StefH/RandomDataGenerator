@@ -10,10 +10,7 @@ namespace RandomDataGenerator.Gui.Entities
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private dynamic _randomizer;
-
-        public DataField()
-            : this(string.Empty, null, null, null)
+        public DataField() : this(string.Empty, null, null, null)
         {
         }
 
@@ -22,15 +19,22 @@ namespace RandomDataGenerator.Gui.Entities
             _name = name;
             _field = field;
             _subField = subField;
-            _fieldOptions = fieldOptions != null ? fieldOptions.Clone() : null;
+            _fieldOptions = fieldOptions?.Clone();
             Id = GetHashCode().ToString(CultureInfo.InvariantCulture);
         }
 
-        public dynamic GetData()
+        public dynamic Generate()
         {
-            dynamic rand = RandomizerFactory.GetRandomizerAsDynamic(FieldOptions);
-            return rand.Generate();
+            dynamic randomizer = RandomizerFactory.GetRandomizerAsDynamic(FieldOptions);
+
+            if (randomizer.GetType().GetMethod("GenerateAsString") != null)
+            {
+                return randomizer.GenerateAsString();
+            }
+
+            return randomizer.Generate();
         }
+
         [XmlIgnore]
         public string Id { get; }
 
