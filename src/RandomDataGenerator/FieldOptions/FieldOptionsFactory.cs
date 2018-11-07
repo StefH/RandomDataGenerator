@@ -1,16 +1,17 @@
-﻿//using System;
-//using RandomDataGenerator.Enums;
+﻿using System;
+using RandomDataGenerator.Enums;
 
-//namespace RandomDataGenerator.FieldOptions
-//{
-//    static class FieldOptionsFactory
-//    {
-//        public static FieldOptionsAbstract GetFieldOptions(SubFieldType subFieldType)
-//        {
-//            string typeName = $"RandomDataGenerator.FieldOptions.FieldOptions{subFieldType}";
-//            var type = Type.GetType(typeName);
+namespace RandomDataGenerator.FieldOptions
+{
+    public static class FieldOptionsFactory
+    {
+        public static FieldOptionsAbstract GetFieldOptions(SubFieldType subFieldType)
+        {
+            string typeName = $"RandomDataGenerator.FieldOptions.FieldOptions{subFieldType}";
+            Type type = Type.GetType(typeName);
 
-//            return type != null ? (FieldOptionsAbstract)Activator.CreateInstance(type) : null;
-//        }
-//    }
-//}
+            // ReSharper disable once AssignNullToNotNullAttribute
+            return (FieldOptionsAbstract)Activator.CreateInstance(type);
+        }
+    }
+}

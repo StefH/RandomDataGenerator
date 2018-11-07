@@ -3,7 +3,7 @@ using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerMACAddress : RandomizerAbstract<FieldOptionsMACAddress>, IRandomizerString
+    public class RandomizerMACAddress : RandomizerAbstract<FieldOptionsMACAddress>, IRandomizerString
     {
         private readonly RandomIntegerGenerator _generator = new RandomIntegerGenerator(0, 0xff);
 

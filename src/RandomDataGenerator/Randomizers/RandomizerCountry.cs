@@ -4,7 +4,7 @@ using RandomDataGenerator.TextData;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerCountry : RandomizerAbstract<FieldOptionsCountry>, IRandomizerString
+    public class RandomizerCountry : RandomizerAbstract<FieldOptionsCountry>, IRandomizerString
     {
         private readonly RandomStringFromListGenerator _generator;
 

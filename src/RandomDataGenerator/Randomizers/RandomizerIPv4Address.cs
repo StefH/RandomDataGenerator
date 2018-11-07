@@ -3,7 +3,7 @@ using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerIPv4Address : RandomizerAbstract<FieldOptionsIPv4Address>, IRandomizerString
+    public class RandomizerIPv4Address : RandomizerAbstract<FieldOptionsIPv4Address>, IRandomizerString
     {
         private readonly RandomIntegerGenerator _firstOctet = new RandomIntegerGenerator(1, 0xff);
         private readonly RandomIntegerGenerator _otherOctets = new RandomIntegerGenerator(0, 0xff);

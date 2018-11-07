@@ -5,7 +5,7 @@ using RandomDataGenerator.TextData;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerFullName : RandomizerAbstract<FieldOptionsFullName>, IRandomizerString
+    public class RandomizerFullName : RandomizerAbstract<FieldOptionsFullName>, IRandomizerString
     {
         private readonly RandomIntegerGenerator _integerGenerator;
         private readonly RandomStringFromListGenerator _lastNamesGenerator;

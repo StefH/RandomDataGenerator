@@ -3,7 +3,7 @@ using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerStringList : RandomizerAbstract<FieldOptionsStringList>, IRandomizerString
+    public class RandomizerStringList : RandomizerAbstract<FieldOptionsStringList>, IRandomizerString
     {
         private readonly RandomStringFromListGenerator _generator;
 

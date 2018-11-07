@@ -33,6 +33,17 @@ namespace RandomDataGenerator.Randomizers
             return Create<IRandomizerString>(fieldOptions);
         }
 
+#if NET20 || NET35
+        public static object GetRandomizerAsDynamic(FieldOptionsAbstract fieldOptions)
+        {
+            return Create<object>(fieldOptions);
+        }
+#else
+        public static dynamic GetRandomizerAsDynamic(object fieldOptions)
+        {
+            return Create<object>(fieldOptions);
+        }
+#endif
         private static T Create<T>(object fieldOptions)
         {
             Type key = fieldOptions.GetType();

@@ -3,7 +3,7 @@ using RandomDataGenerator.FieldOptions;
 
 namespace RandomDataGenerator.Randomizers
 {
-    class RandomizerGuid : RandomizerAbstract<FieldOptionsGuid>, IRandomizerGuid
+    public class RandomizerGuid : RandomizerAbstract<FieldOptionsGuid>, IRandomizerGuid
     {
         public RandomizerGuid(FieldOptionsGuid options)
             : base(options)
