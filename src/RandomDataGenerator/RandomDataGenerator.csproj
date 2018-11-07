@@ -9,7 +9,7 @@
     <PackageId>RandomDataGenerator.Net</PackageId>
     <PackageTags>Random;Data;Text</PackageTags>
     <PackageReleaseNotes>See ReleaseNotes.md</PackageReleaseNotes>
-    <!--<PackageIconUrl>https://raw.githubusercontent.com/StefH/XPath2.Net/master/resources/XPath2-icon-64x64.png</PackageIconUrl>-->
+    <PackageIconUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/resources/icon_64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/StefH/RandomDataGenerator</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
