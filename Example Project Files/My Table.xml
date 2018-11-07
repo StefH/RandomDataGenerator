@@ -3,7 +3,7 @@
   <Date>2013-10-02T20:42:18.5887967+02:00</Date>
   <Name>My Table</Name>
   <TotalRecords>1000</TotalRecords>
-  <OutputFile>c:\Tmp\output.sql</OutputFile>
+  <OutputFile>c:\Temp\output.sql</OutputFile>
   <GenerateOptions xsi:type="GenerateOptionsSQL">
     <RecordsPerInsert>10</RecordsPerInsert>
     <Table>My Table</Table>
