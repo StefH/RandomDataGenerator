@@ -53,9 +53,8 @@ namespace RandomDataGenerator.Randomizers
             {
                 // ReSharper disable once PossibleNullReferenceException
                 string typeName = fieldOptionsFullName.Replace("FieldOptions.FieldOptions", "Randomizers.Randomizer");
-                var type = Type.GetType(typeName);
+                var type = Type.GetType(typeName, true);
 
-                // ReSharper disable once AssignNullToNotNullAttribute
                 Cache.TryAdd(key, Activator.CreateInstance(type, fieldOptions));
             }
 
