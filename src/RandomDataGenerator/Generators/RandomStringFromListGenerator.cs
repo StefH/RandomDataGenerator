@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace RandomDataGenerator.Generators
 {
-    public class RandomStringFromListGenerator
+    internal class RandomStringFromListGenerator
     {
         private readonly string[] _list;
 

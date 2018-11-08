@@ -10,7 +10,7 @@ namespace RandomDataGenerator.Generators
     /// from Normally (Gaussian) distributed random numbers and 
     /// Exponentially distributed random numbers.
     /// </summary>
-    public class RandomValueGenerator
+    internal static class RandomValueGenerator
     {
         private const double Tolerance = double.Epsilon;
         private static Random _rnf;

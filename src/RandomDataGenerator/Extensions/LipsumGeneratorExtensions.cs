@@ -2,7 +2,7 @@
 
 namespace RandomDataGenerator.Extensions
 {
-    public static class LipsumGeneratorExtensions
+    internal static class LipsumGeneratorExtensions
     {
         public static string GenerateWord(this LipsumGenerator generator)
         {

@@ -18,7 +18,7 @@ namespace RandomDataGenerator.Generators
     ///
     /// Stef: Replaced RNGCryptoServiceProvider by Random for netstandard1.3
     /// </summary>
-    public class RandomStringGenerator
+    internal class RandomStringGenerator
     {
         public RandomStringGenerator(bool useUpperCaseCharacters = true,
                                      bool useLowerCaseCharacters = true,
@@ -46,7 +46,7 @@ namespace RandomDataGenerator.Generators
             _existingStrings = new List<string>();
 
 #if NETSTANDARD1_3
-            _random = new Random((int)(DateTime.UtcNow.Ticks & 0xFFFFFFFF));
+            _random = new Random(Environment.TickCount);
 #else
             _random = new System.Security.Cryptography.RNGCryptoServiceProvider();
 #endif

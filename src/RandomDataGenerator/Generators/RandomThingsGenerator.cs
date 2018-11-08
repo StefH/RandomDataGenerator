@@ -1,6 +1,6 @@
 ﻿namespace RandomDataGenerator.Generators
 {
-    public class RandomThingsGenerator<T>
+    internal class RandomThingsGenerator<T>
     {
         private readonly T _min;
         private readonly T _max;
