@@ -3,7 +3,7 @@ namespace RandomDataGenerator.Gui
 {
     public static class VersionInfo
     {
-        public const string AssemblyCopyright = "Copyright © Stef Heyenrath (2015)";
+        public const string AssemblyCopyright = "Copyright © Stef Heyenrath (2015-2018)";
 
         // Version information for an assembly consists of the following four values:
         //
@@ -11,7 +11,7 @@ namespace RandomDataGenerator.Gui
         //      Minor Version 
         //      Build Number
         //      Revision
-        public const string AssemblyVersion = "1.0.2.0";
+        public const string AssemblyVersion = "1.0.0.0";
         public const string AssemblyFileVersion = AssemblyVersion;
     }
 }
