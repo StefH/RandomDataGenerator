@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example Project Files", "Ex
 		..\Example Project Files\My Table.xml = ..\Example Project Files\My Table.xml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppNetCoreApp2", "ConsoleAppNetCoreApp2\ConsoleAppNetCoreApp2.csproj", "{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{FEF862C9-B401-42AB-B753-C877FB11D4CD} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
 		{983EAE55-828B-4135-A1C6-BF7A1BA193EE} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
 		{36D5822C-791D-4F72-9ED4-7DBC164A7E24} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
+		{6AB9BD42-8B23-425C-9B5D-B97A52F008BE} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F00DE8F4-BF0D-49C3-8854-600E8142BE41}
