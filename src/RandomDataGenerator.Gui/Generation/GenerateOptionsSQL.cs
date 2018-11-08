@@ -7,7 +7,7 @@ namespace RandomDataGenerator.Gui.Generation
         {
             //TotalRecords = 1000;
             RecordsPerInsert = 10;
-            //File = @"C:\Tmp\output.sql";
+            //File = @"C:\Temp\output.sql";
             Table = "My Table";
             IncludeFieldNames = true;
         }

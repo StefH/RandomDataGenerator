@@ -419,7 +419,7 @@ namespace RandomDataGenerator.Gui
             this.txtOutputFile.Name = "txtOutputFile";
             this.txtOutputFile.Size = new System.Drawing.Size(440, 20);
             this.txtOutputFile.TabIndex = 3;
-            this.txtOutputFile.Text = "c:\\Tmp\\output.sql";
+            this.txtOutputFile.Text = "c:\\Temp\\output.sql";
             // 
             // lblOutputFile
             // 
