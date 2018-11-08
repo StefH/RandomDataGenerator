@@ -54,8 +54,49 @@ namespace RandomDataGenerator.Generators
         /// </summary>
         public static double NextDouble()
         {
-            double rn = _rnf.NextDouble();
-            return rn;
+            return _rnf.NextDouble();
+        }
+
+        /// <summary>
+        /// Return a random T in the range [min, max]
+        /// </summary>
+        /// <typeparam name="T">Generic type</typeparam>
+        /// <param name="min">The minimum value</param>
+        /// <param name="max">The maximum value</param>
+        /// <returns>Random T</returns>
+        public static T Next<T>(T min, T max)
+        {
+            if (typeof(T) == typeof(short))
+            {
+                return (T)(object)Next((short)(object)min, (short)(object)max);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T)(object)Next((int)(object)min, (int)(object)max);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T)(object)Next((float)(object)min, (float)(object)max);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)Next((double)(object)min, (double)(object)max);
+            }
+
+            if (typeof(T) == typeof(DateTime))
+            {
+                return (T)(object)Next((DateTime)(object)min, (DateTime)(object)max);
+            }
+
+            if (typeof(T) == typeof(TimeSpan))
+            {
+                return (T)(object)Next((TimeSpan)(object)min, (TimeSpan)(object)max);
+            }
+
+            throw new NotSupportedException($"The type '{typeof(T)}' cannot be used.");
         }
 
         /// <summary>

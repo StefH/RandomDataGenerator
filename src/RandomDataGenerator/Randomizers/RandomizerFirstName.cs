@@ -7,7 +7,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerFirstName : RandomizerAbstract<FieldOptionsFirstName>, IRandomizerString
     {
-        private readonly RandomIntegerGenerator _integerGenerator;
+        private readonly RandomThingsGenerator<int> _numberGenerator;
         private readonly List<RandomStringFromListGenerator> _genderSetGenerators = new List<RandomStringFromListGenerator>();
 
         public RandomizerFirstName(FieldOptionsFirstName options)
@@ -23,7 +23,7 @@ namespace RandomDataGenerator.Randomizers
                 _genderSetGenerators.Add(new RandomStringFromListGenerator(Texts.Instance.FemaleNames));
             }
 
-            _integerGenerator = new RandomIntegerGenerator(0, _genderSetGenerators.Count);
+            _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count);
         }
 
         public string Generate()
@@ -33,7 +33,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            int maleOrFemale = _integerGenerator.Generate();
+            int maleOrFemale = _numberGenerator.Generate();
 
             return _genderSetGenerators[maleOrFemale].Generate();
         }

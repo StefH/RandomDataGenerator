@@ -11,7 +11,7 @@ namespace RandomDataGenerator.Randomizers
     public class RandomizerEmailAddress : RandomizerAbstract<FieldOptionsEmailAddress>, IRandomizerString
     {
         private readonly LipsumGenerator _generator = new LipsumGenerator();
-        private readonly RandomIntegerGenerator _integerGenerator;
+        private readonly RandomThingsGenerator<int> _numberGenerator;
         private readonly RandomStringFromListGenerator _topLevelDomainGenerator;
         private readonly RandomStringFromListGenerator _lastNamesGenerator;
         private readonly List<RandomStringFromListGenerator> _genderSetGenerators = new List<RandomStringFromListGenerator>();
@@ -32,7 +32,7 @@ namespace RandomDataGenerator.Randomizers
                 _genderSetGenerators.Add(new RandomStringFromListGenerator(Texts.Instance.FemaleNames.Select(l => l.ToLower())));
             }
 
-            _integerGenerator = new RandomIntegerGenerator(0, _genderSetGenerators.Count);
+            _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count);
         }
 
         public string Generate()
@@ -42,7 +42,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            int maleOrFemale = _integerGenerator.Generate();
+            int maleOrFemale = _numberGenerator.Generate();
             var firstNamesSet = _genderSetGenerators[maleOrFemale];
 
             string firstName = firstNamesSet.Generate();

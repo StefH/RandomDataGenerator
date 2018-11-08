@@ -17,9 +17,11 @@ namespace ConsoleAppClassic
             string country = randomizerCountry.Generate();
             Write(randomizerCountry, country);
 
-            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { DateFrom = DateTime.Today.AddDays(-1888) });
+            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { DateFrom = DateTime.Today.AddDays(-1888), UseNullValues = true });
             DateTime? date = randomizerDateTime.Generate();
             Write(randomizerDateTime, date);
+            string dateAsString = randomizerDateTime.GenerateAsString();
+            Write(randomizerDateTime, dateAsString);
 
             var randomizerFirstName = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
             string firstname = randomizerFirstName.Generate();

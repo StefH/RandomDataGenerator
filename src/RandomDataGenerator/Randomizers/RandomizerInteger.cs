@@ -5,11 +5,11 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerInteger : RandomizerAbstract<FieldOptionsInteger>, IRandomizerInteger
     {
-        private readonly RandomIntegerGenerator _generator;
+        private readonly RandomThingsGenerator<int> _generator;
 
         public RandomizerInteger(FieldOptionsInteger options): base(options)
         {
-            _generator = new RandomIntegerGenerator(options.Min, options.Max);
+            _generator = new RandomThingsGenerator<int>(options.Min, options.Max);
         }
 
         public int? Generate()

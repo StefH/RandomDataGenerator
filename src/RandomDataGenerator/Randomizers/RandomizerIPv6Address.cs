@@ -5,7 +5,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerIPv6Address : RandomizerAbstract<FieldOptionsIPv6Address>, IRandomizerString
     {
-        private readonly RandomIntegerGenerator _generator = new RandomIntegerGenerator(0, 0xffff);
+        private readonly RandomThingsGenerator<int> _generator = new RandomThingsGenerator<int>(0, 0xffff);
 
         public RandomizerIPv6Address(FieldOptionsIPv6Address options)
             : base(options)

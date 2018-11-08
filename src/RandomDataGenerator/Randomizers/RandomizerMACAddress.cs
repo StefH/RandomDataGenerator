@@ -5,7 +5,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerMACAddress : RandomizerAbstract<FieldOptionsMACAddress>, IRandomizerString
     {
-        private readonly RandomIntegerGenerator _generator = new RandomIntegerGenerator(0, 0xff);
+        private readonly RandomThingsGenerator<int> _generator = new RandomThingsGenerator<int>(0, 0xff);
 
         public RandomizerMACAddress(FieldOptionsMACAddress options)
             : base(options)
