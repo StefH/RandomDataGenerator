@@ -32,6 +32,13 @@ var randomizerText = RandomizerFactory.GetRandomizer(new FieldOptionsText { UseN
 string text = randomizerText.Generate();
 ```
 
+## Usage (as SQL Data Generator GUI)
+You can also use a UI to generate SQL insert table statements.
+![Random Data Generator - 1](https://github.com/StefH/RandomDataGenerator/blob/master/resources/screen-01.png "Screen 1")
+
+![Random Data Generator - 2](https://github.com/StefH/RandomDataGenerator/blob/master/resources/screen-02.png "Screen 2")
+
+
 ## Copyright
 
 ### Referenced files
