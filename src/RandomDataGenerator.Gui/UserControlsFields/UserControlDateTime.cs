@@ -21,11 +21,11 @@ namespace RandomDataGenerator.Gui.UserControlsFields
         {
             base.SetOptionsAndUpdateControls(options);
 
-            datePickerFrom.Value = FieldOptions.DateFrom;
-            timePickerFrom.Value = FieldOptions.IncludeTime ? FieldOptions.DateFrom : DateTime.Now.Date;
+            datePickerFrom.Value = FieldOptions.From;
+            timePickerFrom.Value = FieldOptions.IncludeTime ? FieldOptions.From : DateTime.Now.Date;
 
-            datePickerTo.Value = FieldOptions.DateTo;
-            timePickerTo.Value = FieldOptions.IncludeTime ? FieldOptions.DateTo : DateTime.Now.Date;
+            datePickerTo.Value = FieldOptions.To;
+            timePickerTo.Value = FieldOptions.IncludeTime ? FieldOptions.To : DateTime.Now.Date;
 
             IncludeTime = FieldOptions.IncludeTime;
         }
@@ -34,8 +34,8 @@ namespace RandomDataGenerator.Gui.UserControlsFields
         {
             FieldOptions = base.GetFieldOptionsT();
 
-            FieldOptions.DateFrom = datePickerFrom.Value + (chkIncludeTime.Checked ? timePickerFrom.Value.TimeOfDay : new TimeSpan(0));
-            FieldOptions.DateTo = datePickerTo.Value + (chkIncludeTime.Checked ? timePickerTo.Value.TimeOfDay : new TimeSpan(0));
+            FieldOptions.From = datePickerFrom.Value + (chkIncludeTime.Checked ? timePickerFrom.Value.TimeOfDay : new TimeSpan(0));
+            FieldOptions.To = datePickerTo.Value + (chkIncludeTime.Checked ? timePickerTo.Value.TimeOfDay : new TimeSpan(0));
             FieldOptions.IncludeTime = chkIncludeTime.Checked;
 
             return FieldOptions;

@@ -19,11 +19,27 @@ namespace ConsoleAppClassic
             string country = randomizerCountry.Generate();
             Write(randomizerCountry, country);
 
-            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { DateFrom = DateTime.Today.AddDays(-1888), UseNullValues = true });
+            var randomizerTimeSpan = RandomizerFactory.GetRandomizer(new FieldOptionsTimeSpan { From = TimeSpan.FromDays(1), To = TimeSpan.FromDays(7) });
+            TimeSpan? ts = randomizerTimeSpan.Generate();
+            Write(randomizerTimeSpan, ts);
+
+            var randomizerTimeSpanC = RandomizerFactory.GetRandomizer(new FieldOptionsTimeSpan { From = TimeSpan.FromDays(1), To = TimeSpan.FromDays(7), IncludeMilliseconds = false, Format = "c" });
+            string tsC = randomizerTimeSpanC.GenerateAsString();
+            Write(randomizerTimeSpanC, tsC);
+
+            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { From = DateTime.Today.AddDays(-1888) });
             DateTime? date = randomizerDateTime.Generate();
             Write(randomizerDateTime, date);
             string dateAsString = randomizerDateTime.GenerateAsString();
             Write(randomizerDateTime, dateAsString);
+
+            var randomizerDateTimeNoTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { IncludeTime = false });
+            DateTime? dateNoTime = randomizerDateTimeNoTime.Generate();
+            Write(randomizerDateTimeNoTime, dateNoTime);
+
+            var randomizerDateTimeWithFormat = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { Format = "yyyy/MM/dd" });
+            string dateWithFormat = randomizerDateTimeWithFormat.GenerateAsString();
+            Write(randomizerDateTimeNoTime, dateWithFormat);
 
             var randomizerFirstName = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
             string firstname = randomizerFirstName.Generate();
@@ -40,6 +56,14 @@ namespace ConsoleAppClassic
             var randomizerInteger = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
             int? integer = randomizerInteger.Generate();
             Write(randomizerInteger, integer);
+
+            var randomizerLong = RandomizerFactory.GetRandomizer(new FieldOptionsLong());
+            int? @long = randomizerInteger.Generate();
+            Write(randomizerLong, @long);
+
+            var randomizerFloat = RandomizerFactory.GetRandomizer(new FieldOptionsFloat());
+            float? flt = randomizerFloat.Generate();
+            Write(randomizerFloat, flt);
 
             var randomizerDouble = RandomizerFactory.GetRandomizer(new FieldOptionsDouble());
             double? dbl = randomizerDouble.Generate();
@@ -79,6 +103,12 @@ namespace ConsoleAppClassic
             var randomizerTextWords = RandomizerFactory.GetRandomizer(new FieldOptionsTextWords { Min = 10, Max = 10 });
             string words = randomizerTextWords.Generate();
             Write(randomizerTextWords, words);
+
+            properties = new Dictionary<string, object>();
+            var fieldOptionsTimeSpan2 = FieldOptionsFactory.GetFieldOptions("TimeSpan", properties);
+            var randomizerTimeSpan2 = RandomizerFactory.GetRandomizerAsDynamic(fieldOptionsTimeSpan2);
+            TimeSpan? ts2 = randomizerTimeSpan2.Generate();
+            Write(randomizerTimeSpan2, ts2);
         }
 
         private static void Write<T>(object randomizer, T value)

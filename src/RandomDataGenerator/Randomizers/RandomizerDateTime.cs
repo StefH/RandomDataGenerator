@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
@@ -6,13 +7,12 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerDateTime : RandomizerAbstract<FieldOptionsDateTime>, IRandomizerDateTime
     {
-        private const string Format = "yyyy-M-dd hh:mm:ss";
         private readonly RandomThingsGenerator<DateTime> _generator;
 
         public RandomizerDateTime(FieldOptionsDateTime options)
             : base(options)
         {
-            _generator = new RandomThingsGenerator<DateTime>(options.DateFrom, options.DateTo);
+            _generator = new RandomThingsGenerator<DateTime>(options.From, options.To);
         }
 
         public DateTime? Generate()
@@ -29,7 +29,9 @@ namespace RandomDataGenerator.Randomizers
         public string GenerateAsString()
         {
             DateTime? date = Generate();
-            return date?.ToString(Format);
+
+            string format = !string.IsNullOrEmpty(Options.Format) ? Options.Format : FieldOptionsDateTime.DefaultFormat;
+            return date?.ToString(format, CultureInfo.InvariantCulture);
         }
     }
 }
