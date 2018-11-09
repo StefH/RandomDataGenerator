@@ -184,12 +184,6 @@
     <Compile Include="UserControlsFields\UserControlTextWords.Designer.cs">
       <DependentUpon>UserControlTextWords.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsFields\UserControlIntegerFixed.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsFields\UserControlIntegerFixed.Designer.cs">
-      <DependentUpon>UserControlIntegerFixed.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlsFields\UserControlCity.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -275,9 +269,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlTextWords.resx">
       <DependentUpon>UserControlTextWords.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsFields\UserControlIntegerFixed.resx">
-      <DependentUpon>UserControlIntegerFixed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlCity.resx">
       <DependentUpon>UserControlCity.cs</DependentUpon>

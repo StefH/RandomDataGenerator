@@ -11,24 +11,17 @@ namespace RandomDataGenerator.Gui.Data
 
         public DataManager()
         {
-            /*
-            _fields.Add(new Field
-            {
-                FieldType = FieldType.None,
-                SubFields = new []
-                {
-                    new SubField { SubFieldType = SubFieldType.None }
-                }
-            });
-            */
-
             _fields.Add(new Field
             {
                 FieldType = FieldType.Numbers,
                 SubFields = new[]
                 {
+                    // new SubField { SubFieldType = SubFieldType.Boolean },
+                    // new SubField { SubFieldType = SubFieldType.Short },
                     new SubField { SubFieldType = SubFieldType.Integer },
-                    new SubField { SubFieldType = SubFieldType.IntegerFixed }
+                    // new SubField { SubFieldType = SubFieldType.Long },
+                    // new SubField { SubFieldType = SubFieldType.Float },
+                    // new SubField { SubFieldType = SubFieldType.Double }
                 }
             });
 

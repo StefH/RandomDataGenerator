@@ -15,7 +15,7 @@ namespace RandomDataGenerator.Randomizers
 
         public string Generate()
         {
-            return IsNull() ? null : _generator.Generate(Options.Pattern);
+            return IsNull() || string.IsNullOrEmpty(Options.Pattern) ? null : _generator.Generate(Options.Pattern);
         }
     }
 }

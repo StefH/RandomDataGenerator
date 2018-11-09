@@ -14,29 +14,15 @@
       <Name>Numbers_Integer</Name>
       <FieldOptions xsi:type="FieldOptionsInteger">
         <ValueAsString>false</ValueAsString>
-        <UseNullValues>true</UseNullValues>
+        <UseNullValues>false</UseNullValues>
         <Min>0</Min>
-        <Max>99999999</Max>
+        <Max>77778888</Max>
       </FieldOptions>
       <Field>
         <FieldType>Numbers</FieldType>
       </Field>
       <SubField>
         <SubFieldType>Integer</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Numbers_IntegerFixed</Name>
-      <FieldOptions xsi:type="FieldOptionsIntegerFixed">
-        <ValueAsString>false</ValueAsString>
-        <UseNullValues>false</UseNullValues>
-        <Value>77</Value>
-      </FieldOptions>
-      <Field>
-        <FieldType>Numbers</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>IntegerFixed</SubFieldType>
       </SubField>
     </DataField>
     <DataField>

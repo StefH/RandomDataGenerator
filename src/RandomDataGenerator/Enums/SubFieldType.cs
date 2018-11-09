@@ -7,11 +7,23 @@ namespace RandomDataGenerator.Enums
         None,
 
         // Numbers
+        [Description("Boolean")]
+        Boolean,
+
+        [Description("Short")]
+        Short,
+
         [Description("Integer")]
         Integer,
 
-        [Description("Integer Fixed")]
-        IntegerFixed,
+        [Description("Long")]
+        Long,
+
+        [Description("Float")]
+        Float,
+
+        [Description("Double")]
+        Double,
 
 
         // IT
@@ -40,7 +52,7 @@ namespace RandomDataGenerator.Enums
         [Description("Email Address")]
         EmailAddress,
 
-        
+
         // Location
         [Description("Country")]
         Country,
