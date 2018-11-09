@@ -17,6 +17,8 @@ namespace RandomDataGenerator.Generators
         private static double _storedUniformDeviate;
         private static bool _storedUniformDeviateIsGood;
 
+        public static Type[] SupportedTypes { get; } = { typeof(bool), typeof(short), typeof(int), typeof(long), typeof(float), typeof(double), typeof(long), typeof(DateTime), typeof(TimeSpan) };
+
         #region -- Construction/Initialization --
 
         static RandomValueGenerator()
@@ -66,6 +68,11 @@ namespace RandomDataGenerator.Generators
         /// <returns>Random T</returns>
         public static T Next<T>(T min, T max)
         {
+            if (typeof(T) == typeof(bool))
+            {
+                return (T)(object)NextBoolean();
+            }
+
             if (typeof(T) == typeof(short))
             {
                 return (T)(object)Next((short)(object)min, (short)(object)max);
@@ -74,6 +81,11 @@ namespace RandomDataGenerator.Generators
             if (typeof(T) == typeof(int))
             {
                 return (T)(object)Next((int)(object)min, (int)(object)max);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T)(object)Next((long)(object)min, (long)(object)max);
             }
 
             if (typeof(T) == typeof(float))

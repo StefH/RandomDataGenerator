@@ -34,9 +34,12 @@ namespace RandomDataGenerator.Gui.UserControlsFields
             base.SetOptionsAndUpdateControls(options);
             
             _values.Clear();
-            foreach (string value in options.Values)
+            if (options.Values != null)
             {
-                _values.Add(value);
+                foreach (string value in options.Values)
+                {
+                    _values.Add(value);
+                }
             }
             
             chkConvertToString.Checked = FieldOptions.ValueAsString;

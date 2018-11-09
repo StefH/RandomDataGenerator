@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Linq;
+using System.Reflection;
 using RandomDataGenerator.FieldOptions;
+using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
@@ -18,19 +21,14 @@ namespace RandomDataGenerator.Randomizers
             return Create<IRandomizerGuid>(fieldOptions);
         }
 
-        public static IRandomizerInteger GetRandomizer(IFieldOptionsInteger fieldOptions)
+        public static IRandomizerNumber<T> GetRandomizer<T>(IFieldOptionsNumber<T> fieldOptions) where T : struct
         {
-            return Create<IRandomizerInteger>(fieldOptions);
+            return Create<IRandomizerNumber<T>>(fieldOptions);
         }
 
         public static IRandomizerDateTime GetRandomizer(IFieldOptionsDateTime fieldOptions)
         {
             return Create<IRandomizerDateTime>(fieldOptions);
-        }
-
-        public static IRandomizerString GetRandomizer(IFieldOptions fieldOptions)
-        {
-            return Create<IRandomizerString>(fieldOptions);
         }
 
 #if NET20 || NET35
@@ -46,19 +44,42 @@ namespace RandomDataGenerator.Randomizers
 #endif
         private static T Create<T>(object fieldOptions)
         {
-            string fieldOptionsFullName = fieldOptions.GetType().FullName;
-            string key = fieldOptionsFullName + fieldOptions.GetHashCode();
+            string key = $"{fieldOptions.GetType().FullName}_{fieldOptions.GetHashCode()}";
 
             if (!Cache.ContainsKey(key))
             {
-                // ReSharper disable once PossibleNullReferenceException
-                string typeName = fieldOptionsFullName.Replace("FieldOptions.FieldOptions", "Randomizers.Randomizer");
-                var type = Type.GetType(typeName, true);
-
-                Cache.TryAdd(key, Activator.CreateInstance(type, fieldOptions));
+                Cache.TryAdd(key, CreateRandomizer(fieldOptions));
             }
 
             return (T)Cache[key];
+        }
+
+        private static object CreateRandomizer(object fieldOptions)
+        {
+            Type fieldOptionsType = fieldOptions.GetType();
+            string fieldOptionsFullName = fieldOptionsType.FullName ?? string.Empty;
+
+            string typeName;
+            if (fieldOptionsType.GetTypeInfo().BaseType?.Name.EndsWith("Number`1") == true)
+            {
+                Type genericType = fieldOptionsType.GetTypeInfo().BaseType.GetTypeInfo().GetGenericTypeArguments().FirstOrDefault();
+                if (RandomValueGenerator.SupportedTypes.Contains(genericType))
+                {
+                    typeName = fieldOptionsFullName.Replace($"FieldOptions.{fieldOptionsType.Name}", $"Randomizers.RandomizerNumber`1[{genericType}]");
+                }
+                else
+                {
+                    throw new NotSupportedException($"The type '{genericType}' is not supported.");
+                }
+            }
+            else
+            {
+                typeName = fieldOptionsFullName.Replace("FieldOptions.FieldOptions", "Randomizers.Randomizer");
+            }
+
+            var type = Type.GetType(typeName, true);
+
+            return Activator.CreateInstance(type, fieldOptions);
         }
     }
 }

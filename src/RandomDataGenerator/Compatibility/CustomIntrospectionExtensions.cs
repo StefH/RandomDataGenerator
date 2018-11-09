@@ -13,6 +13,16 @@ namespace System.Reflection
         {
             return type;
         }
+
+        public static Type[] GetGenericTypeArguments(this Type type)
+        {
+            return type.GetGenericArguments();
+        }
+#else
+        public static Type[] GetGenericTypeArguments(this TypeInfo typeInfo)
+        {
+            return typeInfo.GenericTypeArguments;
+        }
 #endif
 
         public static PropertyInfo[] GetPublicSettableProperties(this Type type)

@@ -2,8 +2,8 @@
 
 namespace RandomDataGenerator.FieldOptions
 {
-    public class FieldOptionsStringList : FieldOptionsAbstract, IFieldOptions
+    public class FieldOptionsStringList : FieldOptionsAbstract, IFieldOptionsString
     {
-        public List<string> Values { get; set; } = new List<string>();
+        public List<string> Values { get; set; }
     }
 }

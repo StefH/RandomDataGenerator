@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Randomizers;
 
@@ -28,9 +29,21 @@ namespace ConsoleAppClassic
             string firstname = randomizerFirstName.Generate();
             Write(randomizerFirstName, firstname);
 
+            var randomizerBoolean = RandomizerFactory.GetRandomizer(new FieldOptionsBoolean());
+            bool? b = randomizerBoolean.Generate();
+            Write(randomizerBoolean, b);
+
+            var randomizerShort = RandomizerFactory.GetRandomizer(new FieldOptionsShort());
+            short? sh = randomizerShort.Generate();
+            Write(randomizerShort, sh);
+
             var randomizerInteger = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
             int? integer = randomizerInteger.Generate();
             Write(randomizerInteger, integer);
+
+            var randomizerDouble = RandomizerFactory.GetRandomizer(new FieldOptionsDouble());
+            double? dbl = randomizerDouble.Generate();
+            Write(randomizerDouble, dbl);
 
             var randomizerGuid = RandomizerFactory.GetRandomizer(new FieldOptionsGuid());
             Guid? guid = randomizerGuid.Generate();
@@ -70,7 +83,8 @@ namespace ConsoleAppClassic
 
         private static void Write<T>(object randomizer, T value)
         {
-            Console.WriteLine("{0} --> '{1}'", randomizer.GetType().Name, value);
+            Type genericType = randomizer.GetType().GetTypeInfo().GenericTypeArguments.FirstOrDefault();
+            Console.WriteLine("{0}{1} --> '{2}'", randomizer.GetType().Name, genericType != null ? $"[{genericType}]" : string.Empty, value);
         }
     }
 }
