@@ -1,3 +1,6 @@
+# 1.0.3.0 (09 November 2018)
+- [#5](https://github.com/StefH/RandomDataGenerator/pull/5) - Add Long and TimeSpan [feature] contributed by [StefH](https://github.com/StefH)
+
 # 1.0.2.0 (09 November 2018)
 - [#4](https://github.com/StefH/RandomDataGenerator/pull/4) - RandomizerNumber [feature] contributed by [StefH](https://github.com/StefH)
 
