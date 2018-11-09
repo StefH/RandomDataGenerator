@@ -13,8 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppClassic", "Consol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{B178195C-4964-44C5-8EB1-1628EF9C64D2}"
 	ProjectSection(SolutionItems) = preProject
+		..\GitHubReleaseNotes.txt = ..\GitHubReleaseNotes.txt
 		RandomDataGenerator Solution.sln.DotSettings = RandomDataGenerator Solution.sln.DotSettings
 		..\README.md = ..\README.md
+		..\ReleaseNotes.md = ..\ReleaseNotes.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppNetCoreApp1", "ConsoleAppNetCoreApp1\ConsoleAppNetCoreApp1.csproj", "{983EAE55-828B-4135-A1C6-BF7A1BA193EE}"
@@ -31,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example Project Files", "Ex
 		..\Example Project Files\My Table.xml = ..\Example Project Files\My Table.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppNetCoreApp2", "ConsoleAppNetCoreApp2\ConsoleAppNetCoreApp2.csproj", "{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppNetCoreApp2", "ConsoleAppNetCoreApp2\ConsoleAppNetCoreApp2.csproj", "{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
