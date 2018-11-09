@@ -1,4 +1,6 @@
-﻿using System.Xml.Serialization;
+﻿#if !NETSTANDARD1_3
+using System.Xml.Serialization;
+#endif
 
 namespace RandomDataGenerator.FieldOptions
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Randomizers;
@@ -41,7 +42,16 @@ namespace ConsoleAppClassic
             string stringListValue = randomizerStringList.Generate();
             Write(randomizerStringList, stringListValue);
 
-            var randomizerText = RandomizerFactory.GetRandomizer(new FieldOptionsText { UseNumber = false, UseSpecial = false });
+            var properties = new Dictionary<string, object>
+            {
+                { "Min", 7 },
+                { "Max", 10 },
+                { "UseNumber", false },
+                { "UseSpecial", false }
+            };
+
+            var fieldOptionsText = FieldOptionsFactory.GetFieldOptions("Text", properties);
+            var randomizerText = RandomizerFactory.GetRandomizerAsDynamic(fieldOptionsText);
             string text = randomizerText.Generate();
             Write(randomizerText, text);
 

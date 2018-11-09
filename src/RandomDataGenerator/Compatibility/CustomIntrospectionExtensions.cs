@@ -1,4 +1,7 @@
-﻿namespace System.Reflection
+﻿using System.Linq;
+
+// ReSharper disable once CheckNamespace
+namespace System.Reflection
 {
     /// <summary>
     /// https://github.com/castleproject/Core/blob/netcore/src/Castle.Core/Compatibility/IntrospectionExtensions.cs
@@ -11,5 +14,14 @@
             return type;
         }
 #endif
+
+        public static PropertyInfo[] GetPublicSettableProperties(this Type type)
+        {
+#if NET20 || NET35
+            return type.GetProperties(BindingFlags.Instance | BindingFlags.SetProperty | BindingFlags.Public);
+#else
+            return type.GetTypeInfo().DeclaredProperties.Where(pi => pi.CanWrite).ToArray();
+#endif
+        }
     }
 }
