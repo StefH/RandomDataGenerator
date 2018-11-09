@@ -9,11 +9,11 @@ namespace RandomDataGenerator.FieldOptions
 {
     public static class FieldOptionsFactory
     {
-        private const string Prefix = "RandomDataGenerator.FieldOptions.FieldOptions";
+        private const string Namespace = "RandomDataGenerator.FieldOptions";
 
         public static FieldOptionsAbstract GetFieldOptions(SubFieldType subFieldType)
         {
-            Type type = Type.GetType($"{Prefix}{subFieldType}", true);
+            Type type = Type.GetType($"{Namespace}.FieldOptions{subFieldType}", true);
 
             return (FieldOptionsAbstract)Activator.CreateInstance(type);
         }
@@ -23,11 +23,15 @@ namespace RandomDataGenerator.FieldOptions
             Check.NotNullOrEmpty(name, nameof(name));
             Check.NotNull(properties, nameof(properties));
 
-            Type type = Type.GetType($"{Prefix}{name}", true);
-            var fieldOptionsProperties = type.GetAllPublicProperties();
+            // Generate classname
+            string className = !name.StartsWith("FieldOptions") ? $"FieldOptions{name}" : name;
 
+            // Create type based on classname
+            Type type = Type.GetType($"{Namespace}.{className}", true);
             var fieldOptions = (FieldOptionsAbstract)Activator.CreateInstance(type);
-            foreach (PropertyInfo propertyInfo in fieldOptionsProperties)
+
+            // Loop all settable properties and set value if it's defined as an argument
+            foreach (PropertyInfo propertyInfo in type.GetPublicSettableProperties())
             {
                 bool exists = properties.ContainsKey(propertyInfo.Name);
                 if (exists)
