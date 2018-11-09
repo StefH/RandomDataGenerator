@@ -4,9 +4,9 @@ namespace RandomDataGenerator.FieldOptions
 {
     public interface IFieldOptionsDateTime
     {
-        DateTime DateFrom { get; set; }
+        DateTime From { get; set; }
 
-        DateTime DateTo { get; set; }
+        DateTime To { get; set; }
 
         bool IncludeTime { get; set; }
     }

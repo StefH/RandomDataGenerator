@@ -27,7 +27,7 @@ namespace RandomDataGenerator.Randomizers
             }
 
             string guid = Guid.NewGuid().ToString();
-            return Options.Uppercase ? guid.ToUpperInvariant() : guid;
+            return Options.Uppercase ? guid.ToUpperInvariant() : guid.ToLowerInvariant();
         }
     }
 }

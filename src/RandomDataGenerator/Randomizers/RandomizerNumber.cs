@@ -7,7 +7,7 @@ namespace RandomDataGenerator.Randomizers
     {
         private readonly RandomThingsGenerator<T> _generator;
 
-        public RandomizerNumber(FieldOptionsNumber<T> options): base(options)
+        public RandomizerNumber(FieldOptionsNumber<T> options) : base(options)
         {
             _generator = new RandomThingsGenerator<T>(options.Min, options.Max);
         }

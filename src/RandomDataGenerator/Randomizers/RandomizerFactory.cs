@@ -31,6 +31,11 @@ namespace RandomDataGenerator.Randomizers
             return Create<IRandomizerDateTime>(fieldOptions);
         }
 
+        public static IRandomizerTimeSpan GetRandomizer(IFieldOptionsTimeSpan fieldOptions)
+        {
+            return Create<IRandomizerTimeSpan>(fieldOptions);
+        }
+
 #if NET20 || NET35
         public static object GetRandomizerAsDynamic(FieldOptionsAbstract fieldOptions)
         {
