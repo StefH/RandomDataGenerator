@@ -30,6 +30,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FieldOptions\FieldOptionsNumberFixed.cs" />
+    <Compile Remove="Randomizers\RandomizerNumberFixed.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="TextData\CityNames.txt" />
     <EmbeddedResource Include="TextData\CountryNames.txt" />
     <EmbeddedResource Include="TextData\FemaleNames.txt" />
