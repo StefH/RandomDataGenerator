@@ -21,7 +21,7 @@ namespace ConsoleAppClassic
             string country = randomizerCountry.Generate();
             Write(randomizerCountry, country);
 
-            var randomizerMAC = RandomizerFactory.GetRandomizer(new FieldOptionsMACAddress { Min = "00:11:22:33:44:55", Max = "aa:bb:cc:dd:ee:ff" });
+            var randomizerMAC = RandomizerFactory.GetRandomizer(new FieldOptionsMACAddress { Min = "00-11-22-33-44-55", Max = "aa-bb-cc-dd-ee-ff", Separator = "-" });
             string mac = randomizerMAC.Generate();
             Write(randomizerMAC, mac);
 
