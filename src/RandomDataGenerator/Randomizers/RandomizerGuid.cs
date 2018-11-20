@@ -1,4 +1,5 @@
 ﻿using System;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 
 namespace RandomDataGenerator.Randomizers
@@ -26,8 +27,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            string guid = Guid.NewGuid().ToString();
-            return Options.Uppercase ? guid.ToUpperInvariant() : guid.ToLowerInvariant();
+            return Guid.NewGuid().ToString().ToCasedInvariant(Options.Uppercase);
         }
     }
 }

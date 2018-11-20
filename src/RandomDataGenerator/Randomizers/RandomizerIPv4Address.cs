@@ -1,26 +1,23 @@
-﻿using RandomDataGenerator.Extensions;
+﻿using System.Linq;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using System.Linq;
 
 namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerIPv4Address : RandomizerAbstract<FieldOptionsIPv4Address>, IRandomizerString
     {
-        private readonly RandomThingsGenerator<byte> octet0;
-        private readonly RandomThingsGenerator<byte> octet1;
-        private readonly RandomThingsGenerator<byte> octet2;
-        private readonly RandomThingsGenerator<byte> octet3;
+        private readonly RandomThingsGenerator<byte>[] octets = new RandomThingsGenerator<byte>[4];
 
         public RandomizerIPv4Address(FieldOptionsIPv4Address options) : base(options)
         {
             byte[] octetsMin = string.IsNullOrEmpty(Options.Min) ? new byte[] { 0, 0, 0, 0 } : Options.Min.Split('.').Select(x => byte.Parse(x)).ToArray();
             byte[] octetsMax = string.IsNullOrEmpty(Options.Max) ? new byte[] { 0xff, 0xff, 0xff, 0xff } : Options.Max.Split('.').Select(x => byte.Parse(x)).ToArray();
 
-            octet0 = new RandomThingsGenerator<byte>(octetsMin[0], octetsMax[0]);
-            octet1 = new RandomThingsGenerator<byte>(octetsMin[1], octetsMax[1]);
-            octet2 = new RandomThingsGenerator<byte>(octetsMin[2], octetsMax[2]);
-            octet3 = new RandomThingsGenerator<byte>(octetsMin[3], octetsMax[3]);
+            for (int i = 0; i < 4; i++)
+            {
+                octets[i] = new RandomThingsGenerator<byte>(octetsMin[i], octetsMax[i]);
+            }
         }
 
         public string Generate()
@@ -30,7 +27,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            return $"{octet0.Generate()}:{octet1.Generate()}:{octet2.Generate()}:{octet3.Generate()}";
+            return string.Join(":", octets.Select(gen => $"{gen.Generate()}").ToArray());
         }
 
         public string Generate(bool upperCase)
