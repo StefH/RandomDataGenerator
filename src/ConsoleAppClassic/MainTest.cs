@@ -14,10 +14,26 @@ namespace ConsoleAppClassic
             var randomizerCity = RandomizerFactory.GetRandomizer(new FieldOptionsCity());
             string city = randomizerCity.Generate();
             Write(randomizerCity, city);
+            string cityUpper = randomizerCity.Generate(true);
+            Write(randomizerCity, cityUpper);
 
             var randomizerCountry = RandomizerFactory.GetRandomizer(new FieldOptionsCountry());
             string country = randomizerCountry.Generate();
             Write(randomizerCountry, country);
+
+            var randomizerMAC = RandomizerFactory.GetRandomizer(new FieldOptionsMACAddress { Min = "00-11-22-33-44-55", Max = "aa-bb-cc-dd-ee-ff", Separator = "-" });
+            string mac = randomizerMAC.Generate();
+            Write(randomizerMAC, mac);
+
+            var randomizerIPv4 = RandomizerFactory.GetRandomizer(new FieldOptionsIPv4Address { Min = "127.0.2.233", Max = "128.190.255.244" });
+            string ipv4 = randomizerIPv4.Generate();
+            Write(randomizerIPv4, ipv4);
+
+            var randomizerIPv6 = RandomizerFactory.GetRandomizer(new FieldOptionsIPv6Address { Min = "0000:0001:0000:0000:0020:ff00:0042:8000", Max = "2001:0db8:0120:0000:0030:ff00:aa42:8329" });
+            string ipv6 = randomizerIPv6.Generate();
+            Write(randomizerIPv6, ipv6);
+            string ipv6Lower = randomizerIPv6.Generate(false);
+            Write(randomizerIPv6, ipv6Lower);
 
             var randomizerTimeSpan = RandomizerFactory.GetRandomizer(new FieldOptionsTimeSpan { From = TimeSpan.FromDays(1), To = TimeSpan.FromDays(7) });
             TimeSpan? ts = randomizerTimeSpan.Generate();
@@ -27,7 +43,7 @@ namespace ConsoleAppClassic
             string tsC = randomizerTimeSpanC.GenerateAsString();
             Write(randomizerTimeSpanC, tsC);
 
-            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { From = DateTime.Today.AddDays(-1888) });
+            var randomizerDateTime = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime { From = DateTime.Today.AddYears(-1) });
             DateTime? date = randomizerDateTime.Generate();
             Write(randomizerDateTime, date);
             string dateAsString = randomizerDateTime.GenerateAsString();
@@ -45,9 +61,17 @@ namespace ConsoleAppClassic
             string firstname = randomizerFirstName.Generate();
             Write(randomizerFirstName, firstname);
 
+            var randomizerLastName = RandomizerFactory.GetRandomizer(new FieldOptionsLastName());
+            string lastname = randomizerLastName.Generate();
+            Write(randomizerLastName, lastname);
+
             var randomizerBoolean = RandomizerFactory.GetRandomizer(new FieldOptionsBoolean());
             bool? b = randomizerBoolean.Generate();
             Write(randomizerBoolean, b);
+
+            var randomizerByte = RandomizerFactory.GetRandomizer(new FieldOptionsByte());
+            byte? bt = randomizerByte.Generate();
+            Write(randomizerByte, bt);
 
             var randomizerShort = RandomizerFactory.GetRandomizer(new FieldOptionsShort());
             short? sh = randomizerShort.Generate();
@@ -75,7 +99,7 @@ namespace ConsoleAppClassic
             string guidAsString = randomizerGuid.GenerateAsString();
             Write(randomizerGuid, guidAsString);
 
-            var randomizerStringList = RandomizerFactory.GetRandomizer(new FieldOptionsStringList { Values = new[] { "1", "b" }.ToList() });
+            var randomizerStringList = RandomizerFactory.GetRandomizer(new FieldOptionsStringList { Values = new[] { "1", "b", "c" }.ToList() });
             string stringListValue = randomizerStringList.Generate();
             Write(randomizerStringList, stringListValue);
 
@@ -114,7 +138,7 @@ namespace ConsoleAppClassic
         private static void Write<T>(object randomizer, T value)
         {
             Type genericType = randomizer.GetType().GetTypeInfo().GenericTypeArguments.FirstOrDefault();
-            Console.WriteLine("{0}{1} --> '{2}'", randomizer.GetType().Name, genericType != null ? $"[{genericType}]" : string.Empty, value);
+            Console.WriteLine("{0}{1} --> '{2}'", randomizer.GetType().Name, genericType != null ? $"[{genericType.Name}]" : string.Empty, value);
         }
     }
 }

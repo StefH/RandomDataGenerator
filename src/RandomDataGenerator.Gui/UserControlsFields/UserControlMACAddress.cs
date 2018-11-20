@@ -16,7 +16,7 @@ namespace RandomDataGenerator.Gui.UserControlsFields
         {
             base.SetOptionsAndUpdateControls(options);
 
-            chkAddColons.Checked = FieldOptions.AddColons;
+            chkAddColons.Checked = FieldOptions.Separator == ":";
             chkUppercase.Checked = FieldOptions.Uppercase;
         }
 
@@ -24,7 +24,7 @@ namespace RandomDataGenerator.Gui.UserControlsFields
         {
             FieldOptions = base.GetFieldOptionsT();
 
-            FieldOptions.AddColons = chkAddColons.Checked;
+            FieldOptions.Separator = chkAddColons.Checked ? ":" : string.Empty;
             FieldOptions.Uppercase = chkUppercase.Checked;
 
             return FieldOptions;

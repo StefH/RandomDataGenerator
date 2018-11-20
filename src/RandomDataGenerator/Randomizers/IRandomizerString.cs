@@ -3,5 +3,7 @@
     public interface IRandomizerString
     {
         string Generate();
+
+        string Generate(bool upperCase);
     }
 }

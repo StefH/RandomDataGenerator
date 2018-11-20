@@ -8,9 +8,9 @@ namespace RandomDataGenerator.FieldOptions
 
         public string Format { get; set; } = DefaultFormat;
 
-        public DateTime From { get; set; } = DateTime.Now.Date;
+        public DateTime From { get; set; } = DateTime.UtcNow.Date;
 
-        public DateTime To { get; set; } = DateTime.Now.AddYears(1).Date;
+        public DateTime To { get; set; } = DateTime.UtcNow.Date.AddYears(1);
 
         public bool IncludeTime { get; set; } = true;
     }

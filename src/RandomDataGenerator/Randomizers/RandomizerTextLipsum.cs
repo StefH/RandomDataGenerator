@@ -1,4 +1,5 @@
 ﻿using NLipsum.Core;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 
 namespace RandomDataGenerator.Randomizers
@@ -15,6 +16,11 @@ namespace RandomDataGenerator.Randomizers
         public string Generate()
         {
             return IsNull() ? null : _generator.GenerateLipsum(Options.Paragraphs);
+        }
+
+        public string Generate(bool upperCase)
+        {
+            return Generate().ToCasedInvariant(upperCase);
         }
     }
 }

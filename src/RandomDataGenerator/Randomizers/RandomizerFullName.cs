@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 using RandomDataGenerator.TextData;
@@ -43,6 +44,11 @@ namespace RandomDataGenerator.Randomizers
             string lastname = _lastNamesGenerator.Generate();
 
             return $"{firstName} {lastname}";
+        }
+
+        public string Generate(bool upperCase)
+        {
+            return Generate().ToCasedInvariant(upperCase);
         }
     }
 }
