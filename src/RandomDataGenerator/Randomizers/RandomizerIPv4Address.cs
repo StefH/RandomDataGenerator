@@ -27,7 +27,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            return string.Join(":", octets.Select(gen => $"{gen.Generate()}").ToArray());
+            return string.Join(".", octets.Select(gen => $"{gen.Generate()}").ToArray());
         }
 
         public string Generate(bool upperCase)
