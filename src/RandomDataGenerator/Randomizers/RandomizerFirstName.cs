@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 using RandomDataGenerator.TextData;
@@ -36,6 +37,11 @@ namespace RandomDataGenerator.Randomizers
             int maleOrFemale = _numberGenerator.Generate();
 
             return _genderSetGenerators[maleOrFemale].Generate();
+        }
+
+        public string Generate(bool upperCase)
+        {
+            return Generate().ToCasedInvariant(upperCase);
         }
     }
 }

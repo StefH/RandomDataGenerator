@@ -17,7 +17,7 @@ namespace RandomDataGenerator.Generators
         private static double _storedUniformDeviate;
         private static bool _storedUniformDeviateIsGood;
 
-        public static Type[] SupportedTypes { get; } = { typeof(bool), typeof(short), typeof(int), typeof(long), typeof(float), typeof(double), typeof(long), typeof(DateTime), typeof(TimeSpan) };
+        public static Type[] SupportedTypes { get; } = { typeof(bool), typeof(byte), typeof(short), typeof(int), typeof(long), typeof(float), typeof(double), typeof(long), typeof(DateTime), typeof(TimeSpan) };
 
         #region -- Construction/Initialization --
 
@@ -73,6 +73,11 @@ namespace RandomDataGenerator.Generators
                 return (T)(object)NextBoolean();
             }
 
+            if (typeof(T) == typeof(byte))
+            {
+                return (T)(object)Next((byte)(object)min, (byte)(object)max);
+            }
+
             if (typeof(T) == typeof(short))
             {
                 return (T)(object)Next((short)(object)min, (short)(object)max);
@@ -109,6 +114,20 @@ namespace RandomDataGenerator.Generators
             }
 
             throw new NotSupportedException($"The type '{typeof(T)}' cannot be used.");
+        }
+
+        /// <summary>
+        /// Returns byte in the range [min, max)
+        /// </summary>
+        public static byte Next(byte min, byte max)
+        {
+            if (max <= min)
+            {
+                throw new ArgumentException("Max must be greater than min.");
+            }
+
+            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
+            return Convert.ToByte(rn);
         }
 
         /// <summary>

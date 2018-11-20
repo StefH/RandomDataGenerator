@@ -1,4 +1,5 @@
-﻿using RandomDataGenerator.FieldOptions;
+﻿using RandomDataGenerator.Extensions;
+using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 using System.Linq;
 
@@ -6,9 +7,20 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerIPv4Address : RandomizerAbstract<FieldOptionsIPv4Address>, IRandomizerString
     {
-        public RandomizerIPv4Address(FieldOptionsIPv4Address options)
-            : base(options)
+        private readonly RandomThingsGenerator<byte> octet0;
+        private readonly RandomThingsGenerator<byte> octet1;
+        private readonly RandomThingsGenerator<byte> octet2;
+        private readonly RandomThingsGenerator<byte> octet3;
+
+        public RandomizerIPv4Address(FieldOptionsIPv4Address options) : base(options)
         {
+            byte[] octetsMin = string.IsNullOrEmpty(Options.Min) ? new byte[] { 0, 0, 0, 0 } : Options.Min.Split('.').Select(x => byte.Parse(x)).ToArray();
+            byte[] octetsMax = string.IsNullOrEmpty(Options.Max) ? new byte[] { 0xff, 0xff, 0xff, 0xff } : Options.Max.Split('.').Select(x => byte.Parse(x)).ToArray();
+
+            octet0 = new RandomThingsGenerator<byte>(octetsMin[0], octetsMax[0]);
+            octet1 = new RandomThingsGenerator<byte>(octetsMin[1], octetsMax[1]);
+            octet2 = new RandomThingsGenerator<byte>(octetsMin[2], octetsMax[2]);
+            octet3 = new RandomThingsGenerator<byte>(octetsMin[3], octetsMax[3]);
         }
 
         public string Generate()
@@ -18,15 +30,12 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            int[] octetsMin = string.IsNullOrEmpty(Options.Min) ? new[] { 0, 0, 0, 0 } : Options.Min.Split('.').Select(x => int.Parse(x)).ToArray();
-            int[] octetsMax = string.IsNullOrEmpty(Options.Max) ? new[] { 0xff, 0xff, 0xff, 0xff } : Options.Max.Split('.').Select(x => int.Parse(x)).ToArray();
+            return $"{octet0.Generate()}:{octet1.Generate()}:{octet2.Generate()}:{octet3.Generate()}";
+        }
 
-            int rnd0 = new RandomThingsGenerator<int>(octetsMin[0], octetsMax[0]).Generate();
-            int rnd1 = new RandomThingsGenerator<int>(octetsMin[1], octetsMax[1]).Generate();
-            int rnd2 = new RandomThingsGenerator<int>(octetsMin[2], octetsMax[2]).Generate();
-            int rnd3 = new RandomThingsGenerator<int>(octetsMin[3], octetsMax[3]).Generate();
-
-            return $"{rnd0}:{rnd1}:{rnd2}:{rnd3}";
+        public string Generate(bool upperCase)
+        {
+            return Generate().ToCasedInvariant(upperCase);
         }
     }
 }

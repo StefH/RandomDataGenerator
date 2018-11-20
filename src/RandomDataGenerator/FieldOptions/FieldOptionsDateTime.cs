@@ -10,7 +10,7 @@ namespace RandomDataGenerator.FieldOptions
 
         public DateTime From { get; set; } = DateTime.Now.Date;
 
-        public DateTime To { get; set; } = DateTime.Now.AddYears(1).Date;
+        public DateTime To { get; set; } = DateTime.MaxValue;
 
         public bool IncludeTime { get; set; } = true;
     }

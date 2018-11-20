@@ -12,6 +12,6 @@ namespace RandomDataGenerator.FieldOptions
 
         public TimeSpan From { get; set; }
 
-        public TimeSpan To { get; set; } = TimeSpan.FromDays(1);
+        public TimeSpan To { get; set; } = TimeSpan.MaxValue;
     }
 }

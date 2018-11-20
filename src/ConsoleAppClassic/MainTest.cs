@@ -19,6 +19,16 @@ namespace ConsoleAppClassic
             string country = randomizerCountry.Generate();
             Write(randomizerCountry, country);
 
+            var randomizerIPv4 = RandomizerFactory.GetRandomizer(new FieldOptionsIPv4Address { Min = "127.0.2.233", Max = "128.190.255.244" });
+            string ipv4 = randomizerIPv4.Generate();
+            Write(randomizerIPv4, ipv4);
+
+            var randomizerIPv6 = RandomizerFactory.GetRandomizer(new FieldOptionsIPv6Address { Min = "0000:0001:0000:0000:0020:ff00:0042:8000", Max = "2001:0db8:0120:0000:0030:ff00:aa42:8329" });
+            string ipv6 = randomizerIPv6.Generate();
+            Write(randomizerIPv6, ipv6);
+            string ipv6Lower = randomizerIPv6.Generate(false);
+            Write(randomizerIPv6, ipv6Lower);
+
             var randomizerTimeSpan = RandomizerFactory.GetRandomizer(new FieldOptionsTimeSpan { From = TimeSpan.FromDays(1), To = TimeSpan.FromDays(7) });
             TimeSpan? ts = randomizerTimeSpan.Generate();
             Write(randomizerTimeSpan, ts);
@@ -48,6 +58,11 @@ namespace ConsoleAppClassic
             var randomizerBoolean = RandomizerFactory.GetRandomizer(new FieldOptionsBoolean());
             bool? b = randomizerBoolean.Generate();
             Write(randomizerBoolean, b);
+
+            var randomizerByte = RandomizerFactory.GetRandomizer(new FieldOptionsByte());
+            byte? bt = randomizerByte.Generate();
+            Write(randomizerByte, bt);
+
 
             var randomizerShort = RandomizerFactory.GetRandomizer(new FieldOptionsShort());
             short? sh = randomizerShort.Generate();

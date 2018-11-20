@@ -5,6 +5,6 @@ namespace RandomDataGenerator.FieldOptions
     {
         public override long Min { get; set; }
 
-        public override long Max { get; set; } = 999999999999;
+        public override long Max { get; set; } = long.MaxValue;
     }
 }

@@ -5,6 +5,6 @@ namespace RandomDataGenerator.FieldOptions
     {
         public override double Min { get; set; }
 
-        public override double Max { get; set; } = 99999999.0;
+        public override double Max { get; set; } = double.MaxValue;
     }
 }

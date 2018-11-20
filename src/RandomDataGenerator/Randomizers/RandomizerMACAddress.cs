@@ -1,4 +1,5 @@
-﻿using RandomDataGenerator.FieldOptions;
+﻿using RandomDataGenerator.Extensions;
+using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
@@ -27,7 +28,12 @@ namespace RandomDataGenerator.Randomizers
 
             string value = string.Join(Options.AddColons ? ":" : string.Empty, list);
 
-            return Options.Uppercase ? value.ToUpperInvariant() : value;
+            return value.ToCasedInvariant(Options.Uppercase);
+        }
+
+        public string Generate(bool upperCase)
+        {
+            return Generate().ToCasedInvariant(upperCase);
         }
     }
 }

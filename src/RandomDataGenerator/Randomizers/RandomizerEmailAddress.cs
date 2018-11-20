@@ -52,5 +52,10 @@ namespace RandomDataGenerator.Randomizers
 
             return $"{firstName}.{lastname}@{company}.{domain}";
         }
+
+        public string Generate(bool upperCase)
+        {
+            return Generate().ToCasedInvariant(upperCase);
+        }
     }
 }

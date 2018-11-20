@@ -1,4 +1,5 @@
-﻿using RandomDataGenerator.FieldOptions;
+﻿using RandomDataGenerator.Extensions;
+using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
@@ -16,6 +17,11 @@ namespace RandomDataGenerator.Randomizers
         public string Generate()
         {
             return IsNull() ? null : _generator.Generate();
+        }
+
+        public string Generate(bool upperCase)
+        {
+            return IsNull() ? null : _generator.Generate().ToCasedInvariant(upperCase);
         }
     }
 }
