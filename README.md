@@ -44,8 +44,8 @@ You can also use a UI to generate SQL insert table statements.
 ### Referenced files
 - http://www.cambiaresearch.com/articles/13/csharp-randomprovider-class
 - http://www.codeproject.com/Articles/423229/CsharpRandomStringGenerator
+- https://github.com/SaladLab/NetLegacySupport/tree/master/core/ConcurrentDictionary/System/Collections/Concurrent
 
 ### NuGet dependencies
 - NLipsum
-- NetLegacySupport.ConcurrentDictionary (only for .NET 2.0 & 3.5)
 - LinqBridge (only for .NET 2.0)

@@ -12,19 +12,18 @@ namespace RandomDataGenerator.Randomizers
         private readonly RandomStringFromListGenerator _lastNamesGenerator;
         private readonly List<RandomStringFromListGenerator> _genderSetGenerators = new List<RandomStringFromListGenerator>();
 
-        public RandomizerFullName(FieldOptionsFullName options)
-            : base(options)
+        public RandomizerFullName(FieldOptionsFullName options) : base(options)
         {
-            _lastNamesGenerator = new RandomStringFromListGenerator(Texts.Instance.LastNames);
+            _lastNamesGenerator = new RandomStringFromListGenerator(ListData.Instance.LastNames);
 
             if (options.Male)
             {
-                _genderSetGenerators.Add(new RandomStringFromListGenerator(Texts.Instance.MaleNames));
+                _genderSetGenerators.Add(new RandomStringFromListGenerator(ListData.Instance.MaleNames));
             }
 
             if (options.Female)
             {
-                _genderSetGenerators.Add(new RandomStringFromListGenerator(Texts.Instance.FemaleNames));
+                _genderSetGenerators.Add(new RandomStringFromListGenerator(ListData.Instance.FemaleNames));
             }
 
             _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count);

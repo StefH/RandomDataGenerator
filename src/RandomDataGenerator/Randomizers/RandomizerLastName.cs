@@ -9,10 +9,9 @@ namespace RandomDataGenerator.Randomizers
     {
         private readonly RandomStringFromListGenerator _lastNamesGenerator;
 
-        public RandomizerLastName(FieldOptionsLastName options)
-            : base(options)
+        public RandomizerLastName(FieldOptionsLastName options) : base(options)
         {
-            _lastNamesGenerator = new RandomStringFromListGenerator(Texts.Instance.LastNames);
+            _lastNamesGenerator = new RandomStringFromListGenerator(ListData.Instance.LastNames);
         }
 
         public string Generate()

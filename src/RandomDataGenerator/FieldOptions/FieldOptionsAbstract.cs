@@ -10,6 +10,7 @@ namespace RandomDataGenerator.FieldOptions
     [XmlInclude(typeof(FieldOptionsDateTime))]
     [XmlInclude(typeof(FieldOptionsEmailAddress))]
     [XmlInclude(typeof(FieldOptionsFirstName))]
+    [XmlInclude(typeof(FieldOptionsIBAN))]
     [XmlInclude(typeof(FieldOptionsNumber<short>))]
     [XmlInclude(typeof(FieldOptionsNumber<int>))]
     [XmlInclude(typeof(FieldOptionsNumber<long>))]

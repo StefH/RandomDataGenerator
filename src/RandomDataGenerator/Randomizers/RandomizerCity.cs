@@ -11,7 +11,7 @@ namespace RandomDataGenerator.Randomizers
 
         public RandomizerCity(FieldOptionsCity options) : base(options)
         {
-            _generator = new RandomStringFromListGenerator(Texts.Instance.CityNames);
+            _generator = new RandomStringFromListGenerator(ListData.Instance.CityNames);
         }
 
         public string Generate()

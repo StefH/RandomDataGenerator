@@ -16,20 +16,19 @@ namespace RandomDataGenerator.Randomizers
         private readonly RandomStringFromListGenerator _lastNamesGenerator;
         private readonly List<RandomStringFromListGenerator> _genderSetGenerators = new List<RandomStringFromListGenerator>();
 
-        public RandomizerEmailAddress(FieldOptionsEmailAddress options)
-            : base(options)
+        public RandomizerEmailAddress(FieldOptionsEmailAddress options) : base(options)
         {
-            _lastNamesGenerator = new RandomStringFromListGenerator(Texts.Instance.LastNames.Select(l => l.ToLower()));
-            _topLevelDomainGenerator = new RandomStringFromListGenerator(Texts.Instance.TopLevelDomains.Select(l => l.ToLower()));
+            _lastNamesGenerator = new RandomStringFromListGenerator(ListData.Instance.LastNames.Select(l => l.ToLower()));
+            _topLevelDomainGenerator = new RandomStringFromListGenerator(ListData.Instance.TopLevelDomains.Select(l => l.ToLower()));
 
             if (options.Male)
             {
-                _genderSetGenerators.Add(new RandomStringFromListGenerator(Texts.Instance.MaleNames.Select(l => l.ToLower())));
+                _genderSetGenerators.Add(new RandomStringFromListGenerator(ListData.Instance.MaleNames.Select(l => l.ToLower())));
             }
 
             if (options.Female)
             {
-                _genderSetGenerators.Add(new RandomStringFromListGenerator(Texts.Instance.FemaleNames.Select(l => l.ToLower())));
+                _genderSetGenerators.Add(new RandomStringFromListGenerator(ListData.Instance.FemaleNames.Select(l => l.ToLower())));
             }
 
             _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count);
