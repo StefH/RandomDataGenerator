@@ -1,13 +1,13 @@
-﻿namespace RandomDataGenerator.TextData.Models
+﻿using Fare;
+
+namespace RandomDataGenerator.TextData.Models
 {
     internal class IBAN
     {
+        public string CountryName { get; set; }
+
         public string CountryCode { get; set; }
 
-        public int Number { get; set; }
-
-        public string Format { get; set; }
-
-        public string Pattern { get; set; }
+        public Xeger Generator { get; set; }
     }
 }

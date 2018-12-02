@@ -4,12 +4,12 @@ using RandomDataGenerator.Generators;
 using RandomDataGenerator.TextData;
 using RandomDataGenerator.TextData.Models;
 using System;
+using Fare;
 
 namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerIBAN : RandomizerAbstract<FieldOptionsIBAN>, IRandomizerString
     {
-        private readonly RandomStringGenerator _stringGenerator = new RandomStringGenerator();
         private readonly RandomItemFromListGenerator<IBAN> _itemGenerator;
 
         public RandomizerIBAN(FieldOptionsIBAN options) : base(options)
@@ -32,7 +32,7 @@ namespace RandomDataGenerator.Randomizers
             }
 
             var iban = _itemGenerator.Generate();
-            return _stringGenerator.Generate(iban.Pattern);
+            return iban.Generator.Generate();
         }
 
         public string Generate(bool upperCase)

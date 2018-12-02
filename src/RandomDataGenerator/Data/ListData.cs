@@ -1,7 +1,9 @@
-﻿using RandomDataGenerator.TextData.Models;
+﻿using Fare;
+using RandomDataGenerator.TextData.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -41,10 +43,9 @@ namespace RandomDataGenerator.TextData
             {
                 return new IBAN
                 {
-                    CountryCode = columns[0],
-                    Number = int.Parse(columns[1]),
-                    Format = columns[2],
-                    Pattern = columns[3]
+                    CountryName = columns[0],
+                    CountryCode = columns[1],
+                    Generator = new Xeger(columns[2])
                 };
             });
         }
@@ -52,7 +53,7 @@ namespace RandomDataGenerator.TextData
         public static ListData Instance => Nested.TextInstance;
 
         // ReSharper disable once ClassNeverInstantiated.Local
-        class Nested
+        private class Nested
         {
             // Explicit static constructor to tell C# compiler not to mark type as before field-init
             static Nested()

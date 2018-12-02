@@ -24,6 +24,7 @@ namespace RandomDataGenerator.FieldOptions
     [XmlInclude(typeof(FieldOptionsLastName))]
     [XmlInclude(typeof(FieldOptionsMACAddress))]
     [XmlInclude(typeof(FieldOptionsTextPattern))]
+    [XmlInclude(typeof(FieldOptionsTextRegex))]
     [XmlInclude(typeof(FieldOptionsText))]
     [XmlInclude(typeof(FieldOptionsTextWords))]
     [XmlInclude(typeof(FieldOptionsStringList))]

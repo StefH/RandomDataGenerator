@@ -11,11 +11,15 @@ namespace ConsoleAppClassic
     {
         public static void Run()
         {
+            var randomizerTextRegex = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Pattern = @"^[0-9]{4}[A-Z]{2}" });
+            string textRegex = randomizerTextRegex.Generate();
+            Write(randomizerTextRegex, textRegex);
+
             var randomizerIBAN1 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN());
             string IBAN1 = randomizerIBAN1.Generate();
             Write(randomizerIBAN1, IBAN1);
 
-            var randomizerIBAN2 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN { CountryCode = "NL" } );
+            var randomizerIBAN2 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN { CountryCode = "NL" });
             string IBAN2 = randomizerIBAN2.Generate();
             Write(randomizerIBAN2, IBAN2);
 
