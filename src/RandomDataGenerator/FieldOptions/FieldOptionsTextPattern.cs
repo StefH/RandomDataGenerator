@@ -1,5 +1,8 @@
-﻿namespace RandomDataGenerator.FieldOptions
+﻿using System;
+
+namespace RandomDataGenerator.FieldOptions
 {
+    [Obsolete("Use FieldOptionsTextRegex")]
     public class FieldOptionsTextPattern : FieldOptionsAbstract, IFieldOptionsString
     {
         /// <summary>

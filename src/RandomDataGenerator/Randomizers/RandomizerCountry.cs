@@ -9,9 +9,9 @@ namespace RandomDataGenerator.Randomizers
     {
         private readonly RandomStringFromListGenerator _generator;
 
-        public RandomizerCountry(FieldOptionsCountry options): base(options)
+        public RandomizerCountry(FieldOptionsCountry options) : base(options)
         {
-            _generator = new RandomStringFromListGenerator(Texts.Instance.CountryNames);
+            _generator = new RandomStringFromListGenerator(ListData.Instance.CountryNames);
         }
 
         public string Generate()

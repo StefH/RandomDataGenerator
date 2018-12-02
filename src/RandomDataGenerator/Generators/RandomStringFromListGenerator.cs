@@ -1,20 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace RandomDataGenerator.Generators
 {
-    internal class RandomStringFromListGenerator
+    internal class RandomStringFromListGenerator : RandomItemFromListGenerator<string>
     {
-        private readonly string[] _list;
-
-        public RandomStringFromListGenerator(IEnumerable<string> list)
+        public RandomStringFromListGenerator(IEnumerable<string> list) : base(list)
         {
-            _list = list.ToArray();
-        }
-
-        public string Generate()
-        {
-            return _list.Length > 0 ? _list[RandomValueGenerator.Next(0, _list.Length)] : string.Empty;
         }
     }
 }

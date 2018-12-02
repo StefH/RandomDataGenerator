@@ -7,22 +7,27 @@ This is a simple generator to create random data.
 
 ## Supported Random Data 
 
-- Text Patterns
+- Text Regex Patterns
 - Lorum Ipsum Text
 - Words
 - First/Last Names
 - Cities
 - Countries
 - IP-Addresses (V4 and V6)
+- IBANs
 - MAC Addresses
 - Email Addresses
 - Guids
 - DateTime
-- Integers
+- Numbers (integer, long, float, double, ...)
 
 ## Usage
 
 ``` csharp
+// Generate a random text with a Regular expression
+var randomizerTextRegex = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Pattern = @"^[0-9]{4}[A-Z]{2}" });
+string textRegex = randomizerTextRegex.Generate();
+
 // Generate a random first name
 var randomizerFirstName = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
 string firstName = randomizerFirstName.Generate();
@@ -44,8 +49,8 @@ You can also use a UI to generate SQL insert table statements.
 ### Referenced files
 - http://www.cambiaresearch.com/articles/13/csharp-randomprovider-class
 - http://www.codeproject.com/Articles/423229/CsharpRandomStringGenerator
+- https://github.com/SaladLab/NetLegacySupport/tree/master/core/ConcurrentDictionary/System/Collections/Concurrent
 
 ### NuGet dependencies
 - NLipsum
-- NetLegacySupport.ConcurrentDictionary (only for .NET 2.0 & 3.5)
-- LinqBridge (only for .NET 2.0)
+- Fare
