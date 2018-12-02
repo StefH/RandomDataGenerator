@@ -11,7 +11,7 @@ namespace ConsoleAppClassic
     {
         public static void Run()
         {
-            var randomizerTextRegex = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Pattern = @"^[0-9]{4}[A-Z]{2}" });
+            var randomizerTextRegex = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Pattern = @"^[1-9][0-9]{3}([A-RT-Z][A-Z]|[S][BCE-RT-Z])$" });
             string textRegex = randomizerTextRegex.Generate();
             Write(randomizerTextRegex, textRegex);
 
