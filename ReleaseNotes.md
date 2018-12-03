@@ -1,3 +1,6 @@
+# 1.0.7.0 (03 December 2018)
+- [#8](https://github.com/StefH/RandomDataGenerator/pull/8) - Add BBAN [feature] contributed by [StefH](https://github.com/StefH)
+
 # 1.0.5.0 (02 December 2018)
 - [#7](https://github.com/StefH/RandomDataGenerator/pull/7) - Added Regex and IBAN contributed by [StefH](https://github.com/StefH)
 
