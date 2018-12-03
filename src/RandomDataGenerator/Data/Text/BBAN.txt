@@ -1,0 +1,54 @@
+﻿Albania	AL	^\d{8}[0-9A-Z]{16}$
+Andorra	AD	^\d{8}[0-9A-Z]{12}$
+Austria	AT	^\d{16}$
+Kingdom of Bahrain	BH	^[A-Z]{4}[0-9A-Z]{14}$
+Belgium	BE	^\d{12}$
+Bosnia and Herzegovina	BA	^\d{16}$
+Bulgaria	BG	^[A-Z]{4}\d{6}[0-9A-Z]{8}$
+Croatia	HR	^\d{17}$
+Cyprus	CY	^\d{8}[0-9A-Z]{16}$
+Czech Republic	CZ	^\d{20}$
+Denmark	DK	^\d{14}$
+Dominican Republic	DO	^[0-9A-Z]{4}\d{20}$
+Estonia	EE	^\d{16}$
+Finland	FI	^\d{14}$
+France	FR	^\d{10}[0-9A-Z]{11}\d{2}$
+Georgia	GE	^[A-Z]{2}\d{16}$
+Germany	DE	^\d{18}$
+Gibraltar	GI	^[A-Z]{4}[0-9A-Z]{15}$
+Greece	GR	^\d{7}[0-9A-Z]{16}$
+Hungary	HU	^\d{24}$
+Iceland	IS	^\d{22}$
+Ireland	IE	^[A-Z]{4}\d{14}$
+Israel	IL	^\d{19}$
+Italy	IT	^[A-Z]\d{10}[0-9A-Z]{12}$
+Kazakhstan	KZ	^\d{3}[0-9A-Z]{13}$
+KUWAIT	KW	^[A-Z]{4}[0-9A-Z]{22}$
+Latvia	LV	^[A-Z]{4}[0-9A-Z]{13}$
+LEBANON	LB	^\d{4}[0-9A-Z]{20}$
+Liechtenstein (Principality of)	LI	^\d{5}[0-9A-Z]{12}$
+Lithuania	LT	^\d{16}$
+Luxembourg	LU	^\d{3}[0-9A-Z]{13}$
+Macedonia	MK	^\d{3}[0-9A-Z]{10}\d{2}$
+Malta	MT	^[A-Z]{4}\d{5}[0-9A-Z]{18}$
+Mauritania	MR	^\d{23}$
+Mauritius	MU	^[A-Z]{4}\d{19}[A-Z]{3}$
+Monaco	MC	^\d{10}[0-9A-Z]{11}\d{2}$
+Montenegro	ME	^\d{18}$
+The Netherlands	NL	^[A-Z]{4}\d{10}$
+Norway	NO	^\d{11}$
+Poland	PL	^\d{24}$
+Portugal	PT	^\d{21}$
+Romania	RO	^[A-Z]{4}[0-9A-Z]{16}$
+San Marino	SM	^[A-Z]\d{10}[0-9A-Z]{12}$
+Saudi Arabia	SA	^\d{2}[0-9A-Z]{18}$
+Serbia	RS	^\d{18}$
+Slovak Republic	SK	^\d{20}$
+Slovenia	SI	^\d{15}$
+Spain	ES	^\d{20}$
+Sweden	SE	^\d{20}$
+Switzerland	CH	^\d{5}[0-9A-Z]{12}$
+Tunisia	TN	^\d{20}$
+Turkey	TR	^\d{5}[0-9A-Z]{17}$
+United Arab Emirates	AE	^\d{19}$
+United Kingdom	GB	^[A-Z]{4}\d{14}$

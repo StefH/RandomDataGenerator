@@ -37,12 +37,14 @@
 
   <ItemGroup>
     <None Remove="Data\IBAN.txt" />
+    <None Remove="Data\Text\BBAN.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Text\CityNames.txt" />
     <EmbeddedResource Include="Data\Text\CountryNames.txt" />
     <EmbeddedResource Include="Data\Text\FemaleNames.txt" />
+    <EmbeddedResource Include="Data\Text\BBAN.txt" />
     <EmbeddedResource Include="Data\Text\IBAN.txt" />
     <EmbeddedResource Include="Data\Text\LastNames.txt" />
     <EmbeddedResource Include="Data\Text\MaleNames.txt" />

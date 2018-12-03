@@ -15,7 +15,7 @@ namespace ConsoleAppClassic
             string textRegex = randomizerTextRegex.Generate();
             Write(randomizerTextRegex, textRegex);
 
-            var randomizerIBAN1 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN());
+            var randomizerIBAN1 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN { Type = "BOTH" });
             string IBAN1 = randomizerIBAN1.Generate();
             Write(randomizerIBAN1, IBAN1);
 
