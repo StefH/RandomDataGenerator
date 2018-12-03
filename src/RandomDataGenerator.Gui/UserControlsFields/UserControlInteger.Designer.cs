@@ -1,4 +1,6 @@
-﻿namespace RandomDataGenerator.Gui.UserControlsFields
+﻿using System;
+
+namespace RandomDataGenerator.Gui.UserControlsFields
 {
     sealed partial class UserControlInteger
     {
@@ -60,7 +62,7 @@
             // 
             this.ctrlMin.Location = new System.Drawing.Point(108, 4);
             this.ctrlMin.Maximum = new decimal(new int[] {
-            99999999,
+            Int32.MaxValue, 
             0,
             0,
             0});
@@ -73,7 +75,7 @@
             // 
             this.ctrlMax.Location = new System.Drawing.Point(108, 38);
             this.ctrlMax.Maximum = new decimal(new int[] {
-            99999999,
+                Int32.MaxValue,
             0,
             0,
             0});
@@ -81,7 +83,7 @@
             this.ctrlMax.Size = new System.Drawing.Size(75, 20);
             this.ctrlMax.TabIndex = 3;
             this.ctrlMax.Value = new decimal(new int[] {
-            99999999,
+                Int32.MaxValue,
             0,
             0,
             0});

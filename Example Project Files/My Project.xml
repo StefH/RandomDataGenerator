@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Date>2013-10-02T20:42:18.5887967+02:00</Date>
-  <Name>My Table</Name>
+  <Date>2018-12-03T10:23:44.2639199+01:00</Date>
+  <Name>My Test Project</Name>
   <TotalRecords>1000</TotalRecords>
   <OutputFile>c:\Temp\output.sql</OutputFile>
   <GenerateOptions xsi:type="GenerateOptionsSQL">
@@ -13,8 +13,8 @@
     <DataField>
       <Name>Numbers_Integer</Name>
       <FieldOptions xsi:type="FieldOptionsInteger">
-        <ValueAsString>false</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>false</ValueAsString>
         <Min>0</Min>
         <Max>77778888</Max>
       </FieldOptions>
@@ -28,8 +28,8 @@
     <DataField>
       <Name>Human_First_Both</Name>
       <FieldOptions xsi:type="FieldOptionsFirstName">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Male>true</Male>
         <Female>true</Female>
       </FieldOptions>
@@ -43,8 +43,8 @@
     <DataField>
       <Name>Human_Last</Name>
       <FieldOptions xsi:type="FieldOptionsLastName">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
       </FieldOptions>
       <Field>
         <FieldType>Human</FieldType>
@@ -56,8 +56,8 @@
     <DataField>
       <Name>Human_Full_Both</Name>
       <FieldOptions xsi:type="FieldOptionsFullName">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Male>true</Male>
         <Female>true</Female>
         <Left2Right>true</Left2Right>
@@ -72,8 +72,8 @@
     <DataField>
       <Name>Human_Email</Name>
       <FieldOptions xsi:type="FieldOptionsEmailAddress">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>true</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Male>true</Male>
         <Female>true</Female>
         <Left2Right>true</Left2Right>
@@ -88,8 +88,8 @@
     <DataField>
       <Name>Loc_City</Name>
       <FieldOptions xsi:type="FieldOptionsCity">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
       </FieldOptions>
       <Field>
         <FieldType>Location</FieldType>
@@ -101,8 +101,8 @@
     <DataField>
       <Name>Loc_Country</Name>
       <FieldOptions xsi:type="FieldOptionsCountry">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
       </FieldOptions>
       <Field>
         <FieldType>Location</FieldType>
@@ -114,8 +114,8 @@
     <DataField>
       <Name>Text_Words_3</Name>
       <FieldOptions xsi:type="FieldOptionsTextWords">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Min>1</Min>
         <Max>3</Max>
       </FieldOptions>
@@ -129,8 +129,8 @@
     <DataField>
       <Name>Text_Random_4to8</Name>
       <FieldOptions xsi:type="FieldOptionsText">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Min>4</Min>
         <Max>8</Max>
         <UseUppercase>false</UseUppercase>
@@ -150,15 +150,9 @@
     <DataField>
       <Name>Text_Pattern</Name>
       <FieldOptions xsi:type="FieldOptionsTextPattern">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Pattern>\xLLnn_**ss\x</Pattern>
-        <!-- <UseUppercase>false</UseUppercase> -->
-        <!-- <UseLowercase>false</UseLowercase> -->
-        <!-- <UseLetter>true</UseLetter> -->
-        <!-- <UseNumber>true</UseNumber> -->
-        <!-- <UseSpace>true</UseSpace> -->
-        <!-- <UseSpecial>true</UseSpecial> -->
       </FieldOptions>
       <Field>
         <FieldType>Text</FieldType>
@@ -168,10 +162,24 @@
       </SubField>
     </DataField>
     <DataField>
+      <Name>Text_Regex</Name>
+      <FieldOptions xsi:type="FieldOptionsTextRegex">
+        <UseNullValues>false</UseNullValues>
+        <ValueAsString>false</ValueAsString>
+        <Pattern>[a-z]{4,8}</Pattern>
+      </FieldOptions>
+      <Field>
+        <FieldType>Text</FieldType>
+      </Field>
+      <SubField>
+        <SubFieldType>TextRegex</SubFieldType>
+      </SubField>
+    </DataField>
+    <DataField>
       <Name>Set_StringList</Name>
       <FieldOptions xsi:type="FieldOptionsStringList">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
         <Values>
           <string>Active</string>
           <string>InActive</string>
@@ -188,10 +196,11 @@
     <DataField>
       <Name>Date_Time</Name>
       <FieldOptions xsi:type="FieldOptionsDateTime">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>true</UseNullValues>
-        <DateFrom>2013-08-30T00:00:00+02:00</DateFrom>
-        <DateTo>2014-08-30T00:00:00+02:00</DateTo>
+        <ValueAsString>true</ValueAsString>
+        <Format>s</Format>
+        <From>2018-12-03T00:00:00Z</From>
+        <To>2019-12-03T00:00:00Z</To>
         <IncludeTime>true</IncludeTime>
       </FieldOptions>
       <Field>
@@ -204,8 +213,8 @@
     <DataField>
       <Name>IT_IPv4</Name>
       <FieldOptions xsi:type="FieldOptionsIPv4Address">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
       </FieldOptions>
       <Field>
         <FieldType>IT</FieldType>
@@ -217,8 +226,9 @@
     <DataField>
       <Name>IT_IPv6</Name>
       <FieldOptions xsi:type="FieldOptionsIPv6Address">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
+        <Uppercase>false</Uppercase>
       </FieldOptions>
       <Field>
         <FieldType>IT</FieldType>
@@ -230,8 +240,10 @@
     <DataField>
       <Name>IT_MAC</Name>
       <FieldOptions xsi:type="FieldOptionsMACAddress">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
+        <Separator>:</Separator>
+        <Uppercase>true</Uppercase>
       </FieldOptions>
       <Field>
         <FieldType>IT</FieldType>
@@ -243,8 +255,9 @@
     <DataField>
       <Name>IT_Guid</Name>
       <FieldOptions xsi:type="FieldOptionsGuid">
-        <ValueAsString>true</ValueAsString>
         <UseNullValues>false</UseNullValues>
+        <ValueAsString>true</ValueAsString>
+        <Uppercase>true</Uppercase>
       </FieldOptions>
       <Field>
         <FieldType>IT</FieldType>

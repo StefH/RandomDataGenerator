@@ -35,30 +35,33 @@
             // chkAllowNull
             // 
             this.chkAllowNull.AutoSize = true;
-            this.chkAllowNull.Location = new System.Drawing.Point(108, 2);
+            this.chkAllowNull.Location = new System.Drawing.Point(162, 6);
+            this.chkAllowNull.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkAllowNull.Name = "chkAllowNull";
             this.chkAllowNull.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chkAllowNull.Size = new System.Drawing.Size(15, 14);
+            this.chkAllowNull.Size = new System.Drawing.Size(22, 21);
             this.chkAllowNull.TabIndex = 3;
             this.chkAllowNull.UseVisualStyleBackColor = true;
             // 
             // lblAllowNullValues
             // 
             this.lblAllowNullValues.AutoSize = true;
-            this.lblAllowNullValues.Location = new System.Drawing.Point(4, 2);
+            this.lblAllowNullValues.Location = new System.Drawing.Point(6, 6);
+            this.lblAllowNullValues.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAllowNullValues.Name = "lblAllowNullValues";
-            this.lblAllowNullValues.Size = new System.Drawing.Size(88, 13);
+            this.lblAllowNullValues.Size = new System.Drawing.Size(129, 20);
             this.lblAllowNullValues.TabIndex = 4;
             this.lblAllowNullValues.Text = "Allow Null Values";
             // 
             // UserControlCommonOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblAllowNullValues);
             this.Controls.Add(this.chkAllowNull);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserControlCommonOptions";
-            this.Size = new System.Drawing.Size(390, 20);
+            this.Size = new System.Drawing.Size(585, 40);
             this.ResumeLayout(false);
             this.PerformLayout();
 
