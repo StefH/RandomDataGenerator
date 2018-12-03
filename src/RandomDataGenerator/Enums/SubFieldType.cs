@@ -68,6 +68,9 @@ namespace RandomDataGenerator.Enums
         [Description("Text Pattern")]
         TextPattern,
 
+        [Description("Text Regex")]
+        TextRegex,
+
         [Description("Text Lipsum")]
         TextLipsum,
 

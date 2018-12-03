@@ -1,11 +1,10 @@
-﻿using Fare;
-using RandomDataGenerator.TextData.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
+using Fare;
+using RandomDataGenerator.TextData.Models;
 
 namespace RandomDataGenerator.TextData
 {
@@ -29,6 +28,8 @@ namespace RandomDataGenerator.TextData
 
         public IEnumerable<IBAN> IBANs { get; }
 
+        public IEnumerable<IBAN> BBANs { get; }
+
         ListData()
         {
             LastNames = GetResourceAsLines("LastNames");
@@ -39,15 +40,10 @@ namespace RandomDataGenerator.TextData
             Directions = new[] { "North", "East", "South", "West" };
             StreetTypes = new[] { "St.", "Ln.", "Ave.", "Way", "Blvd.", "Ct." };
             TopLevelDomains = new[] { "com", "net", "org", "us", "gov", "nl" };
-            IBANs = GetResourceAsItems("IBAN", (columns) =>
-            {
-                return new IBAN
-                {
-                    CountryName = columns[0],
-                    CountryCode = columns[1],
-                    Generator = new Xeger(columns[2])
-                };
-            });
+
+            Func<string[], IBAN> ibanFunc = (columns) => new IBAN { CountryName = columns[0], CountryCode = columns[1], Generator = new Xeger(columns[2]) };
+            IBANs = GetResourceAsItems("IBAN", ibanFunc);
+            BBANs = GetResourceAsItems("BBAN", ibanFunc);
         }
 
         public static ListData Instance => Nested.TextInstance;

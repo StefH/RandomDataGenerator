@@ -124,6 +124,12 @@
     <Compile Include="UserControlsFields\UserControlIPv4Address.Designer.cs">
       <DependentUpon>UserControlIPv4Address.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsFields\UserControlTextRegex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextRegex.Designer.cs">
+      <DependentUpon>UserControlTextRegex.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlMACAddress.resx">
       <DependentUpon>UserControlMACAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlTextRegex.resx">
+      <DependentUpon>UserControlTextRegex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlOutputSQL.resx">
       <DependentUpon>UserControlOutputSQL.cs</DependentUpon>

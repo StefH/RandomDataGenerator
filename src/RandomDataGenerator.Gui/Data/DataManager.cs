@@ -63,6 +63,7 @@ namespace RandomDataGenerator.Gui.Data
                 SubFields = new[] {
                     new SubField { SubFieldType = SubFieldType.Text },
                     new SubField { SubFieldType = SubFieldType.TextPattern },
+                    new SubField { SubFieldType = SubFieldType.TextRegex },
                     new SubField { SubFieldType = SubFieldType.TextWords },
                     // new SubField { SubFieldType = SubFieldType.TextLipsum }
                 }

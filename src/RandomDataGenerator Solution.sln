@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataGenerator.Gui", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example Project Files", "Example Project Files", "{E32DF9EB-603F-494D-A4BB-34CF2321F545}"
 	ProjectSection(SolutionItems) = preProject
-		..\Example Project Files\My Table.xml = ..\Example Project Files\My Table.xml
+		..\Example Project Files\My Project.xml = ..\Example Project Files\My Project.xml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppNetCoreApp2", "ConsoleAppNetCoreApp2\ConsoleAppNetCoreApp2.csproj", "{6AB9BD42-8B23-425C-9B5D-B97A52F008BE}"

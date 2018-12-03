@@ -1,10 +1,10 @@
-﻿using RandomDataGenerator.Extensions;
+﻿using System;
+using System.Linq;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 using RandomDataGenerator.TextData;
 using RandomDataGenerator.TextData.Models;
-using System;
-using Fare;
 
 namespace RandomDataGenerator.Randomizers
 {
@@ -21,7 +21,20 @@ namespace RandomDataGenerator.Randomizers
                 predicate = (iban) => iban.CountryCode == options.CountryCode;
             }
 
-            _itemGenerator = new RandomItemFromListGenerator<IBAN>(ListData.Instance.IBANs, predicate);
+            // Set the list to IBAN as default
+            var list = ListData.Instance.IBANs; 
+            switch (options.Type)
+            {
+                case "BBAN":
+                    list = ListData.Instance.BBANs;
+                    break;
+
+                case "BOTH":
+                    list = list.Union(ListData.Instance.BBANs);
+                    break;
+            }
+
+            _itemGenerator = new RandomItemFromListGenerator<IBAN>(list, predicate);
         }
 
         public string Generate()
