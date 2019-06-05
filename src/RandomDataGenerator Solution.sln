@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppClassic", "Consol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{B178195C-4964-44C5-8EB1-1628EF9C64D2}"
 	ProjectSection(SolutionItems) = preProject
+		..\Directory.Build.props = ..\Directory.Build.props
 		..\GitHubReleaseNotes.txt = ..\GitHubReleaseNotes.txt
 		RandomDataGenerator Solution.sln.DotSettings = RandomDataGenerator Solution.sln.DotSettings
 		..\README.md = ..\README.md
