@@ -1,4 +1,5 @@
-﻿using RandomDataGenerator.FieldOptions;
+﻿using System.Collections.Generic;
+using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Gui.UserControls;
 
 namespace RandomDataGenerator.Gui.UserControlsFields
@@ -10,6 +11,8 @@ namespace RandomDataGenerator.Gui.UserControlsFields
             InitializeComponent();
 
             InitEventsForControls();
+
+            formatComboBox.DataSource = new List<string> { "N", "D", "B", "P", "X" };
         }
 
         public override void SetOptionsAndUpdateControls(FieldOptionsGuid options)
@@ -17,6 +20,8 @@ namespace RandomDataGenerator.Gui.UserControlsFields
             base.SetOptionsAndUpdateControls(options);
 
             chkUppercase.Checked = FieldOptions.Uppercase;
+
+            formatComboBox.SelectedItem = FieldOptions.Format;
         }
 
         public override FieldOptionsGuid GetFieldOptionsT()
@@ -24,6 +29,8 @@ namespace RandomDataGenerator.Gui.UserControlsFields
             FieldOptions = base.GetFieldOptionsT();
 
             FieldOptions.Uppercase = chkUppercase.Checked;
+
+            FieldOptions.Format = formatComboBox.Text;
 
             return FieldOptions;
         }

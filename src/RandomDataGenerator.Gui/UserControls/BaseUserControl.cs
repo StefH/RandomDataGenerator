@@ -1,10 +1,10 @@
-﻿using System;
+﻿using RandomDataGenerator.FieldOptions;
+using RandomDataGenerator.Gui.Extensions;
+using RandomDataGenerator.Gui.UserControlsFields;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using RandomDataGenerator.FieldOptions;
-using RandomDataGenerator.Gui.Extensions;
-using RandomDataGenerator.Gui.UserControlsFields;
 
 namespace RandomDataGenerator.Gui.UserControls
 {
@@ -136,6 +136,11 @@ namespace RandomDataGenerator.Gui.UserControls
             foreach (var ctrl in FindControls<DateTimePicker>())
             {
                 ctrl.ValueChanged += HandleOptionsChangedChanged;
+            }
+
+            foreach (var ctrl in FindControls<ComboBox>())
+            {
+                ctrl.SelectedValueChanged += HandleOptionsChangedChanged;
             }
         }
 
