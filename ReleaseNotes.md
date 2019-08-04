@@ -1,3 +1,6 @@
+# 1.0.9.0 (04 August 2019)
+- [#10](https://github.com/StefH/RandomDataGenerator/pull/10) - Add Format option to GuidRandomizer [feature] contributed by [vitaliydavydiak](https://github.com/vitaliydavydiak)
+
 # 1.0.8.0 (05 June 2019)
 - [#9](https://github.com/StefH/RandomDataGenerator/pull/9) - Sign Assembly [feature] contributed by [StefH](https://github.com/StefH)
 
