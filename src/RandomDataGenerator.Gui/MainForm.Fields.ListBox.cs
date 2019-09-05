@@ -80,7 +80,10 @@ namespace RandomDataGenerator.Gui
 
                 // Update FieldOptions
                 var baseUserControl = panelFieldOptions.FindControl<BaseUserControl>();
-                baseUserControl.UpdateControls(selectedDataField.FieldOptions);
+                if (baseUserControl != null)
+                {
+                    baseUserControl.UpdateControls(selectedDataField.FieldOptions);
+                }
 
                 IsMoveUpFieldEnabled = listBoxFields.SelectedIndex > 0;
                 IsMoveDownFieldEnabled = listBoxFields.SelectedIndex < listBoxFields.Items.Count - 1;

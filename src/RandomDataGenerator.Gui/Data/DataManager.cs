@@ -91,14 +91,14 @@ namespace RandomDataGenerator.Gui.Data
             return _fields.ToList();
         }
 
-        public List<SubField> GetSubFields()
-        {
-            return _fields.SelectMany(f => f.SubFields).ToList();
-        }
+        //public List<SubField> GetSubFields()
+        //{
+        //    return _fields.SelectMany(f => f.SubFields).ToList();
+        //}
 
-        public List<SubField> GetSubFields(FieldType fieldType)
-        {
-            return _fields.Single(f => f.FieldType == fieldType).SubFields.ToList();
-        }
+        //public List<SubField> GetSubFields(FieldType fieldType)
+        //{
+        //    return _fields.Single(f => f.FieldType == fieldType).SubFields.ToList();
+        //}
     }
 }

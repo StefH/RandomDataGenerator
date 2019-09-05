@@ -19,11 +19,7 @@ namespace RandomDataGenerator.Gui.UserControls
 
         public virtual void OnOptionsChanged(EventArgs e)
         {
-            EventHandler handler = OptionsChanged;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
+            OptionsChanged?.Invoke(this, e);
         }
 
         protected virtual void HandleOptionsChangedChanged(object sender, EventArgs e)

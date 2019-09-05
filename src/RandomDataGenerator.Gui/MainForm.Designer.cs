@@ -337,7 +337,7 @@ namespace RandomDataGenerator.Gui
             this.cmbFields.Size = new System.Drawing.Size(121, 21);
             this.cmbFields.TabIndex = 0;
             this.cmbFields.ValueMember = "FieldType";
-            this.cmbFields.SelectedValueChanged += new System.EventHandler(this.cmbFields_SelectedValueChanged);
+            // this.cmbFields.SelectedValueChanged += new System.EventHandler(this.cmbFields_SelectedValueChanged);
             // 
             // txtFieldName
             // 

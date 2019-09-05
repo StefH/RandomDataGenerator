@@ -15,8 +15,7 @@ namespace RandomDataGenerator.Gui
             var cmb = (ComboBox)sender;
             var selectedValue = (Field)cmb.SelectedItem;
 
-            cmbSubFields.DataSource = new BindingList<SubField>(_dataManager.GetSubFields(selectedValue.FieldType));
-            cmbSubFields.SelectedIndex = 0;
+            cmbSubFields.DataSource = selectedValue.SubFields;
         }
 
         void cmbSubFields_SelectedValueChanged(object sender, EventArgs e)
@@ -84,7 +83,7 @@ namespace RandomDataGenerator.Gui
             {
                 // Just ignore exception
             }
-            
+
             userControlExample.txtExample.Text = value != null ? value.ToString() : "NULL";
         }
         #endregion
