@@ -3,7 +3,7 @@ namespace RandomDataGenerator.Gui
 {
     public static class VersionInfo
     {
-        public const string AssemblyCopyright = "Copyright © Stef Heyenrath (2015-2018)";
+        public const string AssemblyCopyright = "Copyright © Stef Heyenrath (2015-2019)";
 
         // Version information for an assembly consists of the following four values:
         //

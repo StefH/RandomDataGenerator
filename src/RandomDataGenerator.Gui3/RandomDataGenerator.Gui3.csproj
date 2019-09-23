@@ -9,6 +9,8 @@
     <AssemblyName>RandomDataGenerator.Gui</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <StartupObject>RandomDataGenerator.Gui.Program</StartupObject>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ApplicationIcon />
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!--<Compile Remove="..\RandomDataGenerator.Gui\Properties\AssemblyInfo.cs" />-->
     <Compile Remove="..\RandomDataGenerator.Gui\Properties\Settings.Designer.cs" />
   </ItemGroup>
 
