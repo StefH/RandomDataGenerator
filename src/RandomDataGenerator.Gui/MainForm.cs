@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using RandomDataGenerator.Gui.Data;
 using RandomDataGenerator.Gui.Entities;
@@ -32,9 +33,10 @@ namespace RandomDataGenerator.Gui
             listBoxFields.DataSource = _dataFields;
             _dataFields.ListChanged += DataFields_ListChanged;
 
-            cmbFields.SelectedValueChanged -= cmbFields_SelectedValueChanged;
-            cmbFields.DataSource = new BindingList<Field>(_dataManager.GetFields());
-            cmbFields.SelectedIndex = -1;
+            var fields = _dataManager.GetFields();
+            cmbFields.DataSource = fields;
+            cmbSubFields.DataSource = fields.First().SubFields;
+
             cmbFields.SelectedValueChanged += cmbFields_SelectedValueChanged;
 
             userControlExample.btnRefresh.Click += UserControlExample_RefreshClicked;

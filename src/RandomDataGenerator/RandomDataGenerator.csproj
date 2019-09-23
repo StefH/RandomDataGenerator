@@ -31,17 +31,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FieldOptions\FieldOptionsNumberFixed.cs" />
-    <Compile Remove="FieldOptions\IFieldOptions.cs" />
-    <Compile Remove="Randomizers\RandomizerNumberFixed.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Data\IBAN.txt" />
-    <None Remove="Data\Text\BBAN.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Data\Text\CityNames.txt" />
     <EmbeddedResource Include="Data\Text\CountryNames.txt" />
     <EmbeddedResource Include="Data\Text\FemaleNames.txt" />
