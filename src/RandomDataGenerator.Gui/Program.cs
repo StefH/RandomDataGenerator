@@ -22,7 +22,7 @@ namespace RandomDataGenerator.Gui
 
 #if NETCOREAPP3_0
             // https://github.com/dotnet/winforms/issues/135
-            // Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 #endif
 
             Application.Run(form);

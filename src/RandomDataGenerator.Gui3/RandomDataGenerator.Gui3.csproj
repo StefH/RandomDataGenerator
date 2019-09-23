@@ -8,6 +8,7 @@
     <RootNamespace>RandomDataGenerator.Gui</RootNamespace>
     <AssemblyName>RandomDataGenerator.Gui</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>RandomDataGenerator.Gui.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
