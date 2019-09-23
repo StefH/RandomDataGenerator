@@ -8,9 +8,9 @@
     <RootNamespace>RandomDataGenerator.Gui</RootNamespace>
     <AssemblyName>RandomDataGenerator.Gui</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <StartupObject>RandomDataGenerator.Gui.Program</StartupObject>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <ApplicationIcon />
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,7 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--<Compile Remove="..\RandomDataGenerator.Gui\Properties\AssemblyInfo.cs" />-->
     <Compile Remove="..\RandomDataGenerator.Gui\Properties\Settings.Designer.cs" />
   </ItemGroup>
 
