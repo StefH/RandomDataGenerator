@@ -19,7 +19,8 @@ This is a simple generator to create random data.
 - Email Addresses
 - Guids
 - DateTime
-- Numbers (integer, long, float, double, ...)
+- Numbers (integer, long, float, double, byte, ...)
+- Bytes
 
 ## Usage
 
