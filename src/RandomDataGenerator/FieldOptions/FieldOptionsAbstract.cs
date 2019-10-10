@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 namespace RandomDataGenerator.FieldOptions
 {
 #if !NETSTANDARD1_3
+    [XmlInclude(typeof(FieldOptionsBytes))]
     [XmlInclude(typeof(FieldOptionsCity))]
     [XmlInclude(typeof(FieldOptionsCountry))]
     [XmlInclude(typeof(FieldOptionsDateTime))]
