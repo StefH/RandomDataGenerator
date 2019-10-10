@@ -1,3 +1,7 @@
+# 1.0.10.0 (10 October 2019)
+- [#11](https://github.com/StefH/RandomDataGenerator/pull/11) - Net Core 3.0 contributed by [StefH](https://github.com/StefH)
+- [#12](https://github.com/StefH/RandomDataGenerator/pull/12) - RandomizerBytes contributed by [StefH](https://github.com/StefH)
+
 # 1.0.9.0 (04 August 2019)
 - [#10](https://github.com/StefH/RandomDataGenerator/pull/10) - Add Format option to GuidRandomizer [feature] contributed by [vitaliydavydiak](https://github.com/vitaliydavydiak)
 
