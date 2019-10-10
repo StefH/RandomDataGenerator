@@ -11,6 +11,11 @@ namespace RandomDataGenerator.Randomizers
     {
         private static readonly ConcurrentDictionary<string, object> Cache = new ConcurrentDictionary<string, object>();
 
+        public static IRandomizerBytes GetRandomizer(IFieldOptionsBytes fieldOptions)
+        {
+            return Create<IRandomizerBytes>(fieldOptions);
+        }
+
         public static IRandomizerString GetRandomizer(IFieldOptionsString fieldOptions)
         {
             return Create<IRandomizerString>(fieldOptions);

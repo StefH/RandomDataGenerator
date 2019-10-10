@@ -60,6 +60,22 @@ namespace RandomDataGenerator.Generators
         }
 
         /// <summary>
+        /// Generates an array of bytes with random numbers.
+        /// </summary>
+        /// <param name="min">The minimum number of bytes</param>
+        /// <param name="max">The maximum number of bytes</param>
+        /// <returns>Random byte array</returns>
+        public static byte[] NextBytes(int min, int max)
+        {
+            int arrayLength = Next(min, max);
+
+            byte[] bytes = new byte[arrayLength];
+            _rnf.NextBytes(bytes);
+
+            return bytes;
+        }
+
+        /// <summary>
         /// Return a random T in the range [min, max]
         /// </summary>
         /// <typeparam name="T">Generic type</typeparam>

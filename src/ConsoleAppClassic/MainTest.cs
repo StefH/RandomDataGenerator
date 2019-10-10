@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Randomizers;
 
@@ -11,6 +12,10 @@ namespace ConsoleAppClassic
     {
         public static void Run()
         {
+            var randomizerBytes = RandomizerFactory.GetRandomizer(new FieldOptionsBytes { Min = 10, Max = 20 });
+            var base64 = randomizerBytes.GenerateAsBase64String();
+            Write(randomizerBytes, base64);
+
             var randomizerTextRegex = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Pattern = @"^[1-9][0-9]{3}([A-RT-Z][A-Z]|[S][BCE-RT-Z])$" });
             string textRegex = randomizerTextRegex.Generate();
             Write(randomizerTextRegex, textRegex);
