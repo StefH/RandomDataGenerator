@@ -7,7 +7,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerTextLipsum : RandomizerAbstract<FieldOptionsTextLipsum>, IRandomizerString
     {
-        private const string NEWLINE = "\r\n";
+        private const string Newline = "\r\n";
         private readonly RandomStringsFromListGenerator _generator;
 
         public RandomizerTextLipsum(FieldOptionsTextLipsum options) : base(options)
@@ -17,7 +17,7 @@ namespace RandomDataGenerator.Randomizers
 
         public string Generate()
         {
-            return IsNull() ? null : string.Join(NEWLINE, _generator.Generate(Options.Paragraphs).ToArray());
+            return IsNull() ? null : string.Join(Newline, _generator.Generate(Options.Paragraphs).ToArray());
         }
 
         public string Generate(bool upperCase)

@@ -7,7 +7,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomizerBytes
     {
-        private readonly RandomValueGenerator c = new RandomValueGenerator();
+        private readonly RandomValueGenerator _randomValueGenerator = new RandomValueGenerator();
 
         public RandomizerBytes(FieldOptionsBytes options)
             : base(options)
@@ -16,7 +16,7 @@ namespace RandomDataGenerator.Randomizers
 
         public byte[] Generate()
         {
-            return c.NextBytes(Options.Min, Options.Max);
+            return _randomValueGenerator.NextBytes(Options.Min, Options.Max);
         }
 
         public string GenerateAsString(Encoding encoding)

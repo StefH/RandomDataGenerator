@@ -1,6 +1,6 @@
 ﻿using Fare;
 
-namespace RandomDataGenerator.TextData.Models
+namespace RandomDataGenerator.Data.Models
 {
     internal class IBAN
     {

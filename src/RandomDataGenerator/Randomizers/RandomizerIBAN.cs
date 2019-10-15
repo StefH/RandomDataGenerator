@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using RandomDataGenerator.Data;
+using RandomDataGenerator.Data.Models;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using RandomDataGenerator.TextData.Models;
 
 namespace RandomDataGenerator.Randomizers
 {

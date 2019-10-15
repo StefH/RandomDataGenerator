@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Fare;
-using RandomDataGenerator.TextData.Models;
+using RandomDataGenerator.Data.Models;
 
 namespace RandomDataGenerator.Data
 {
