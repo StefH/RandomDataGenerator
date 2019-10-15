@@ -1,12 +1,14 @@
-﻿using RandomDataGenerator.FieldOptions;
-using RandomDataGenerator.Generators;
-using System;
+﻿using System;
 using System.Text;
+using RandomDataGenerator.FieldOptions;
+using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomizerBytes
     {
+        private readonly RandomValueGenerator c = new RandomValueGenerator();
+
         public RandomizerBytes(FieldOptionsBytes options)
             : base(options)
         {
@@ -14,7 +16,7 @@ namespace RandomDataGenerator.Randomizers
 
         public byte[] Generate()
         {
-            return RandomValueGenerator.NextBytes(Options.Min, Options.Max);
+            return c.NextBytes(Options.Min, Options.Max);
         }
 
         public string GenerateAsString(Encoding encoding)

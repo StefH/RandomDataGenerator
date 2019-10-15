@@ -1,5 +1,6 @@
-﻿using System;
-using NLipsum.Core;
+﻿using System.Linq;
+using System.Text;
+using RandomDataGenerator.Data;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
@@ -8,18 +9,34 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerTextWords : RandomizerAbstract<FieldOptionsTextWords>, IRandomizerString
     {
-        private readonly LipsumGenerator _generator = new LipsumGenerator();
-        private readonly RandomThingsGenerator<int> _numberGenerator;
+        private readonly RandomStringFromListGenerator _generator;
+        private readonly RandomValueGenerator _randomValueGenerator;
 
         public RandomizerTextWords(FieldOptionsTextWords options) : base(options)
         {
-            _numberGenerator = new RandomThingsGenerator<int>(Math.Min(options.Min, options.Max), Math.Max(options.Min, options.Max) + 1);
+            _randomValueGenerator = options.Seed.HasValue ? new RandomValueGenerator(options.Seed.Value) : new RandomValueGenerator();
+
+            var words = ListData.Instance.LoremIpsum.SelectMany(l => l.Split(' '));
+            _generator = new RandomStringFromListGenerator(words, options.Seed);
         }
 
         public string Generate()
         {
-            return IsNull() ? null : string.Join(" ", _generator.GenerateWords(_numberGenerator.Generate()));
+            if (IsNull())
+            {
+                return null;
+            }
+
+            int max = _randomValueGenerator.Next(Options.Min, Options.Max);
+            var sb = new StringBuilder(Options.Max);
+            for (int i = 0; i < Options.Max - Options.Min + 1; i++)
+            {
+                sb.Append(_generator.Generate());
+            }
+
+            return sb.ToString();
         }
+
         public string Generate(bool upperCase)
         {
             return Generate().ToCasedInvariant(upperCase);

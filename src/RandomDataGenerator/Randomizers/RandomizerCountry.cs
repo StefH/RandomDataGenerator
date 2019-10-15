@@ -1,7 +1,7 @@
-﻿using RandomDataGenerator.Extensions;
+﻿using RandomDataGenerator.Data;
+using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using RandomDataGenerator.TextData;
 
 namespace RandomDataGenerator.Randomizers
 {

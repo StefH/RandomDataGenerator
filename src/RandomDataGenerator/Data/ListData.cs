@@ -6,7 +6,7 @@ using System.Text;
 using Fare;
 using RandomDataGenerator.TextData.Models;
 
-namespace RandomDataGenerator.TextData
+namespace RandomDataGenerator.Data
 {
     internal sealed class ListData
     {
@@ -30,6 +30,8 @@ namespace RandomDataGenerator.TextData
 
         public IEnumerable<IBAN> BBANs { get; }
 
+        public IEnumerable<string> LoremIpsum { get; }
+
         ListData()
         {
             LastNames = GetResourceAsLines("LastNames");
@@ -44,6 +46,7 @@ namespace RandomDataGenerator.TextData
             Func<string[], IBAN> ibanFunc = (columns) => new IBAN { CountryName = columns[0], CountryCode = columns[1], Generator = new Xeger(columns[2]) };
             IBANs = GetResourceAsItems("IBAN", ibanFunc);
             BBANs = GetResourceAsItems("BBAN", ibanFunc);
+            LoremIpsum = GetResourceAsLines("LoremIpsum");
         }
 
         public static ListData Instance => Nested.TextInstance;

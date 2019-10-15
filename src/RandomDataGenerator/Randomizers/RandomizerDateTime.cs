@@ -12,7 +12,7 @@ namespace RandomDataGenerator.Randomizers
         public RandomizerDateTime(FieldOptionsDateTime options)
             : base(options)
         {
-            _generator = new RandomThingsGenerator<DateTime>(options.From, options.To);
+            _generator = new RandomThingsGenerator<DateTime>(options.From, options.To, options.Seed);
         }
 
         public DateTime? Generate()

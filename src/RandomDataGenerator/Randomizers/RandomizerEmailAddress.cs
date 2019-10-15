@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NLipsum.Core;
+using RandomDataGenerator.Data;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using RandomDataGenerator.TextData;
 
 namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerEmailAddress : RandomizerAbstract<FieldOptionsEmailAddress>, IRandomizerString
     {
-        private readonly LipsumGenerator _generator = new LipsumGenerator();
+        private readonly RandomizerTextWords _wordGenerator;
         private readonly RandomThingsGenerator<int> _numberGenerator;
         private readonly RandomStringFromListGenerator _topLevelDomainGenerator;
         private readonly RandomStringFromListGenerator _lastNamesGenerator;
@@ -31,7 +30,8 @@ namespace RandomDataGenerator.Randomizers
                 _genderSetGenerators.Add(new RandomStringFromListGenerator(ListData.Instance.FemaleNames.Select(l => l.ToLower())));
             }
 
-            _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count);
+            _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count, options.Seed);
+            _wordGenerator = new RandomizerTextWords(new FieldOptionsTextWords { Min = 1, Max = 1});
         }
 
         public string Generate()
@@ -46,7 +46,7 @@ namespace RandomDataGenerator.Randomizers
 
             string firstName = firstNamesSet.Generate();
             string lastname = _lastNamesGenerator.Generate();
-            string company = _generator.GenerateWord();
+            string company = _wordGenerator.Generate();
             string domain = _topLevelDomainGenerator.Generate();
 
             return $"{firstName}.{lastname}@{company}.{domain}";

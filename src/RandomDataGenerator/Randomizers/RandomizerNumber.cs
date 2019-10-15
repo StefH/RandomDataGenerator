@@ -9,7 +9,7 @@ namespace RandomDataGenerator.Randomizers
 
         public RandomizerNumber(FieldOptionsNumber<T> options) : base(options)
         {
-            _generator = new RandomThingsGenerator<T>(options.Min, options.Max);
+            _generator = new RandomThingsGenerator<T>(options.Min, options.Max, options.Seed);
         }
 
         public T? Generate()

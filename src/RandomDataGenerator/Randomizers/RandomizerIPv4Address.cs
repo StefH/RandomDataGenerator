@@ -16,7 +16,7 @@ namespace RandomDataGenerator.Randomizers
 
             for (int i = 0; i < 4; i++)
             {
-                octets[i] = new RandomThingsGenerator<byte>(octetsMin[i], octetsMax[i]);
+                octets[i] = new RandomThingsGenerator<byte>(octetsMin[i], octetsMax[i], options.Seed);
             }
         }
 

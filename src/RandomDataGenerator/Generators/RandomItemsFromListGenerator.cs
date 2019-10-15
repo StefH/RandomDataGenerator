@@ -4,20 +4,27 @@ using System.Linq;
 
 namespace RandomDataGenerator.Generators
 {
-    internal class RandomItemFromListGenerator<T>
+    internal class RandomItemsFromListGenerator<T>
     {
         private readonly RandomValueGenerator _randomValueGenerator;
         private readonly T[] _list;
 
-        public RandomItemFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool> predicate = null)
+        public RandomItemsFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool> predicate = null)
         {
             _list = predicate == null ? list.ToArray() : list.Where(predicate).ToArray();
             _randomValueGenerator = seed.HasValue ? new RandomValueGenerator(seed.Value) : new RandomValueGenerator();
         }
 
-        public T Generate()
+        public List<T> Generate(int count)
         {
-            return _list.Length > 0 ? _list[_randomValueGenerator.Next(0, _list.Length - 1)] : default(T);
+            var list = new List<T>(count);
+            for (int i = 0; i < count; i++)
+            {
+                int index = _randomValueGenerator.Next(0, _list.Length - 1);
+                list.Add(_list[index]);
+            }
+
+            return list;
         }
     }
 }

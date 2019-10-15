@@ -1,10 +1,9 @@
-﻿using System;
+﻿using RandomDataGenerator.FieldOptions;
+using RandomDataGenerator.Randomizers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using RandomDataGenerator.FieldOptions;
-using RandomDataGenerator.Randomizers;
 
 namespace ConsoleAppClassic
 {
@@ -12,6 +11,14 @@ namespace ConsoleAppClassic
     {
         public static void Run()
         {
+            var randomizerTextRegexWithSeed1 = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Seed = 12345, Pattern = @"^[1-9][0-9]{3}([A-RT-Z][A-Z]|[S][BCE-RT-Z])$" });
+            string textRegexWithSeed1 = randomizerTextRegexWithSeed1.Generate();
+            Write(randomizerTextRegexWithSeed1, textRegexWithSeed1);
+
+            var randomizerTextRegexWithSeed2 = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Seed = 12345, Pattern = @"^[1-9][0-9]{3}([A-RT-Z][A-Z]|[S][BCE-RT-Z])$" });
+            string textRegexWithSeed2 = randomizerTextRegexWithSeed2.Generate();
+            Write(randomizerTextRegexWithSeed2, textRegexWithSeed2);
+
             var randomizerBytes = RandomizerFactory.GetRandomizer(new FieldOptionsBytes { Min = 10, Max = 20 });
             var base64 = randomizerBytes.GenerateAsBase64String();
             Write(randomizerBytes, base64);
@@ -27,6 +34,14 @@ namespace ConsoleAppClassic
             var randomizerIBAN2 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN { CountryCode = "NL" });
             string IBAN2 = randomizerIBAN2.Generate();
             Write(randomizerIBAN2, IBAN2);
+
+            var randomizerIBANWithSeed1 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN { Seed = 123, CountryCode = "NL" });
+            string IBANWithSeed1 = randomizerIBANWithSeed1.Generate();
+            Write(randomizerIBANWithSeed1, IBANWithSeed1);
+
+            var randomizerIBANWithSeed2 = RandomizerFactory.GetRandomizer(new FieldOptionsIBAN { Seed = 123, CountryCode = "NL" });
+            string IBANWithSeed2 = randomizerIBANWithSeed2.Generate();
+            Write(randomizerIBANWithSeed2, IBANWithSeed2);
 
             var randomizerCity = RandomizerFactory.GetRandomizer(new FieldOptionsCity());
             string city = randomizerCity.Generate();

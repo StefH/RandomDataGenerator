@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
+using RandomDataGenerator.Data;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using RandomDataGenerator.TextData;
 
 namespace RandomDataGenerator.Randomizers
 {
@@ -23,7 +23,7 @@ namespace RandomDataGenerator.Randomizers
                 _genderSetGenerators.Add(new RandomStringFromListGenerator(ListData.Instance.FemaleNames));
             }
 
-            _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count);
+            _numberGenerator = new RandomThingsGenerator<int>(0, _genderSetGenerators.Count, options.Seed);
         }
 
         public string Generate()

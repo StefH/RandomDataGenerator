@@ -10,7 +10,7 @@ namespace RandomDataGenerator.Randomizers
 
         public RandomizerTimeSpan(FieldOptionsTimeSpan options) : base(options)
         {
-            _generator = new RandomThingsGenerator<TimeSpan>(options.From, options.To);
+            _generator = new RandomThingsGenerator<TimeSpan>(options.From, options.To, options.Seed);
         }
 
         public TimeSpan? Generate()

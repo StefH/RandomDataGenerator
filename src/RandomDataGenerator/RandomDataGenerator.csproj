@@ -31,12 +31,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Text\LoremIpsum.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Data\Text\CityNames.txt" />
     <EmbeddedResource Include="Data\Text\CountryNames.txt" />
     <EmbeddedResource Include="Data\Text\FemaleNames.txt" />
     <EmbeddedResource Include="Data\Text\BBAN.txt" />
     <EmbeddedResource Include="Data\Text\IBAN.txt" />
     <EmbeddedResource Include="Data\Text\LastNames.txt" />
+    <EmbeddedResource Include="Data\Text\LoremIpsum.txt" />
     <EmbeddedResource Include="Data\Text\MaleNames.txt" />
   </ItemGroup>
 
@@ -44,7 +49,6 @@
     <PackageReference Include="JetBrains.Annotations" Version="2018.2.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="NLipsum" Version="1.1.0" />
     <PackageReference Include="Fare" Version="2.1.1" />
   </ItemGroup>
 
