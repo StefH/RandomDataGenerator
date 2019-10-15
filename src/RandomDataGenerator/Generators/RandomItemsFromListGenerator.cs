@@ -12,7 +12,7 @@ namespace RandomDataGenerator.Generators
         public RandomItemsFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool> predicate = null)
         {
             _list = predicate == null ? list.ToArray() : list.Where(predicate).ToArray();
-            _randomValueGenerator = seed.HasValue ? new RandomValueGenerator(seed.Value) : new RandomValueGenerator();
+            _randomValueGenerator = new RandomValueGenerator(seed ?? Environment.TickCount);
         }
 
         public List<T> Generate(int count)

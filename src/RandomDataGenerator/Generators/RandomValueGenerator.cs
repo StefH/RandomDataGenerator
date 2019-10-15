@@ -20,19 +20,9 @@ namespace RandomDataGenerator.Generators
         public static Type[] SupportedTypes { get; } = { typeof(bool), typeof(byte), typeof(short), typeof(int), typeof(long), typeof(float), typeof(double), typeof(long), typeof(DateTime), typeof(TimeSpan) };
 
         #region -- Construction/Initialization --
-        public RandomValueGenerator()
-        {
-            Reset();
-        }
-
         public RandomValueGenerator(int seed)
         {
             Reset(seed);
-        }
-
-        public void Reset()
-        {
-            Reset(Environment.TickCount);
         }
 
         public void Reset(int seed)

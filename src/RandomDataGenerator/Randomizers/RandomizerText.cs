@@ -11,7 +11,7 @@ namespace RandomDataGenerator.Randomizers
         public RandomizerText(FieldOptionsText options)
             : base(options)
         {
-            _generator = new RandomStringGenerator(options.UseUppercase, options.UseLowercase, options.UseNumber, options.UseSpecial, options.UseSpace);
+            _generator = new RandomStringGenerator(options.Seed, options.UseUppercase, options.UseLowercase, options.UseNumber, options.UseSpecial, options.UseSpace);
         }
 
         public string Generate()

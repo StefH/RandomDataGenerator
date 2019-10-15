@@ -20,7 +20,7 @@ namespace RandomDataGenerator.Generators
     /// </summary>
     internal class RandomStringGenerator
     {
-        public RandomStringGenerator(bool useUpperCaseCharacters = true,
+        public RandomStringGenerator(int? seed = null, bool useUpperCaseCharacters = true,
                                      bool useLowerCaseCharacters = true,
                                      bool useNumericCharacters = true,
                                      bool useSpecialCharacters = true,
@@ -44,12 +44,7 @@ namespace RandomDataGenerator.Generators
             _patternDriven = false;
             Pattern = string.Empty;
             _existingStrings = new List<string>();
-
-#if NETSTANDARD1_3
-            _random = new Random(Environment.TickCount);
-#else
-            _random = new System.Security.Cryptography.RNGCryptoServiceProvider();
-#endif
+            _random = seed.HasValue ? new Random(seed.Value) : new Random();
         }
 
         #region character sets managers
@@ -568,15 +563,13 @@ namespace RandomDataGenerator.Generators
         {
             byte[] buffer = new byte[2]; // 16 bit = 2^16 = 65576 (more than necessary)
 
-#if NETSTANDARD1_3
             _random.NextBytes(buffer);
-#else
-            _random.GetNonZeroBytes(buffer);
-#endif
 
             int index = BitConverter.ToInt16(buffer, 0);
             if (index < 0)
+            {
                 index = -index; // manage negative random values
+            }
 
             return index;
         }
@@ -610,13 +603,7 @@ namespace RandomDataGenerator.Generators
         private char[] _currentSpaceCharacters;
         private char[] _currentGeneralCharacters; // All used characters
         private readonly List<string> _existingStrings; // History
-#if NETSTANDARD1_3
         private readonly Random _random;
-#else
-        private readonly System.Security.Cryptography.RNGCryptoServiceProvider _random;
-#endif
-
-
         #endregion
     }
 }

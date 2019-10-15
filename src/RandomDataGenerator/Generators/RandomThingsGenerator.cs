@@ -1,4 +1,6 @@
-﻿namespace RandomDataGenerator.Generators
+﻿using System;
+
+namespace RandomDataGenerator.Generators
 {
     internal class RandomThingsGenerator<T>
     {
@@ -10,7 +12,7 @@
         {
             _min = min;
             _max = max;
-            _randomValueGenerator = seed.HasValue ? new RandomValueGenerator(seed.Value) : new RandomValueGenerator();
+            _randomValueGenerator = new RandomValueGenerator(seed ?? Environment.TickCount);
         }
 
         public T Generate()

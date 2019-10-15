@@ -7,11 +7,12 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomizerBytes
     {
-        private readonly RandomValueGenerator _randomValueGenerator = new RandomValueGenerator();
+        private readonly RandomValueGenerator _randomValueGenerator;
 
         public RandomizerBytes(FieldOptionsBytes options)
             : base(options)
         {
+            _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
         }
 
         public byte[] Generate()

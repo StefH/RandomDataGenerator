@@ -1,4 +1,5 @@
-﻿using RandomDataGenerator.FieldOptions;
+﻿using System;
+using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
@@ -13,7 +14,7 @@ namespace RandomDataGenerator.Randomizers
         {
             Options = options;
 
-            _randomValueGenerator = options.Seed.HasValue ? new RandomValueGenerator(options.Seed.Value) : new RandomValueGenerator();
+            _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
         }
 
         protected virtual bool IsNull()

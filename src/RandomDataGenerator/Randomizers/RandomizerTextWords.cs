@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using RandomDataGenerator.Data;
 using RandomDataGenerator.Extensions;
@@ -14,7 +15,7 @@ namespace RandomDataGenerator.Randomizers
 
         public RandomizerTextWords(FieldOptionsTextWords options) : base(options)
         {
-            _randomValueGenerator = options.Seed.HasValue ? new RandomValueGenerator(options.Seed.Value) : new RandomValueGenerator();
+            _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
 
             var words = ListData.Instance.LoremIpsum.SelectMany(l => l.Split(' '));
             _generator = new RandomStringFromListGenerator(words, options.Seed);
