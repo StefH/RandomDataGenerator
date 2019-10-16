@@ -4,6 +4,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <VersionPrefix>1.0.10.0</VersionPrefix>
+    <VersionPrefix>1.0.11-preview-01</VersionPrefix>
   </PropertyGroup>
 </Project>
