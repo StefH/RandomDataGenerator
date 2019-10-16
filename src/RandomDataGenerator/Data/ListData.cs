@@ -32,6 +32,8 @@ namespace RandomDataGenerator.Data
 
         public IEnumerable<string> LoremIpsum { get; }
 
+        public IEnumerable<string> LoremIpsumWords { get; }
+
         ListData()
         {
             LastNames = GetResourceAsLines("LastNames");
@@ -47,6 +49,7 @@ namespace RandomDataGenerator.Data
             IBANs = GetResourceAsItems("IBAN", ibanFunc);
             BBANs = GetResourceAsItems("BBAN", ibanFunc);
             LoremIpsum = GetResourceAsLines("LoremIpsum");
+            LoremIpsumWords = GetResourceAsLines("LorumIpsumWords");
         }
 
         public static ListData Instance => Nested.TextInstance;

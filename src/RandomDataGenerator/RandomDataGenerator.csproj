@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <None Remove="Data\Text\LoremIpsum.txt" />
+    <None Remove="Data\Text\LorumIpsumWords.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +43,7 @@
     <EmbeddedResource Include="Data\Text\IBAN.txt" />
     <EmbeddedResource Include="Data\Text\LastNames.txt" />
     <EmbeddedResource Include="Data\Text\LoremIpsum.txt" />
+    <EmbeddedResource Include="Data\Text\LorumIpsumWords.txt" />
     <EmbeddedResource Include="Data\Text\MaleNames.txt" />
   </ItemGroup>
 

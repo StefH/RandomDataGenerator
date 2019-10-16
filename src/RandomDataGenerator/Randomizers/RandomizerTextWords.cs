@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using RandomDataGenerator.Data;
+﻿using RandomDataGenerator.Data;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
+using System;
+using System.Collections.Generic;
 
 namespace RandomDataGenerator.Randomizers
 {
@@ -17,8 +16,7 @@ namespace RandomDataGenerator.Randomizers
         {
             _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
 
-            var words = ListData.Instance.LoremIpsum.SelectMany(l => l.Split(' '));
-            _generator = new RandomStringFromListGenerator(words, options.Seed);
+            _generator = new RandomStringFromListGenerator(ListData.Instance.LoremIpsumWords, options.Seed);
         }
 
         public string Generate()
@@ -29,13 +27,13 @@ namespace RandomDataGenerator.Randomizers
             }
 
             int max = _randomValueGenerator.Next(Options.Min, Options.Max);
-            var sb = new StringBuilder(Options.Max);
-            for (int i = 0; i < Options.Max - Options.Min + 1; i++)
+            var list = new List<string>(max);
+            for (int i = 0; i < max; i++)
             {
-                sb.Append(_generator.Generate());
+                list.Add(_generator.Generate());
             }
 
-            return sb.ToString();
+            return string.Join(" ", list.ToArray());
         }
 
         public string Generate(bool upperCase)
