@@ -12,7 +12,7 @@
     <PackageReleaseNotes>See ReleaseNotes.md</PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/resources/icon_64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/StefH/RandomDataGenerator</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/StefH/RandomDataGenerator</RepositoryUrl>
     <DebugType>full</DebugType>
@@ -24,9 +24,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <IncludeSource>True</IncludeSource>
+    <!--<IncludeSource>True</IncludeSource>
     <IncludeSymbols>True</IncludeSymbols>
-    <PathMap>$(MSBuildProjectDirectory)=/</PathMap>
+    <PathMap>$(MSBuildProjectDirectory)=/</PathMap>-->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
