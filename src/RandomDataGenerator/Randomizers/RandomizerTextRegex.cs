@@ -1,4 +1,5 @@
-﻿using Fare;
+﻿using System;
+using Fare;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 
@@ -10,7 +11,7 @@ namespace RandomDataGenerator.Randomizers
 
         public RandomizerTextRegex(FieldOptionsTextRegex options) : base(options)
         {
-            _generator = new Xeger(Options.Pattern);
+            _generator = options.Seed.HasValue ? new Xeger(options.Pattern, new Random(options.Seed.Value)) : new Xeger(options.Pattern);
         }
 
         public string Generate()

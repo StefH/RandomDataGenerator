@@ -12,7 +12,7 @@
     <PackageReleaseNotes>See ReleaseNotes.md</PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/resources/icon_64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/StefH/RandomDataGenerator</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/StefH/RandomDataGenerator</RepositoryUrl>
     <DebugType>full</DebugType>
@@ -24,11 +24,16 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <IncludeSource>True</IncludeSource>
+    <!--<IncludeSource>True</IncludeSource>
     <IncludeSymbols>True</IncludeSymbols>
-    <PathMap>$(MSBuildProjectDirectory)=/</PathMap>
+    <PathMap>$(MSBuildProjectDirectory)=/</PathMap>-->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Text\LoremIpsum.txt" />
+    <None Remove="Data\Text\LorumIpsumWords.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Text\CityNames.txt" />
@@ -37,6 +42,8 @@
     <EmbeddedResource Include="Data\Text\BBAN.txt" />
     <EmbeddedResource Include="Data\Text\IBAN.txt" />
     <EmbeddedResource Include="Data\Text\LastNames.txt" />
+    <EmbeddedResource Include="Data\Text\LoremIpsum.txt" />
+    <EmbeddedResource Include="Data\Text\LorumIpsumWords.txt" />
     <EmbeddedResource Include="Data\Text\MaleNames.txt" />
   </ItemGroup>
 
@@ -44,7 +51,6 @@
     <PackageReference Include="JetBrains.Annotations" Version="2018.2.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="NLipsum" Version="1.1.0" />
     <PackageReference Include="Fare" Version="2.1.1" />
   </ItemGroup>
 

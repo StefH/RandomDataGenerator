@@ -1,20 +1,23 @@
-﻿using RandomDataGenerator.FieldOptions;
-using RandomDataGenerator.Generators;
-using System;
+﻿using System;
 using System.Text;
+using RandomDataGenerator.FieldOptions;
+using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomizerBytes
     {
+        private readonly RandomValueGenerator _randomValueGenerator;
+
         public RandomizerBytes(FieldOptionsBytes options)
             : base(options)
         {
+            _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
         }
 
         public byte[] Generate()
         {
-            return RandomValueGenerator.NextBytes(Options.Min, Options.Max);
+            return _randomValueGenerator.NextBytes(Options.Min, Options.Max);
         }
 
         public string GenerateAsString(Encoding encoding)

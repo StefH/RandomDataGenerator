@@ -53,5 +53,4 @@ You can also use a UI to generate SQL insert table statements.
 - https://github.com/SaladLab/NetLegacySupport/tree/master/core/ConcurrentDictionary/System/Collections/Concurrent
 
 ### NuGet dependencies
-- NLipsum
 - Fare

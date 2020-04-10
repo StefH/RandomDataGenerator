@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
+using RandomDataGenerator.Data;
+using RandomDataGenerator.Data.Models;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using RandomDataGenerator.TextData;
-using RandomDataGenerator.TextData.Models;
 
 namespace RandomDataGenerator.Randomizers
 {
@@ -34,7 +34,7 @@ namespace RandomDataGenerator.Randomizers
                     break;
             }
 
-            _itemGenerator = new RandomItemFromListGenerator<IBAN>(list, predicate);
+            _itemGenerator = new RandomItemFromListGenerator<IBAN>(options.Seed, list, predicate);
         }
 
         public string Generate()

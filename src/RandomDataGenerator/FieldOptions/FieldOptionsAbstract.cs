@@ -12,6 +12,7 @@ namespace RandomDataGenerator.FieldOptions
     [XmlInclude(typeof(FieldOptionsEmailAddress))]
     [XmlInclude(typeof(FieldOptionsFirstName))]
     [XmlInclude(typeof(FieldOptionsIBAN))]
+    [XmlInclude(typeof(FieldOptionsNumber<byte>))]
     [XmlInclude(typeof(FieldOptionsNumber<short>))]
     [XmlInclude(typeof(FieldOptionsNumber<int>))]
     [XmlInclude(typeof(FieldOptionsNumber<long>))]
@@ -35,6 +36,8 @@ namespace RandomDataGenerator.FieldOptions
         public bool UseNullValues { get; set; }
 
         public bool ValueAsString { get; set; }
+
+        public int? Seed { get; set; }
 
         public FieldOptionsAbstract Clone()
         {

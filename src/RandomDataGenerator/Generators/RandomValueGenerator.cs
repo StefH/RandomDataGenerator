@@ -10,27 +10,25 @@ namespace RandomDataGenerator.Generators
     /// from Normally (Gaussian) distributed random numbers and 
     /// Exponentially distributed random numbers.
     /// </summary>
-    internal static class RandomValueGenerator
+    internal class RandomValueGenerator
     {
         private const double Tolerance = double.Epsilon;
-        private static Random _rnf;
-        private static double _storedUniformDeviate;
-        private static bool _storedUniformDeviateIsGood;
+        private Random _rnf;
+        private double _storedUniformDeviate;
+        private bool _storedUniformDeviateIsGood;
 
         public static Type[] SupportedTypes { get; } = { typeof(bool), typeof(byte), typeof(short), typeof(int), typeof(long), typeof(float), typeof(double), typeof(long), typeof(DateTime), typeof(TimeSpan) };
 
         #region -- Construction/Initialization --
-
-        static RandomValueGenerator()
+        public RandomValueGenerator(int seed)
         {
-            Reset();
+            Reset(seed);
         }
 
-        public static void Reset()
+        public void Reset(int seed)
         {
-            _rnf = new Random(Environment.TickCount);
+            _rnf = new Random(seed);
         }
-
         #endregion
 
         #region -- Uniform Deviates --
@@ -38,7 +36,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns double in the range [0, 1)
         /// </summary>
-        public static double Next()
+        public double Next()
         {
             return _rnf.NextDouble();
         }
@@ -46,7 +44,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns true or false randomly.
         /// </summary>
-        public static bool NextBoolean()
+        public bool NextBoolean()
         {
             return _rnf.Next(0, 2) != 0;
         }
@@ -54,7 +52,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns double in the range [0, 1)
         /// </summary>
-        public static double NextDouble()
+        public double NextDouble()
         {
             return _rnf.NextDouble();
         }
@@ -65,7 +63,7 @@ namespace RandomDataGenerator.Generators
         /// <param name="min">The minimum number of bytes</param>
         /// <param name="max">The maximum number of bytes</param>
         /// <returns>Random byte array</returns>
-        public static byte[] NextBytes(int min, int max)
+        public byte[] NextBytes(int min, int max)
         {
             int arrayLength = Next(min, max);
 
@@ -82,7 +80,7 @@ namespace RandomDataGenerator.Generators
         /// <param name="min">The minimum value</param>
         /// <param name="max">The maximum value</param>
         /// <returns>Random T</returns>
-        public static T Next<T>(T min, T max)
+        public T Next<T>(T min, T max)
         {
             if (typeof(T) == typeof(bool))
             {
@@ -135,7 +133,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns byte in the range [min, max)
         /// </summary>
-        public static byte Next(byte min, byte max)
+        public byte Next(byte min, byte max)
         {
             if (max <= min)
             {
@@ -149,7 +147,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns Int16 in the range [min, max)
         /// </summary>
-        public static short Next(short min, short max)
+        public short Next(short min, short max)
         {
             if (max <= min)
             {
@@ -163,7 +161,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns Int32 in the range [min, max)
         /// </summary>
-        public static int Next(int min, int max)
+        public int Next(int min, int max)
         {
             return _rnf.Next(min, max);
         }
@@ -171,7 +169,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns Int64 in the range [min, max)
         /// </summary>
-        public static long Next(long min, long max)
+        public long Next(long min, long max)
         {
             if (max <= min)
             {
@@ -185,7 +183,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns float (Single) in the range [min, max)
         /// </summary>
-        public static float Next(float min, float max)
+        public float Next(float min, float max)
         {
             if (max <= min)
             {
@@ -199,7 +197,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns double in the range [min, max)
         /// </summary>
-        public static double Next(double min, double max)
+        public double Next(double min, double max)
         {
             if (max <= min)
             {
@@ -213,7 +211,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns DateTime in the range [min, max)
         /// </summary>
-        public static DateTime Next(DateTime min, DateTime max)
+        public DateTime Next(DateTime min, DateTime max)
         {
             if (max <= min)
             {
@@ -231,7 +229,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns TimeSpan in the range [min, max)
         /// </summary>
-        public static TimeSpan Next(TimeSpan min, TimeSpan max)
+        public TimeSpan Next(TimeSpan min, TimeSpan max)
         {
             if (max <= min)
             {
@@ -249,7 +247,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns double in the range [min, max)
         /// </summary>
-        public static double NextUniform()
+        public double NextUniform()
         {
             return Next();
         }
@@ -258,7 +256,7 @@ namespace RandomDataGenerator.Generators
         /// Returns a uniformly random integer representing one of the values 
         /// in the enum.
         /// </summary>
-        public static int NextEnum(Type enumType)
+        public int NextEnum(Type enumType)
         {
             var values = (int[])Enum.GetValues(enumType);
             int randomIndex = Next(0, values.Length);
@@ -270,7 +268,7 @@ namespace RandomDataGenerator.Generators
         /// <summary>
         /// Returns an exponentially distributed, positive, random deviate of unit mean.
         /// </summary>
-        public static double NextExponential()
+        public double NextExponential()
         {
             double dum = 0.0;
 
@@ -289,7 +287,7 @@ namespace RandomDataGenerator.Generators
         /// Returns a normally distributed deviate with zero mean and unit 
         /// variance.
         /// </summary>
-        public static double NextNormal()
+        public double NextNormal()
         {
             // based on algorithm from Numerical Recipes
             if (_storedUniformDeviateIsGood)

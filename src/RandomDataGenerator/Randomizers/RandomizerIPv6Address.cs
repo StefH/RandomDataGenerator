@@ -20,7 +20,7 @@ namespace RandomDataGenerator.Randomizers
 
             for (int i = 0; i < 8; i++)
             {
-                hextets[i] = new RandomThingsGenerator<int>(hextetsMin[i], hextetsMax[i]);
+                hextets[i] = new RandomThingsGenerator<int>(hextetsMin[i], hextetsMax[i], options.Seed);
             }
         }
 

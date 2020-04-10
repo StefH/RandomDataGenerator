@@ -7,7 +7,7 @@ namespace RandomDataGenerator.Randomizers
 {
     public class RandomizerIPv4Address : RandomizerAbstract<FieldOptionsIPv4Address>, IRandomizerString
     {
-        private readonly RandomThingsGenerator<byte>[] octets = new RandomThingsGenerator<byte>[4];
+        private readonly RandomThingsGenerator<byte>[] _octetsGenerator = new RandomThingsGenerator<byte>[4];
 
         public RandomizerIPv4Address(FieldOptionsIPv4Address options) : base(options)
         {
@@ -16,7 +16,7 @@ namespace RandomDataGenerator.Randomizers
 
             for (int i = 0; i < 4; i++)
             {
-                octets[i] = new RandomThingsGenerator<byte>(octetsMin[i], octetsMax[i]);
+                _octetsGenerator[i] = new RandomThingsGenerator<byte>(octetsMin[i], octetsMax[i], options.Seed);
             }
         }
 
@@ -27,7 +27,7 @@ namespace RandomDataGenerator.Randomizers
                 return null;
             }
 
-            return string.Join(".", octets.Select(gen => $"{gen.Generate()}").ToArray());
+            return string.Join(".", _octetsGenerator.Select(gen => $"{gen.Generate()}").ToArray());
         }
 
         public string Generate(bool upperCase)
