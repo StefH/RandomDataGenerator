@@ -1,3 +1,7 @@
+# 1.0.11.0 (10 April 2020)
+- [#14](https://github.com/StefH/RandomDataGenerator/pull/14) - Support custom Random seed value [feature] contributed by [StefH](https://github.com/StefH)
+- [#13](https://github.com/StefH/RandomDataGenerator/issues/13) - Initialize RandomizerFactory with supplied Random instance [feature]
+
 # 1.0.10.0 (10 October 2019)
 - [#11](https://github.com/StefH/RandomDataGenerator/pull/11) - Net Core 3.0 contributed by [StefH](https://github.com/StefH)
 - [#12](https://github.com/StefH/RandomDataGenerator/pull/12) - RandomizerBytes contributed by [StefH](https://github.com/StefH)
@@ -18,8 +22,10 @@
 - [#6](https://github.com/StefH/RandomDataGenerator/pull/6) - Add Min/Max to IPv4, IPv6 and MAC addresses generation [feature] contributed by [StefH](https://github.com/StefH)
 
 # 1.0.3.0 (09 November 2018)
-- [#4](https://github.com/StefH/RandomDataGenerator/pull/4) - RandomizerNumber [feature] contributed by [StefH](https://github.com/StefH)
 - [#5](https://github.com/StefH/RandomDataGenerator/pull/5) - Add Long and TimeSpan [feature] contributed by [StefH](https://github.com/StefH)
+
+# 1.0.2.0 (09 November 2018)
+- [#4](https://github.com/StefH/RandomDataGenerator/pull/4) - RandomizerNumber [feature] contributed by [StefH](https://github.com/StefH)
 
 # 1.0.1.0 (09 November 2018)
 - [#3](https://github.com/StefH/RandomDataGenerator/pull/3) - Updated FieldOptionsFactory [feature] contributed by [StefH](https://github.com/StefH)
