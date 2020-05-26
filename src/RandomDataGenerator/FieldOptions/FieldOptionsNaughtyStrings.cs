@@ -5,8 +5,9 @@
         internal static string All = "All";
 
         /// <summary>
-        /// A comma separated string from one or more from these Categories:
-        /// 
+        /// A comma separated string from one or more from these categories:
+        ///
+        /// All
         /// Changinglengthwhenlowercased
         /// CommandInjectionRuby
         /// Emoji
@@ -38,6 +39,8 @@
         /// UnwantedInterpolation
         /// ZalgoText
         /// iOSVulnerabilities
+        ///
+        /// When null, the 'All' category is used.
         /// </summary>
         public string Categories { get; set; } = All;
     }
