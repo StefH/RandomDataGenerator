@@ -47,5 +47,4 @@ namespace RandomDataGenerator.Compatibility
         }
     }
 }
-
 #endif
