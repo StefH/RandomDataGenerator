@@ -166,11 +166,11 @@ namespace ConsoleAppClassic
             TimeSpan? ts2 = randomizerTimeSpan2.Generate();
             Write(randomizerTimeSpan2, ts2);
 
-            var randomizerNaughtyStrings = RandomizerFactory.GetRandomizer(new FieldOptionsNaughtyStrings { Categories = "NumericStrings, TrickUnicode" });
+            var randomizerNaughtyStrings = RandomizerFactory.GetRandomizer(new FieldOptionsTextNaughtyStrings { Categories = "NumericStrings, TrickUnicode" });
             string naughtyString = randomizerNaughtyStrings.Generate();
             Write(randomizerNaughtyStrings, naughtyString);
 
-            var randomizerNaughtyStringsNullCategory = RandomizerFactory.GetRandomizer(new FieldOptionsNaughtyStrings());
+            var randomizerNaughtyStringsNullCategory = RandomizerFactory.GetRandomizer(new FieldOptionsTextNaughtyStrings());
             string naughtyString2 = randomizerNaughtyStringsNullCategory.Generate();
             Write(randomizerNaughtyStringsNullCategory, naughtyString2);
         }

@@ -1,6 +1,6 @@
 ﻿namespace RandomDataGenerator.FieldOptions
 {
-    public class FieldOptionsNaughtyStrings : FieldOptionsAbstract, IFieldOptionsString
+    public class FieldOptionsTextNaughtyStrings : FieldOptionsAbstract, IFieldOptionsString
     {
         internal static string All = "All";
 

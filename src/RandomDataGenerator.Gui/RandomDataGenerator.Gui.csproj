@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\FieldManager.cs" />
     <Compile Include="Entities\IListItem.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -123,6 +123,12 @@
     </Compile>
     <Compile Include="UserControlsFields\UserControlIPv4Address.Designer.cs">
       <DependentUpon>UserControlIPv4Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextNaughtyStrings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsFields\UserControlTextNaughtyStrings.Designer.cs">
+      <DependentUpon>UserControlTextNaughtyStrings.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsFields\UserControlTextRegex.cs">
       <SubType>UserControl</SubType>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlMACAddress.resx">
       <DependentUpon>UserControlMACAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsFields\UserControlTextNaughtyStrings.resx">
+      <DependentUpon>UserControlTextNaughtyStrings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsFields\UserControlTextRegex.resx">
       <DependentUpon>UserControlTextRegex.cs</DependentUpon>

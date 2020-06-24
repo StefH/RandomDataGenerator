@@ -13,7 +13,7 @@ namespace RandomDataGenerator.Gui
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private readonly DataManager _dataManager = new DataManager();
+        private readonly FieldManager _fieldManager = new FieldManager();
         private readonly BindingList<DataField> _dataFields = new BindingList<DataField>();
 
         public MainForm()
@@ -33,7 +33,7 @@ namespace RandomDataGenerator.Gui
             listBoxFields.DataSource = _dataFields;
             _dataFields.ListChanged += DataFields_ListChanged;
 
-            var fields = _dataManager.GetFields();
+            var fields = _fieldManager.GetFields();
             cmbFields.DataSource = fields;
             cmbSubFields.DataSource = fields.First().SubFields;
 

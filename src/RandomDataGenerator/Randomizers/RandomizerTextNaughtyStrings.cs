@@ -9,11 +9,11 @@ using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers
 {
-    public class RandomizerNaughtyStrings : RandomizerAbstract<FieldOptionsNaughtyStrings>, IRandomizerString
+    public class RandomizerTextNaughtyStrings : RandomizerAbstract<FieldOptionsTextNaughtyStrings>, IRandomizerString
     {
         private readonly RandomStringFromListGenerator _naughtyStringCategoryGenerator;
 
-        public RandomizerNaughtyStrings(FieldOptionsNaughtyStrings options) : base(options)
+        public RandomizerTextNaughtyStrings(FieldOptionsTextNaughtyStrings options) : base(options)
         {
             Type type = typeof(TheNaughtyStrings);
 
@@ -22,7 +22,7 @@ namespace RandomDataGenerator.Randomizers
             var categories = options.Categories
                 .Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(s => s.Trim())
-                .Where(s => s != FieldOptionsNaughtyStrings.All);
+                .Where(s => s != FieldOptionsTextNaughtyStrings.All);
             foreach (string category in categories)
             {
                 if (type.GetField(category).GetValue(null) is IList<string> strings)

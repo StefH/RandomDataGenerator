@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Date>2018-12-03T10:23:44.2639199+01:00</Date>
-  <Name>My Test Project</Name>
+  <Date>2020-06-24T20:33:30.4891227+02:00</Date>
+  <Name>My Table</Name>
   <TotalRecords>1000</TotalRecords>
   <OutputFile>c:\Temp\output.sql</OutputFile>
   <GenerateOptions xsi:type="GenerateOptionsSQL">
@@ -15,6 +15,7 @@
       <FieldOptions xsi:type="FieldOptionsInteger">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>false</ValueAsString>
+        <Seed xsi:nil="true" />
         <Min>0</Min>
         <Max>77778888</Max>
       </FieldOptions>
@@ -30,6 +31,7 @@
       <FieldOptions xsi:type="FieldOptionsFirstName">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Male>true</Male>
         <Female>true</Female>
       </FieldOptions>
@@ -45,6 +47,7 @@
       <FieldOptions xsi:type="FieldOptionsLastName">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
       </FieldOptions>
       <Field>
         <FieldType>Human</FieldType>
@@ -58,6 +61,7 @@
       <FieldOptions xsi:type="FieldOptionsFullName">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Male>true</Male>
         <Female>true</Female>
         <Left2Right>true</Left2Right>
@@ -74,6 +78,7 @@
       <FieldOptions xsi:type="FieldOptionsEmailAddress">
         <UseNullValues>true</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Male>true</Male>
         <Female>true</Female>
         <Left2Right>true</Left2Right>
@@ -90,6 +95,7 @@
       <FieldOptions xsi:type="FieldOptionsCity">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
       </FieldOptions>
       <Field>
         <FieldType>Location</FieldType>
@@ -103,6 +109,7 @@
       <FieldOptions xsi:type="FieldOptionsCountry">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
       </FieldOptions>
       <Field>
         <FieldType>Location</FieldType>
@@ -116,6 +123,7 @@
       <FieldOptions xsi:type="FieldOptionsTextWords">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Min>1</Min>
         <Max>3</Max>
       </FieldOptions>
@@ -131,6 +139,7 @@
       <FieldOptions xsi:type="FieldOptionsText">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Min>4</Min>
         <Max>8</Max>
         <UseUppercase>false</UseUppercase>
@@ -152,6 +161,7 @@
       <FieldOptions xsi:type="FieldOptionsTextPattern">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Pattern>\xLLnn_**ss\x</Pattern>
       </FieldOptions>
       <Field>
@@ -166,6 +176,7 @@
       <FieldOptions xsi:type="FieldOptionsTextRegex">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>false</ValueAsString>
+        <Seed xsi:nil="true" />
         <Pattern>[a-z]{4,8}</Pattern>
       </FieldOptions>
       <Field>
@@ -176,10 +187,26 @@
       </SubField>
     </DataField>
     <DataField>
+      <Name>Text NaughtyStrings</Name>
+      <FieldOptions xsi:type="FieldOptionsTextNaughtyStrings">
+        <UseNullValues>false</UseNullValues>
+        <ValueAsString>false</ValueAsString>
+        <Seed xsi:nil="true" />
+        <Categories>All</Categories>
+      </FieldOptions>
+      <Field>
+        <FieldType>Text</FieldType>
+      </Field>
+      <SubField>
+        <SubFieldType>TextNaughtyStrings</SubFieldType>
+      </SubField>
+    </DataField>
+    <DataField>
       <Name>Set_StringList</Name>
       <FieldOptions xsi:type="FieldOptionsStringList">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Values>
           <string>Active</string>
           <string>InActive</string>
@@ -198,6 +225,7 @@
       <FieldOptions xsi:type="FieldOptionsDateTime">
         <UseNullValues>true</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Format>s</Format>
         <From>2018-12-03T00:00:00Z</From>
         <To>2019-12-03T00:00:00Z</To>
@@ -215,6 +243,7 @@
       <FieldOptions xsi:type="FieldOptionsIPv4Address">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
       </FieldOptions>
       <Field>
         <FieldType>IT</FieldType>
@@ -228,6 +257,7 @@
       <FieldOptions xsi:type="FieldOptionsIPv6Address">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Uppercase>false</Uppercase>
       </FieldOptions>
       <Field>
@@ -242,6 +272,7 @@
       <FieldOptions xsi:type="FieldOptionsMACAddress">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Separator>:</Separator>
         <Uppercase>true</Uppercase>
       </FieldOptions>
@@ -257,7 +288,9 @@
       <FieldOptions xsi:type="FieldOptionsGuid">
         <UseNullValues>false</UseNullValues>
         <ValueAsString>true</ValueAsString>
+        <Seed xsi:nil="true" />
         <Uppercase>true</Uppercase>
+        <Format>D</Format>
       </FieldOptions>
       <Field>
         <FieldType>IT</FieldType>
