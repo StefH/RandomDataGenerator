@@ -1,3 +1,6 @@
+# 1.0.12.0 (24 June 2020)
+- [#15](https://github.com/StefH/RandomDataGenerator/pull/15) - Add the Naughty Strings [feature] contributed by [StefH](https://github.com/StefH)
+
 # 1.0.11.0 (10 April 2020)
 - [#14](https://github.com/StefH/RandomDataGenerator/pull/14) - Support custom Random seed value [feature] contributed by [StefH](https://github.com/StefH)
 - [#13](https://github.com/StefH/RandomDataGenerator/issues/13) - Initialize RandomizerFactory with supplied Random instance [feature]
