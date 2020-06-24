@@ -74,7 +74,7 @@ namespace RandomDataGenerator.Gui
                 foreach (var dataField in settings.DataFields)
                 {
                     // Fix Field and SubField
-                    var field = _dataManager.GetFields().First(f => f.Name == dataField.Field.Name);
+                    var field = _fieldManager.GetFields().First(f => f.Name == dataField.Field.Name);
                     dataField.Field = field;
                     dataField.SubField = field.SubFields.First(sf => sf.Name == dataField.SubField.Name);
 

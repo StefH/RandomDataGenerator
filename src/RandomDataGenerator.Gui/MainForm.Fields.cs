@@ -79,7 +79,7 @@ namespace RandomDataGenerator.Gui
             {
                 value = dummyDataField.Generate();
             }
-            catch
+            catch (Exception e)
             {
                 // Just ignore exception
             }

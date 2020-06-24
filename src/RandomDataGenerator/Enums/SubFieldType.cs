@@ -77,6 +77,9 @@ namespace RandomDataGenerator.Enums
         [Description("Random Text")]
         Text,
 
+        [Description("Naughty Strings")]
+        TextNaughtyStrings,
+
         [Description("Date / Time")]
         DateTime,
 

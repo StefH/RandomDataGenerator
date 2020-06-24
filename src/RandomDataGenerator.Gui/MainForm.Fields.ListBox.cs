@@ -92,7 +92,7 @@ namespace RandomDataGenerator.Gui
 
         private void btnAddField_Click(object sender, EventArgs e)
         {
-            var field = _dataManager.GetFields().Single(f => f.FieldType == FieldType.Numbers);
+            var field = _fieldManager.GetFields().Single(f => f.FieldType == FieldType.Numbers);
             var dataField = new DataField("New Field", new FieldOptionsInteger(), field, field.SubFields.SingleOrDefault(s => s.SubFieldType == SubFieldType.Integer));
 
             lblHiddenId.Text = dataField.Id;

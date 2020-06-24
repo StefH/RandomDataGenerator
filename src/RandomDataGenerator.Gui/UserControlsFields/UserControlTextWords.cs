@@ -3,7 +3,7 @@ using RandomDataGenerator.Gui.UserControls;
 
 namespace RandomDataGenerator.Gui.UserControlsFields
 {
-    public partial class UserControlTextWords : UserControlTextWordsDesignable
+    public partial class UserControlTextWords : BaseUserControl<FieldOptionsTextWords> //UserControlTextWordsDesignable
     {
         public UserControlTextWords()
         {
@@ -12,7 +12,7 @@ namespace RandomDataGenerator.Gui.UserControlsFields
             InitEventsForControls();
         }
 
-        public override sealed void SetOptionsAndUpdateControls(FieldOptionsTextWords options)
+        public sealed override void SetOptionsAndUpdateControls(FieldOptionsTextWords options)
         {
             base.SetOptionsAndUpdateControls(options);
 
@@ -39,10 +39,5 @@ namespace RandomDataGenerator.Gui.UserControlsFields
         {
             ctrlMin.Maximum = ctrlMax.Value;
         }
-    }
-
-    // Workaround http://stackoverflow.com/questions/677609/generic-base-class-for-winform-usercontrol
-    public class UserControlTextWordsDesignable : BaseUserControl<FieldOptionsTextWords>
-    {
     }
 }
