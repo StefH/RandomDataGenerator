@@ -1,3 +1,7 @@
+# 1.0.13 (02 September 2021)
+- [#17](https://github.com/StefH/RandomDataGenerator/pull/17) - Use &quot;using&quot; for a the GetResourceAsStream [bug] contributed by [StefH](https://github.com/StefH)
+- [#16](https://github.com/StefH/RandomDataGenerator/issues/16) - Memory leak [bug]
+
 # 1.0.12.0 (24 June 2020)
 - [#15](https://github.com/StefH/RandomDataGenerator/pull/15) - Add the Naughty Strings [feature] contributed by [StefH](https://github.com/StefH)
 
