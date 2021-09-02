@@ -152,7 +152,7 @@ namespace ConsoleAppClassic
             string lipsum = randomizerTextLipsum.Generate();
             Write(randomizerTextLipsum, lipsum);
 
-            var randomizerTextPattern = RandomizerFactory.GetRandomizer(new FieldOptionsTextPattern { Pattern = "\\xLLnn_**ss\\x" });
+            var randomizerTextPattern = RandomizerFactory.GetRandomizer(new FieldOptionsTextRegex { Pattern = "\\xLLnn_**ss\\x" });
             string textPattern = randomizerTextPattern.Generate();
             Write(randomizerTextPattern, textPattern);
 
@@ -173,6 +173,10 @@ namespace ConsoleAppClassic
             var randomizerNaughtyStringsNullCategory = RandomizerFactory.GetRandomizer(new FieldOptionsTextNaughtyStrings());
             string naughtyString2 = randomizerNaughtyStringsNullCategory.Generate();
             Write(randomizerNaughtyStringsNullCategory, naughtyString2);
+
+            var randomizerEmail = RandomizerFactory.GetRandomizer(new FieldOptionsEmailAddress());
+            var email = randomizerEmail.Generate();
+            Write(randomizerEmail, email);
         }
 
         private static void Write<T>(object randomizer, T value)

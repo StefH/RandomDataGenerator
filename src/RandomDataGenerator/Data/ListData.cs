@@ -10,6 +10,8 @@ namespace RandomDataGenerator.Data
 {
     internal sealed class ListData
     {
+        private const char Tab = '\t';
+
         public IEnumerable<string> LastNames { get; }
 
         public IEnumerable<string> MaleNames { get; }
@@ -34,7 +36,7 @@ namespace RandomDataGenerator.Data
 
         public IEnumerable<string> LoremIpsumWords { get; }
 
-        ListData()
+        private ListData()
         {
             LastNames = GetResourceAsLines("LastNames");
             MaleNames = GetResourceAsLines("MaleNames");
@@ -65,30 +67,32 @@ namespace RandomDataGenerator.Data
             internal static readonly ListData TextInstance = new ListData();
         }
 
-        private Stream GetResourceAsStream(string resourceName)
+        private static Stream GetResourceAsStream(string resourceName)
         {
             return typeof(ListData).GetTypeInfo().Assembly.GetManifestResourceStream($"RandomDataGenerator.Data.Text.{resourceName}.txt");
         }
 
-        private IEnumerable<string> GetResourceAsLines(string fileName)
+        private static IEnumerable<string> GetResourceAsLines(string fileName)
         {
-            var stream = GetResourceAsStream(fileName);
-            using (var reader = new StreamReader(stream, Encoding.UTF8))
+            using (var stream = GetResourceAsStream(fileName))
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (var reader = new StreamReader(stream, Encoding.UTF8))
                 {
-                    yield return line;
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        yield return line;
+                    }
                 }
             }
         }
 
-        private IEnumerable<T> GetResourceAsItems<T>(string fileName, Func<string[], T> convert)
+        private static IEnumerable<T> GetResourceAsItems<T>(string fileName, Func<string[], T> convert)
         {
             var lines = GetResourceAsLines(fileName);
-            foreach (string line in lines)
+            foreach (var line in lines)
             {
-                yield return convert(line.Split('\t'));
+                yield return convert(line.Split(Tab));
             }
         }
     }

@@ -2,7 +2,7 @@
 
 namespace RandomDataGenerator.Data.Models
 {
-    internal class IBAN
+    internal struct IBAN
     {
         public string CountryName { get; set; }
 
