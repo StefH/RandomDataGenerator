@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29021.104
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomDataGenerator", "RandomDataGenerator\RandomDataGenerator.csproj", "{D23EB0AA-1EB0-45D6-8985-14CF01CEDD10}"
 EndProject
@@ -14,7 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{B178195C-4964-44C5-8EB1-1628EF9C64D2}"
 	ProjectSection(SolutionItems) = preProject
 		..\Directory.Build.props = ..\Directory.Build.props
-		..\GitHubReleaseNotes.txt = ..\GitHubReleaseNotes.txt
+		..\Generate-ReleaseNotes.bat = ..\Generate-ReleaseNotes.bat
 		RandomDataGenerator Solution.sln.DotSettings = RandomDataGenerator Solution.sln.DotSettings
 		..\README.md = ..\README.md
 		..\ReleaseNotes.md = ..\ReleaseNotes.md
@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppNetCoreApp2", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomDataGenerator.Gui3", "RandomDataGenerator.Gui3\RandomDataGenerator.Gui3.csproj", "{090EDB20-CA63-473A-BA68-591BCCCB9D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataGenerator.Gui", "RandomDataGenerator.Gui\RandomDataGenerator.Gui.csproj", "{3800D752-F2D0-42E4-8EEC-FE60702F18AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataGenerator.Gui", "RandomDataGenerator.Gui\RandomDataGenerator.Gui.csproj", "{36D5822C-791D-4F72-9ED4-7DBC164A7E24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +61,10 @@ Global
 		{090EDB20-CA63-473A-BA68-591BCCCB9D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090EDB20-CA63-473A-BA68-591BCCCB9D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090EDB20-CA63-473A-BA68-591BCCCB9D11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3800D752-F2D0-42E4-8EEC-FE60702F18AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3800D752-F2D0-42E4-8EEC-FE60702F18AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3800D752-F2D0-42E4-8EEC-FE60702F18AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3800D752-F2D0-42E4-8EEC-FE60702F18AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D5822C-791D-4F72-9ED4-7DBC164A7E24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,7 +75,7 @@ Global
 		{983EAE55-828B-4135-A1C6-BF7A1BA193EE} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
 		{6AB9BD42-8B23-425C-9B5D-B97A52F008BE} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
 		{090EDB20-CA63-473A-BA68-591BCCCB9D11} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
-		{3800D752-F2D0-42E4-8EEC-FE60702F18AC} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
+		{36D5822C-791D-4F72-9ED4-7DBC164A7E24} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F00DE8F4-BF0D-49C3-8854-600E8142BE41}

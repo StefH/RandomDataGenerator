@@ -1,3 +1,6 @@
+# 1.0.14 (24 March 2022)
+- [#19](https://github.com/StefH/RandomDataGenerator/pull/19) - Update Fare 2.2.0 to prevent System.Net.Http DoS known issue [feature] contributed by [brunotarghetta](https://github.com/brunotarghetta)
+
 # 1.0.13 (02 September 2021)
 - [#17](https://github.com/StefH/RandomDataGenerator/pull/17) - Use &quot;using&quot; for a the GetResourceAsStream [bug] contributed by [StefH](https://github.com/StefH)
 - [#16](https://github.com/StefH/RandomDataGenerator/issues/16) - Memory leak [bug]
