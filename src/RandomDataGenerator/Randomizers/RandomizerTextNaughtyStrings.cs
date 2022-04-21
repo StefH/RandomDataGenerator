@@ -7,41 +7,40 @@ using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
-namespace RandomDataGenerator.Randomizers
+namespace RandomDataGenerator.Randomizers;
+
+public class RandomizerTextNaughtyStrings : RandomizerAbstract<FieldOptionsTextNaughtyStrings>, IRandomizerString
 {
-    public class RandomizerTextNaughtyStrings : RandomizerAbstract<FieldOptionsTextNaughtyStrings>, IRandomizerString
+    private readonly RandomStringFromListGenerator _naughtyStringCategoryGenerator;
+
+    public RandomizerTextNaughtyStrings(FieldOptionsTextNaughtyStrings options) : base(options)
     {
-        private readonly RandomStringFromListGenerator _naughtyStringCategoryGenerator;
+        Type type = typeof(TheNaughtyStrings);
 
-        public RandomizerTextNaughtyStrings(FieldOptionsTextNaughtyStrings options) : base(options)
+        var allStrings = new List<string>(TheNaughtyStrings.All);
+
+        var categories = options.Categories
+            .Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(s => s.Trim())
+            .Where(s => s != FieldOptionsTextNaughtyStrings.All);
+        foreach (string category in categories)
         {
-            Type type = typeof(TheNaughtyStrings);
-
-            var allStrings = new List<string>(TheNaughtyStrings.All);
-
-            var categories = options.Categories
-                .Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(s => s.Trim())
-                .Where(s => s != FieldOptionsTextNaughtyStrings.All);
-            foreach (string category in categories)
+            if (type.GetField(category).GetValue(null) is IList<string> strings)
             {
-                if (type.GetField(category).GetValue(null) is IList<string> strings)
-                {
-                    allStrings.AddRange(strings);
-                }
+                allStrings.AddRange(strings);
             }
-
-            _naughtyStringCategoryGenerator = new RandomStringFromListGenerator(allStrings);
         }
 
-        public string Generate()
-        {
-            return IsNull() ? null : _naughtyStringCategoryGenerator.Generate();
-        }
+        _naughtyStringCategoryGenerator = new RandomStringFromListGenerator(allStrings);
+    }
 
-        public string Generate(bool upperCase)
-        {
-            return Generate().ToCasedInvariant(upperCase);
-        }
+    public string? Generate()
+    {
+        return IsNull() ? null : _naughtyStringCategoryGenerator.Generate();
+    }
+
+    public string? Generate(bool upperCase)
+    {
+        return Generate().ToCasedInvariant(upperCase);
     }
 }

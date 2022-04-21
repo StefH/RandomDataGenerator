@@ -25,6 +25,9 @@ namespace RandomDataGenerator.Enums
         [Description("Double")]
         Double,
 
+        [Description("CCN")]
+        CCN,
+
 
         // IT
         [Description("IPv4 Address")]

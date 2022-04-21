@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>RandomDataGenerator.Gui</RootNamespace>
+    <AssemblyName>RandomDataGenerator.Gui</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <PublishSingleFile>true</PublishSingleFile>
+      <!-- Trimming is only available to applications that are published self-contained.-->
+    <PublishTrimmed>false</PublishTrimmed>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <StartupObject>RandomDataGenerator.Gui.Program</StartupObject>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\RandomDataGenerator.Gui\**\*.cs">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Compile>
+    <Content Include="..\RandomDataGenerator.Gui\**\*.png">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\RandomDataGenerator.Gui\**\*.ico">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <EmbeddedResource Include="..\RandomDataGenerator.Gui\**\*.resx">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\RandomDataGenerator.Gui\**\*.resources">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\RandomDataGenerator.Gui\obj\**" />
+    <Compile Remove="..\RandomDataGenerator.Gui\bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\RandomDataGenerator.Gui\Properties\Settings.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RandomDataGenerator\RandomDataGenerator.csproj" />
+  </ItemGroup>
+
+</Project>

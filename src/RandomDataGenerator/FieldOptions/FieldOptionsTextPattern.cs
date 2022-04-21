@@ -14,6 +14,6 @@ namespace RandomDataGenerator.FieldOptions
         /// * - for any character
         /// \ - for character as-is
         /// </summary>
-        public string Pattern { get; set; }
+        public string Pattern { get; set; } = "*";
     }
 }

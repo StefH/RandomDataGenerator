@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace RandomDataGenerator.Randomizers
-{
-    public interface IRandomizerTimeSpan
-    {
-        TimeSpan? Generate();
+namespace RandomDataGenerator.Randomizers;
 
-        string GenerateAsString();
-    }
+public interface IRandomizerTimeSpan
+{
+    TimeSpan? Generate();
+
+    string? GenerateAsString();
 }

@@ -1,6 +1,5 @@
-﻿namespace RandomDataGenerator.FieldOptions
+﻿namespace RandomDataGenerator.FieldOptions;
+
+public interface IFieldOptionsString
 {
-    public interface IFieldOptionsString
-    {
-    }
 }

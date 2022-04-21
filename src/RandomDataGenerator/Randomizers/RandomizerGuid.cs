@@ -2,32 +2,26 @@
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 
-namespace RandomDataGenerator.Randomizers
+namespace RandomDataGenerator.Randomizers;
+
+public class RandomizerGuid : RandomizerAbstract<FieldOptionsGuid>, IRandomizerGuid
 {
-    public class RandomizerGuid : RandomizerAbstract<FieldOptionsGuid>, IRandomizerGuid
+    public RandomizerGuid(FieldOptionsGuid options) : base(options)
     {
-        public RandomizerGuid(FieldOptionsGuid options) : base(options)
+    }
+
+    public Guid? Generate()
+    {
+        if (IsNull())
         {
+            return null;
         }
 
-        public Guid? Generate()
-        {
-            if (IsNull())
-            {
-                return null;
-            }
+        return Guid.NewGuid();
+    }
 
-            return Guid.NewGuid();
-        }
-
-        public string GenerateAsString()
-        {
-            if (IsNull())
-            {
-                return null;
-            }
-
-            return Guid.NewGuid().ToString(Options.Format).ToCasedInvariant(Options.Uppercase);
-        }
+    public string? GenerateAsString()
+    {
+        return IsNull() ? null : Guid.NewGuid().ToString(Options.Format).ToCasedInvariant(Options.Uppercase);
     }
 }

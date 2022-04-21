@@ -1,4 +1,5 @@
-﻿// Copied from https://github.com/SaladLab/NetLegacySupport/blob/master/core/ConcurrentDictionary/System/Collections/Concurrent/ConcurrentDictionary.cs
+﻿#nullable disable
+// Copied from https://github.com/SaladLab/NetLegacySupport/blob/master/core/ConcurrentDictionary/System/Collections/Concurrent/ConcurrentDictionary.cs
 
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
@@ -2106,3 +2107,4 @@ namespace System.Collections.Concurrent
 }
 
 #endif
+#nullable enable

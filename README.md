@@ -7,21 +7,22 @@ This is a simple generator to create random data.
 
 ## Supported Random Data 
 
-- Text Regex Patterns
-- Lorum Ipsum Text
-- Words
-- First/Last Names
+- Bytes
 - Cities
 - Countries
-- IP-Addresses (V4 and V6)
-- IBANs
-- MAC Addresses
-- Email Addresses
-- Guids
+- Credit Card Numbers
 - DateTime
-- Numbers (integer, long, float, double, byte, ...)
-- Bytes
+- Email Addresses
+- First/Last Names
+- Guids
+- IBANs
+- IP Addresses (V4 and V6)
+- Lorum Ipsum Text
+- MAC Addresses
 - NaughtyStrings
+- Numbers (integer, long, float, double, byte, ...)
+- Text Regex Patterns
+- Words
 
 ## Usage
 
@@ -48,11 +49,12 @@ You can also use a UI to generate SQL insert table statements.
 
 ## Copyright
 
-### Referenced files
+### Referenced files / projects
+- https://github.com/gustavofrizzo/CreditCardValidator
 - http://www.cambiaresearch.com/articles/13/csharp-randomprovider-class
 - http://www.codeproject.com/Articles/423229/CsharpRandomStringGenerator
 - https://github.com/SaladLab/NetLegacySupport/tree/master/core/ConcurrentDictionary/System/Collections/Concurrent
 - https://raw.githubusercontent.com/SimonCropp/NaughtyStrings/master/src/NaughtyStrings/TheNaughtyStrings.cs
 
 ### NuGet dependencies
-- Fare
+- [Fare](https://github.com/moodmosaic/Fare)
