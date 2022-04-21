@@ -5,40 +5,39 @@ using RandomDataGenerator.Generators;
 using System;
 using System.Collections.Generic;
 
-namespace RandomDataGenerator.Randomizers
+namespace RandomDataGenerator.Randomizers;
+
+public class RandomizerTextWords : RandomizerAbstract<FieldOptionsTextWords>, IRandomizerString
 {
-    public class RandomizerTextWords : RandomizerAbstract<FieldOptionsTextWords>, IRandomizerString
+    private readonly RandomStringFromListGenerator _generator;
+    private readonly RandomValueGenerator _randomValueGenerator;
+
+    public RandomizerTextWords(FieldOptionsTextWords options) : base(options)
     {
-        private readonly RandomStringFromListGenerator _generator;
-        private readonly RandomValueGenerator _randomValueGenerator;
+        _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
 
-        public RandomizerTextWords(FieldOptionsTextWords options) : base(options)
+        _generator = new RandomStringFromListGenerator(ListData.Instance.LoremIpsumWords, options.Seed);
+    }
+
+    public string? Generate()
+    {
+        if (IsNull())
         {
-            _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
-
-            _generator = new RandomStringFromListGenerator(ListData.Instance.LoremIpsumWords, options.Seed);
+            return null;
         }
 
-        public string Generate()
+        int max = _randomValueGenerator.Next(Options.Min, Options.Max);
+        var list = new List<string>(max);
+        for (int i = 0; i < max; i++)
         {
-            if (IsNull())
-            {
-                return null;
-            }
-
-            int max = _randomValueGenerator.Next(Options.Min, Options.Max);
-            var list = new List<string>(max);
-            for (int i = 0; i < max; i++)
-            {
-                list.Add(_generator.Generate());
-            }
-
-            return string.Join(" ", list.ToArray());
+            list.Add(_generator.Generate()!);
         }
 
-        public string Generate(bool upperCase)
-        {
-            return Generate().ToCasedInvariant(upperCase);
-        }
+        return string.Join(" ", list.ToArray());
+    }
+
+    public string? Generate(bool upperCase)
+    {
+        return Generate().ToCasedInvariant(upperCase);
     }
 }

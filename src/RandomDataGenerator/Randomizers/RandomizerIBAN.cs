@@ -6,51 +6,50 @@ using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
-namespace RandomDataGenerator.Randomizers
+namespace RandomDataGenerator.Randomizers;
+
+public class RandomizerIBAN : RandomizerAbstract<FieldOptionsIBAN>, IRandomizerString
 {
-    public class RandomizerIBAN : RandomizerAbstract<FieldOptionsIBAN>, IRandomizerString
+    private readonly RandomItemFromListGenerator<IBAN> _itemGenerator;
+
+    public RandomizerIBAN(FieldOptionsIBAN options) : base(options)
     {
-        private readonly RandomItemFromListGenerator<IBAN> _itemGenerator;
+        Func<IBAN, bool>? predicate = null;
 
-        public RandomizerIBAN(FieldOptionsIBAN options) : base(options)
+        if (!string.IsNullOrEmpty(options.CountryCode))
         {
-            Func<IBAN, bool> predicate = null;
-
-            if (!string.IsNullOrEmpty(options.CountryCode))
-            {
-                predicate = (iban) => iban.CountryCode == options.CountryCode;
-            }
-
-            // Set the list to IBAN as default
-            var list = ListData.Instance.IBANs; 
-            switch (options.Type)
-            {
-                case "BBAN":
-                    list = ListData.Instance.BBANs;
-                    break;
-
-                case "BOTH":
-                    list = list.Union(ListData.Instance.BBANs);
-                    break;
-            }
-
-            _itemGenerator = new RandomItemFromListGenerator<IBAN>(options.Seed, list, predicate);
+            predicate = (iban) => iban.CountryCode == options.CountryCode;
         }
 
-        public string Generate()
+        // Set the list to IBAN as default
+        var list = ListData.Instance.IBANs; 
+        switch (options.Type)
         {
-            if (IsNull())
-            {
-                return null;
-            }
+            case "BBAN":
+                list = ListData.Instance.BBANs;
+                break;
 
-            var iban = _itemGenerator.Generate();
-            return iban.Generator.Generate();
+            case "BOTH":
+                list = list.Union(ListData.Instance.BBANs);
+                break;
         }
 
-        public string Generate(bool upperCase)
+        _itemGenerator = new RandomItemFromListGenerator<IBAN>(options.Seed, list, predicate);
+    }
+
+    public string? Generate()
+    {
+        if (IsNull())
         {
-            return Generate().ToCasedInvariant(upperCase);
+            return null;
         }
+
+        var iban = _itemGenerator.Generate();
+        return iban.Generator.Generate();
+    }
+
+    public string? Generate(bool upperCase)
+    {
+        return Generate().ToCasedInvariant(upperCase);
     }
 }

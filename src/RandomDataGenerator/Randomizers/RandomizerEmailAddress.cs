@@ -34,7 +34,7 @@ namespace RandomDataGenerator.Randomizers
             _wordGenerator = new RandomizerTextWords(new FieldOptionsTextWords { Min = 1, Max = 1});
         }
 
-        public string Generate()
+        public string? Generate()
         {
             if (IsNull())
             {
@@ -44,15 +44,15 @@ namespace RandomDataGenerator.Randomizers
             int maleOrFemale = _numberGenerator.Generate();
             var firstNamesSet = _genderSetGenerators[maleOrFemale];
 
-            string firstName = firstNamesSet.Generate();
-            string lastname = _lastNamesGenerator.Generate();
-            string company = _wordGenerator.Generate();
-            string domain = _topLevelDomainGenerator.Generate();
+            string firstName = firstNamesSet.Generate()!;
+            string lastname = _lastNamesGenerator.Generate()!;
+            string company = _wordGenerator.Generate()!;
+            string domain = _topLevelDomainGenerator.Generate()!;
 
             return $"{firstName}.{lastname}@{company}.{domain}";
         }
 
-        public string Generate(bool upperCase)
+        public string? Generate(bool upperCase)
         {
             return Generate().ToCasedInvariant(upperCase);
         }

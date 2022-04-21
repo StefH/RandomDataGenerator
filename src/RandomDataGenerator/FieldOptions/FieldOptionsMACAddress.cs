@@ -6,8 +6,8 @@
 
         public bool Uppercase { get; set; } = true;
 
-        public string Min { get; set; }
+        public string? Min { get; set; }
 
-        public string Max { get; set; }
+        public string? Max { get; set; }
     }
 }

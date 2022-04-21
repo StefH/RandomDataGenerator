@@ -7,45 +7,44 @@ using RandomDataGenerator.Gui.Extensions;
 using RandomDataGenerator.Gui.Generation;
 using RandomDataGenerator.Gui.UserControls;
 
-namespace RandomDataGenerator.Gui
+namespace RandomDataGenerator.Gui;
+
+public partial class MainForm : Form, INotifyPropertyChanged
 {
-    public partial class MainForm : Form, INotifyPropertyChanged
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private readonly FieldManager _fieldManager = new();
+    private readonly BindingList<DataField> _dataFields = new();
+
+    public MainForm()
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        InitializeComponent();
 
-        private readonly FieldManager _fieldManager = new FieldManager();
-        private readonly BindingList<DataField> _dataFields = new BindingList<DataField>();
-
-        public MainForm()
+        var userControlSQL = panelOutput.FindControl<UserControlOutputSQL>();
+        if (userControlSQL == null)
         {
-            InitializeComponent();
-
-            var userControlSQL = panelOutput.FindControl<UserControlOutputSQL>();
-            if (userControlSQL == null)
+            userControlSQL = new UserControlOutputSQL(new GenerateOptionsSQL())
             {
-                userControlSQL = new UserControlOutputSQL(new GenerateOptionsSQL())
-                {
-                    Dock = DockStyle.Top
-                };
-                panelOutput.Controls.Add(userControlSQL);
-            }
-
-            listBoxFields.DataSource = _dataFields;
-            _dataFields.ListChanged += DataFields_ListChanged;
-
-            var fields = _fieldManager.GetFields();
-            cmbFields.DataSource = fields;
-            cmbSubFields.DataSource = fields.First().SubFields;
-
-            cmbFields.SelectedValueChanged += cmbFields_SelectedValueChanged;
-
-            userControlExample.btnRefresh.Click += UserControlExample_RefreshClicked;
+                Dock = DockStyle.Top
+            };
+            panelOutput.Controls.Add(userControlSQL);
         }
 
-        // NotifyPropertyChanged will raise the PropertyChanged event passing the source property that is being updated.
-        public void NotifyPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        listBoxFields.DataSource = _dataFields;
+        _dataFields.ListChanged += DataFields_ListChanged;
+
+        var fields = _fieldManager.GetFields();
+        cmbFields.DataSource = fields;
+        cmbSubFields.DataSource = fields.First().SubFields;
+
+        cmbFields.SelectedValueChanged += cmbFields_SelectedValueChanged;
+
+        userControlExample.btnRefresh.Click += UserControlExample_RefreshClicked;
+    }
+
+    // NotifyPropertyChanged will raise the PropertyChanged event passing the source property that is being updated.
+    public void NotifyPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

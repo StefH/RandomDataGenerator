@@ -1,12 +1,11 @@
 ﻿using ConsoleAppClassic;
 
-namespace ConsoleAppNetCoreApp2
+namespace ConsoleAppNetCoreApp2;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            MainTest.Run();
-        }
+        MainTest.Run();
     }
 }
