@@ -1,3 +1,7 @@
+# 1.0.15 (21 April 2022)
+- [#21](https://github.com/StefH/RandomDataGenerator/pull/21) - Credit Card Number [feature] contributed by [StefH](https://github.com/StefH)
+- [#20](https://github.com/StefH/RandomDataGenerator/issues/20) - Credit card numbers [feature]
+
 # 1.0.14 (24 March 2022)
 - [#19](https://github.com/StefH/RandomDataGenerator/pull/19) - Update Fare 2.2.0 to prevent System.Net.Http DoS known issue [feature] contributed by [brunotarghetta](https://github.com/brunotarghetta)
 
