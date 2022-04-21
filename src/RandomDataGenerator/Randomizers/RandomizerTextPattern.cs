@@ -14,12 +14,12 @@ namespace RandomDataGenerator.Randomizers
             _generator = new RandomStringGenerator();
         }
 
-        public string Generate()
+        public string? Generate()
         {
             return IsNull() || string.IsNullOrEmpty(Options.Pattern) ? null : _generator.Generate(Options.Pattern);
         }
 
-        public string Generate(bool upperCase)
+        public string? Generate(bool upperCase)
         {
             return Generate().ToCasedInvariant(upperCase);
         }

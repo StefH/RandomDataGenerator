@@ -6,6 +6,7 @@ namespace RandomDataGenerator.FieldOptions
 {
 #if !NETSTANDARD1_3
     [XmlInclude(typeof(FieldOptionsBytes))]
+    [XmlInclude(typeof(FieldOptionsCCN))]
     [XmlInclude(typeof(FieldOptionsCity))]
     [XmlInclude(typeof(FieldOptionsCountry))]
     [XmlInclude(typeof(FieldOptionsDateTime))]

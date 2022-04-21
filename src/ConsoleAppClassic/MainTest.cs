@@ -177,6 +177,10 @@ namespace ConsoleAppClassic
             var randomizerEmail = RandomizerFactory.GetRandomizer(new FieldOptionsEmailAddress());
             var email = randomizerEmail.Generate();
             Write(randomizerEmail, email);
+
+            var randomizerCCN = RandomizerFactory.GetRandomizer(new FieldOptionsCCN());
+            var CCN = randomizerCCN.Generate();
+            Write(randomizerCCN, CCN);
         }
 
         private static void Write<T>(object randomizer, T value)

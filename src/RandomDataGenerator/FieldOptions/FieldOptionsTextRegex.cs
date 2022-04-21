@@ -5,6 +5,6 @@
         /// <summary>
         /// Use any valid Regex pattern to generate a string.
         /// </summary>
-        public string Pattern { get; set; }
+        public string Pattern { get; set; } = null!;
     }
 }

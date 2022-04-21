@@ -1,9 +1,8 @@
-﻿namespace RandomDataGenerator.Randomizers
-{
-    public interface IRandomizerString
-    {
-        string Generate();
+﻿namespace RandomDataGenerator.Randomizers;
 
-        string Generate(bool upperCase);
-    }
+public interface IRandomizerString
+{
+    string? Generate();
+
+    string? Generate(bool upperCase);
 }
