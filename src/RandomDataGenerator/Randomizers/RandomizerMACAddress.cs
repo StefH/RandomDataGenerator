@@ -14,8 +14,8 @@ public class RandomizerMACAddress : RandomizerAbstract<FieldOptionsMACAddress>, 
 
     public RandomizerMACAddress(FieldOptionsMACAddress options) : base(options)
     {
-        byte[] octetsMin = string.IsNullOrEmpty(Options.Min) ? _defaultMin : Options.Min.Split(Options.Separator.First()).Select(x => byte.Parse(x, NumberStyles.HexNumber)).ToArray();
-        byte[] octetsMax = string.IsNullOrEmpty(Options.Max) ? _defaultMax : Options.Max.Split(Options.Separator.First()).Select(x => byte.Parse(x, NumberStyles.HexNumber)).ToArray();
+        byte[] octetsMin = string.IsNullOrEmpty(Options.Min) ? _defaultMin : Options.Min!.Split(Options.Separator.First()).Select(x => byte.Parse(x, NumberStyles.HexNumber)).ToArray();
+        byte[] octetsMax = string.IsNullOrEmpty(Options.Max) ? _defaultMax : Options.Max!.Split(Options.Separator.First()).Select(x => byte.Parse(x, NumberStyles.HexNumber)).ToArray();
 
         for (int i = 0; i < 6; i++)
         {

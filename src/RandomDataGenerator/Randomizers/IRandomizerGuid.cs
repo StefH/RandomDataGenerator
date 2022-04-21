@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace RandomDataGenerator.Randomizers
-{
-    public interface IRandomizerGuid
-    {
-        Guid? Generate();
+namespace RandomDataGenerator.Randomizers;
 
-        string GenerateAsString();
-    }
+public interface IRandomizerGuid
+{
+    Guid? Generate();
+
+    string? GenerateAsString();
 }

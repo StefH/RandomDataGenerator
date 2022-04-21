@@ -11,8 +11,8 @@ public class RandomizerIPv4Address : RandomizerAbstract<FieldOptionsIPv4Address>
 
     public RandomizerIPv4Address(FieldOptionsIPv4Address options) : base(options)
     {
-        byte[] octetsMin = string.IsNullOrEmpty(Options.Min) ? new byte[] { 0, 0, 0, 0 } : Options.Min.Split('.').Select(byte.Parse).ToArray();
-        byte[] octetsMax = string.IsNullOrEmpty(Options.Max) ? new byte[] { 0xff, 0xff, 0xff, 0xff } : Options.Max.Split('.').Select(byte.Parse).ToArray();
+        byte[] octetsMin = string.IsNullOrEmpty(Options.Min) ? new byte[] { 0, 0, 0, 0 } : Options.Min!.Split('.').Select(byte.Parse).ToArray();
+        byte[] octetsMax = string.IsNullOrEmpty(Options.Max) ? new byte[] { 0xff, 0xff, 0xff, 0xff } : Options.Max!.Split('.').Select(byte.Parse).ToArray();
 
         for (int i = 0; i < 4; i++)
         {

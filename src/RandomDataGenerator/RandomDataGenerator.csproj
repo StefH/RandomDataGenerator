@@ -52,6 +52,7 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Fare" Version="2.2.0" />
+    <PackageReference Include="Stef.Validation" Version="0.1.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">

@@ -1,18 +1,17 @@
 ﻿using System.Text;
 using JetBrains.Annotations;
 
-namespace RandomDataGenerator.Randomizers
+namespace RandomDataGenerator.Randomizers;
+
+public interface IRandomizerBytes
 {
-    public interface IRandomizerBytes
-    {
-        byte[] Generate();
+    byte[] Generate();
 
-        string GenerateAsUTF8String();
+    string GenerateAsUTF8String();
 
-        string GenerateAsASCIIString();
+    string GenerateAsASCIIString();
 
-        string GenerateAsBase64String();
+    string GenerateAsBase64String();
 
-        string GenerateAsString([CanBeNull] Encoding encoding = null);
-    }
+    string GenerateAsString(Encoding? encoding = null);
 }

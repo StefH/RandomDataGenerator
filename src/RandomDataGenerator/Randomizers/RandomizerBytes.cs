@@ -3,41 +3,40 @@ using System.Text;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
-namespace RandomDataGenerator.Randomizers
+namespace RandomDataGenerator.Randomizers;
+
+public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomizerBytes
 {
-    public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomizerBytes
+    private readonly RandomValueGenerator _randomValueGenerator;
+
+    public RandomizerBytes(FieldOptionsBytes options)
+        : base(options)
     {
-        private readonly RandomValueGenerator _randomValueGenerator;
+        _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
+    }
 
-        public RandomizerBytes(FieldOptionsBytes options)
-            : base(options)
-        {
-            _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
-        }
+    public byte[] Generate()
+    {
+        return _randomValueGenerator.NextBytes(Options.Min, Options.Max);
+    }
 
-        public byte[] Generate()
-        {
-            return _randomValueGenerator.NextBytes(Options.Min, Options.Max);
-        }
+    public string GenerateAsString(Encoding? encoding)
+    {
+        return (encoding ?? Encoding.UTF8).GetString(Generate());
+    }
 
-        public string GenerateAsString(Encoding encoding)
-        {
-            return (encoding ?? Encoding.UTF8).GetString(Generate());
-        }
+    public string GenerateAsUTF8String()
+    {
+        return GenerateAsString(Encoding.UTF8);
+    }
 
-        public string GenerateAsUTF8String()
-        {
-            return GenerateAsString(Encoding.UTF8);
-        }
+    public string GenerateAsASCIIString()
+    {
+        return GenerateAsString(Encoding.ASCII);
+    }
 
-        public string GenerateAsASCIIString()
-        {
-            return GenerateAsString(Encoding.ASCII);
-        }
-
-        public string GenerateAsBase64String()
-        {
-            return Convert.ToBase64String(Generate());
-        }
+    public string GenerateAsBase64String()
+    {
+        return Convert.ToBase64String(Generate());
     }
 }

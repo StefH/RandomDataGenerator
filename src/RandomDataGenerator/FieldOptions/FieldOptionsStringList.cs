@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace RandomDataGenerator.FieldOptions
+namespace RandomDataGenerator.FieldOptions;
+
+public class FieldOptionsStringList : FieldOptionsAbstract, IFieldOptionsString
 {
-    public class FieldOptionsStringList : FieldOptionsAbstract, IFieldOptionsString
-    {
-        public List<string> Values { get; set; }
-    }
+    public List<string> Values { get; set; } = new();
 }

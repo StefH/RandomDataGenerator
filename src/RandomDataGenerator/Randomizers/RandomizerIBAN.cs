@@ -18,7 +18,7 @@ public class RandomizerIBAN : RandomizerAbstract<FieldOptionsIBAN>, IRandomizerS
 
         if (!string.IsNullOrEmpty(options.CountryCode))
         {
-            predicate = (iban) => iban.CountryCode == options.CountryCode;
+            predicate = iban => iban.CountryCode == options.CountryCode;
         }
 
         // Set the list to IBAN as default

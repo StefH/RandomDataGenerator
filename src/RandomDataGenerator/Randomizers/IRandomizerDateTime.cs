@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace RandomDataGenerator.Randomizers
-{
-    public interface IRandomizerDateTime
-    {
-        DateTime? Generate();
+namespace RandomDataGenerator.Randomizers;
 
-        string GenerateAsString();
-    }
+public interface IRandomizerDateTime
+{
+    DateTime? Generate();
+
+    string? GenerateAsString();
 }

@@ -5,8 +5,8 @@ namespace RandomDataGenerator.FieldOptions
     {
         public bool Uppercase { get; set; }
 
-        public string Min { get; set; }
+        public string? Min { get; set; }
 
-        public string Max { get; set; }
+        public string? Max { get; set; }
     }
 }
