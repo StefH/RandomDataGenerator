@@ -5,6 +5,7 @@
 /// </summary>
 public enum CardIssuer
 {
+    Any, // Choose any from below
     AmericanExpress,
     ChinaUnionPay,
     Dankort,
@@ -17,6 +18,5 @@ public enum CardIssuer
     MasterCard,
     RuPay,
     Switch,
-    Visa,
-    Unknown
+    Visa
 }

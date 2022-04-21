@@ -19,6 +19,7 @@ namespace RandomDataGenerator.Gui.Data
                     // new SubField { SubFieldType = SubFieldType.Boolean },
                     // new SubField { SubFieldType = SubFieldType.Short },
                     new SubField { SubFieldType = SubFieldType.Integer },
+                    new SubField { SubFieldType = SubFieldType.CCN },
                     // new SubField { SubFieldType = SubFieldType.Long },
                     // new SubField { SubFieldType = SubFieldType.Float },
                     // new SubField { SubFieldType = SubFieldType.Double }

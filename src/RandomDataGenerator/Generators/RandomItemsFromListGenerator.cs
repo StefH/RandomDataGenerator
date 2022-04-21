@@ -9,7 +9,7 @@ namespace RandomDataGenerator.Generators
         private readonly RandomValueGenerator _randomValueGenerator;
         private readonly T[] _list;
 
-        public RandomItemsFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool> predicate = null)
+        public RandomItemsFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool>? predicate = null)
         {
             _list = predicate == null ? list.ToArray() : list.Where(predicate).ToArray();
             _randomValueGenerator = new RandomValueGenerator(seed ?? Environment.TickCount);

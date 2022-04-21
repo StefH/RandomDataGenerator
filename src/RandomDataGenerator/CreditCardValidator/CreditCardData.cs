@@ -222,19 +222,6 @@ internal static class CreditCardData
                 }
             }
         });
-
-        BrandsData.Add(CardIssuer.Unknown, new BrandInfo
-        {
-            BrandName = "Unknown",
-            Rules = new List<Rule>
-            {
-                new()
-                {
-                    Lengths = new List<int> {15},
-                    Prefixes = new List<string> {"7" , "80", "90"}
-                }
-            }
-        });
     }
 
     /// <summary>

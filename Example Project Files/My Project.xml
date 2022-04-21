@@ -1,303 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Date>2020-06-24T20:33:30.4891227+02:00</Date>
-  <Name>My Table</Name>
-  <TotalRecords>1000</TotalRecords>
-  <OutputFile>c:\Temp\output.sql</OutputFile>
-  <GenerateOptions xsi:type="GenerateOptionsSQL">
-    <RecordsPerInsert>10</RecordsPerInsert>
-    <Table>My Table</Table>
-    <IncludeFieldNames>true</IncludeFieldNames>
-  </GenerateOptions>
-  <DataFields>
-    <DataField>
-      <Name>Numbers_Integer</Name>
-      <FieldOptions xsi:type="FieldOptionsInteger">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>false</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Min>0</Min>
-        <Max>77778888</Max>
-      </FieldOptions>
-      <Field>
-        <FieldType>Numbers</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>Integer</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Human_First_Both</Name>
-      <FieldOptions xsi:type="FieldOptionsFirstName">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Male>true</Male>
-        <Female>true</Female>
-      </FieldOptions>
-      <Field>
-        <FieldType>Human</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>FirstName</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Human_Last</Name>
-      <FieldOptions xsi:type="FieldOptionsLastName">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-      </FieldOptions>
-      <Field>
-        <FieldType>Human</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>LastName</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Human_Full_Both</Name>
-      <FieldOptions xsi:type="FieldOptionsFullName">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Male>true</Male>
-        <Female>true</Female>
-        <Left2Right>true</Left2Right>
-      </FieldOptions>
-      <Field>
-        <FieldType>Human</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>FullName</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Human_Email</Name>
-      <FieldOptions xsi:type="FieldOptionsEmailAddress">
-        <UseNullValues>true</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Male>true</Male>
-        <Female>true</Female>
-        <Left2Right>true</Left2Right>
-      </FieldOptions>
-      <Field>
-        <FieldType>Human</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>EmailAddress</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Loc_City</Name>
-      <FieldOptions xsi:type="FieldOptionsCity">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-      </FieldOptions>
-      <Field>
-        <FieldType>Location</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>City</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Loc_Country</Name>
-      <FieldOptions xsi:type="FieldOptionsCountry">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-      </FieldOptions>
-      <Field>
-        <FieldType>Location</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>Country</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Text_Words_3</Name>
-      <FieldOptions xsi:type="FieldOptionsTextWords">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Min>1</Min>
-        <Max>3</Max>
-      </FieldOptions>
-      <Field>
-        <FieldType>Text</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>TextWords</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Text_Random_4to8</Name>
-      <FieldOptions xsi:type="FieldOptionsText">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Min>4</Min>
-        <Max>8</Max>
-        <UseUppercase>false</UseUppercase>
-        <UseLowercase>false</UseLowercase>
-        <UseLetter>true</UseLetter>
-        <UseNumber>true</UseNumber>
-        <UseSpace>true</UseSpace>
-        <UseSpecial>true</UseSpecial>
-      </FieldOptions>
-      <Field>
-        <FieldType>Text</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>Text</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Text_Pattern</Name>
-      <FieldOptions xsi:type="FieldOptionsTextPattern">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Pattern>\xLLnn_**ss\x</Pattern>
-      </FieldOptions>
-      <Field>
-        <FieldType>Text</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>TextPattern</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Text_Regex</Name>
-      <FieldOptions xsi:type="FieldOptionsTextRegex">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>false</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Pattern>[a-z]{4,8}</Pattern>
-      </FieldOptions>
-      <Field>
-        <FieldType>Text</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>TextRegex</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Text NaughtyStrings</Name>
-      <FieldOptions xsi:type="FieldOptionsTextNaughtyStrings">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>false</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Categories>All</Categories>
-      </FieldOptions>
-      <Field>
-        <FieldType>Text</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>TextNaughtyStrings</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Set_StringList</Name>
-      <FieldOptions xsi:type="FieldOptionsStringList">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Values>
-          <string>Active</string>
-          <string>InActive</string>
-          <string>Unknown</string>
-        </Values>
-      </FieldOptions>
-      <Field>
-        <FieldType>Set</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>StringList</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>Date_Time</Name>
-      <FieldOptions xsi:type="FieldOptionsDateTime">
-        <UseNullValues>true</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Format>s</Format>
-        <From>2018-12-03T00:00:00Z</From>
-        <To>2019-12-03T00:00:00Z</To>
-        <IncludeTime>true</IncludeTime>
-      </FieldOptions>
-      <Field>
-        <FieldType>Time</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>DateTime</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>IT_IPv4</Name>
-      <FieldOptions xsi:type="FieldOptionsIPv4Address">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-      </FieldOptions>
-      <Field>
-        <FieldType>IT</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>IPv4Address</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>IT_IPv6</Name>
-      <FieldOptions xsi:type="FieldOptionsIPv6Address">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Uppercase>false</Uppercase>
-      </FieldOptions>
-      <Field>
-        <FieldType>IT</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>IPv6Address</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>IT_MAC</Name>
-      <FieldOptions xsi:type="FieldOptionsMACAddress">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Separator>:</Separator>
-        <Uppercase>true</Uppercase>
-      </FieldOptions>
-      <Field>
-        <FieldType>IT</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>MACAddress</SubFieldType>
-      </SubField>
-    </DataField>
-    <DataField>
-      <Name>IT_Guid</Name>
-      <FieldOptions xsi:type="FieldOptionsGuid">
-        <UseNullValues>false</UseNullValues>
-        <ValueAsString>true</ValueAsString>
-        <Seed xsi:nil="true" />
-        <Uppercase>true</Uppercase>
-        <Format>D</Format>
-      </FieldOptions>
-      <Field>
-        <FieldType>IT</FieldType>
-      </Field>
-      <SubField>
-        <SubFieldType>Guid</SubFieldType>
-      </SubField>
-    </DataField>
-  </DataFields>
+    <Date>2020-06-24T20:33:30.4891227+02:00</Date>
+    <Name>My Table</Name>
+    <TotalRecords>1000</TotalRecords>
+    <OutputFile>c:\Temp\output.sql</OutputFile>
+    <GenerateOptions xsi:type="GenerateOptionsSQL">
+        <RecordsPerInsert>10</RecordsPerInsert>
+        <Table>My Table</Table>
+        <IncludeFieldNames>true</IncludeFieldNames>
+    </GenerateOptions>
+    <DataFields>
+        <DataField>
+            <Name>Numbers_Integer</Name>
+            <FieldOptions xsi:type="FieldOptionsInteger">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>false</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Min>0</Min>
+                <Max>77778888</Max>
+            </FieldOptions>
+            <Field>
+                <FieldType>Numbers</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>Integer</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Numbers_CCN</Name>
+            <FieldOptions xsi:type="FieldOptionsCCN">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>false</ValueAsString>
+                <Seed xsi:nil="true" />
+                <CardIssuer>Visa</CardIssuer>
+                <Length>0</Length>
+            </FieldOptions>
+            <Field>
+                <FieldType>Numbers</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>CCN</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Human_First_Both</Name>
+            <FieldOptions xsi:type="FieldOptionsFirstName">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Male>true</Male>
+                <Female>true</Female>
+            </FieldOptions>
+            <Field>
+                <FieldType>Human</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>FirstName</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Human_Last</Name>
+            <FieldOptions xsi:type="FieldOptionsLastName">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+            </FieldOptions>
+            <Field>
+                <FieldType>Human</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>LastName</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Human_Full_Both</Name>
+            <FieldOptions xsi:type="FieldOptionsFullName">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Male>true</Male>
+                <Female>true</Female>
+                <Left2Right>true</Left2Right>
+            </FieldOptions>
+            <Field>
+                <FieldType>Human</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>FullName</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Human_Email</Name>
+            <FieldOptions xsi:type="FieldOptionsEmailAddress">
+                <UseNullValues>true</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Male>true</Male>
+                <Female>true</Female>
+                <Left2Right>true</Left2Right>
+            </FieldOptions>
+            <Field>
+                <FieldType>Human</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>EmailAddress</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Loc_City</Name>
+            <FieldOptions xsi:type="FieldOptionsCity">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+            </FieldOptions>
+            <Field>
+                <FieldType>Location</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>City</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Loc_Country</Name>
+            <FieldOptions xsi:type="FieldOptionsCountry">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+            </FieldOptions>
+            <Field>
+                <FieldType>Location</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>Country</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Text_Words_3</Name>
+            <FieldOptions xsi:type="FieldOptionsTextWords">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Min>1</Min>
+                <Max>3</Max>
+            </FieldOptions>
+            <Field>
+                <FieldType>Text</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>TextWords</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Text_Random_4to8</Name>
+            <FieldOptions xsi:type="FieldOptionsText">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Min>4</Min>
+                <Max>8</Max>
+                <UseUppercase>false</UseUppercase>
+                <UseLowercase>false</UseLowercase>
+                <UseLetter>true</UseLetter>
+                <UseNumber>true</UseNumber>
+                <UseSpace>true</UseSpace>
+                <UseSpecial>true</UseSpecial>
+            </FieldOptions>
+            <Field>
+                <FieldType>Text</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>Text</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Text_Pattern</Name>
+            <FieldOptions xsi:type="FieldOptionsTextPattern">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Pattern>\xLLnn_**ss\x</Pattern>
+            </FieldOptions>
+            <Field>
+                <FieldType>Text</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>TextPattern</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Text_Regex</Name>
+            <FieldOptions xsi:type="FieldOptionsTextRegex">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>false</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Pattern>[a-z]{4,8}</Pattern>
+            </FieldOptions>
+            <Field>
+                <FieldType>Text</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>TextRegex</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Text NaughtyStrings</Name>
+            <FieldOptions xsi:type="FieldOptionsTextNaughtyStrings">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>false</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Categories>All</Categories>
+            </FieldOptions>
+            <Field>
+                <FieldType>Text</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>TextNaughtyStrings</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Set_StringList</Name>
+            <FieldOptions xsi:type="FieldOptionsStringList">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Values>
+                    <string>Active</string>
+                    <string>InActive</string>
+                    <string>Unknown</string>
+                </Values>
+            </FieldOptions>
+            <Field>
+                <FieldType>Set</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>StringList</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>Date_Time</Name>
+            <FieldOptions xsi:type="FieldOptionsDateTime">
+                <UseNullValues>true</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Format>s</Format>
+                <From>2018-12-03T00:00:00Z</From>
+                <To>2019-12-03T00:00:00Z</To>
+                <IncludeTime>true</IncludeTime>
+            </FieldOptions>
+            <Field>
+                <FieldType>Time</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>DateTime</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>IT_IPv4</Name>
+            <FieldOptions xsi:type="FieldOptionsIPv4Address">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+            </FieldOptions>
+            <Field>
+                <FieldType>IT</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>IPv4Address</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>IT_IPv6</Name>
+            <FieldOptions xsi:type="FieldOptionsIPv6Address">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Uppercase>false</Uppercase>
+            </FieldOptions>
+            <Field>
+                <FieldType>IT</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>IPv6Address</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>IT_MAC</Name>
+            <FieldOptions xsi:type="FieldOptionsMACAddress">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Separator>:</Separator>
+                <Uppercase>true</Uppercase>
+            </FieldOptions>
+            <Field>
+                <FieldType>IT</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>MACAddress</SubFieldType>
+            </SubField>
+        </DataField>
+        <DataField>
+            <Name>IT_Guid</Name>
+            <FieldOptions xsi:type="FieldOptionsGuid">
+                <UseNullValues>false</UseNullValues>
+                <ValueAsString>true</ValueAsString>
+                <Seed xsi:nil="true" />
+                <Uppercase>true</Uppercase>
+                <Format>D</Format>
+            </FieldOptions>
+            <Field>
+                <FieldType>IT</FieldType>
+            </Field>
+            <SubField>
+                <SubFieldType>Guid</SubFieldType>
+            </SubField>
+        </DataField>
+    </DataFields>
 </ProjectSettings>
