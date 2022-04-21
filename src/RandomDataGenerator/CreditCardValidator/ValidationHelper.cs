@@ -12,10 +12,7 @@ internal static class ValidationHelper
     {
         number = number.RemoveWhiteSpace();
 
-        return (number
-                    .ToCharArray()
-                    .All(char.IsNumber) &&
-                !string.IsNullOrEmpty(number));
+        return number.ToCharArray().All(char.IsNumber) && !string.IsNullOrEmpty(number);
     }
 
     internal static List<Rule> GetRulesByLength(CardIssuer cardIssuer, int length)

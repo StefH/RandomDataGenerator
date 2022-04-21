@@ -29,13 +29,17 @@ internal static class CreditCardData
         });
 
 
-        var masterCard = new BrandInfo();
-        masterCard.BrandName = "MasterCard";
-        masterCard.Rules = new List<Rule>();
+        var masterCard = new BrandInfo
+        {
+            BrandName = "MasterCard",
+            Rules = new List<Rule>()
+        };
 
-        var masterCardRule1 = new Rule();
-        masterCardRule1.Lengths = new List<int> { 16 };
-        masterCardRule1.Prefixes = new List<string>();
+        var masterCardRule1 = new Rule
+        {
+            Lengths = new List<int> { 16 },
+            Prefixes = new List<string>()
+        };
         masterCardRule1.Prefixes.AddRange(GenerateRange(51, 55));
         masterCardRule1.Prefixes.AddRange(GenerateRange(2221, 2720));
 
@@ -230,9 +234,9 @@ internal static class CreditCardData
     /// <param name="start"></param>
     /// <param name="end"></param>
     /// <returns></returns>
-    private static List<string> GenerateRange(int start, int end)
+    private static IEnumerable<string> GenerateRange(int start, int end)
     {
-        List<string> ret = new List<string>();
+        var ret = new List<string>();
         for (int i = start; i <= end; i++)
         {
             ret.Add(i.ToString());
