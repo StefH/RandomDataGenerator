@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomDataGenerator.Gui6", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomDataGenerator.Gui3", "RandomDataGenerator.Gui3\RandomDataGenerator.Gui3.csproj", "{89571CAF-8CA9-44C2-98AB-D476CA2458DF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{13262322-06A6-4CB7-AABC-78DA60730E07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{89571CAF-8CA9-44C2-98AB-D476CA2458DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89571CAF-8CA9-44C2-98AB-D476CA2458DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89571CAF-8CA9-44C2-98AB-D476CA2458DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13262322-06A6-4CB7-AABC-78DA60730E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13262322-06A6-4CB7-AABC-78DA60730E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13262322-06A6-4CB7-AABC-78DA60730E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13262322-06A6-4CB7-AABC-78DA60730E07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{36D5822C-791D-4F72-9ED4-7DBC164A7E24} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
 		{94DA986E-B36A-4A9A-8B1E-F5BBAE82BEE7} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
 		{89571CAF-8CA9-44C2-98AB-D476CA2458DF} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
+		{13262322-06A6-4CB7-AABC-78DA60730E07} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F00DE8F4-BF0D-49C3-8854-600E8142BE41}

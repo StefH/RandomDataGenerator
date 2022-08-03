@@ -185,6 +185,13 @@ namespace ConsoleAppClassic
                 var CCN = randomizerCCN.Generate();
                 Write(randomizerCCN, CCN, $" ({cardIssuer})");
             }
+
+            for (int i = 0; i < 20; i++)
+            {
+                var randomType = new RandomizerCity(new FieldOptionsCity());
+                var c = randomType.Generate();
+                Console.WriteLine(c);
+            }
         }
 
         private static void Write<T>(object randomizer, T value, string? extra = null)
@@ -193,7 +200,7 @@ namespace ConsoleAppClassic
             Console.WriteLine("{0}{1}{2} --> '{3}'",
                 randomizer.GetType().Name,
                 genericType != null ? $"[{genericType.Name}]" : string.Empty,
-                extra != null ? extra : string.Empty,
+                extra ?? string.Empty,
                 value
             );
         }

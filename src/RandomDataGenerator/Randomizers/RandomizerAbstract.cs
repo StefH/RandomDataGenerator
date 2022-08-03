@@ -1,5 +1,4 @@
-﻿using System;
-using RandomDataGenerator.FieldOptions;
+﻿using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
 
 namespace RandomDataGenerator.Randomizers;
@@ -8,13 +7,11 @@ public abstract class RandomizerAbstract<TOptions> where TOptions : FieldOptions
 {
     private readonly RandomValueGenerator _randomValueGenerator;
     protected readonly TOptions Options;
-        
 
     protected RandomizerAbstract(TOptions options)
     {
         Options = options;
-
-        _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
+        _randomValueGenerator = RandomValueGeneratorFactory.Create(options.Seed);
     }
 
     protected virtual bool IsNull()
