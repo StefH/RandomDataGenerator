@@ -1,3 +1,6 @@
+# 1.0.16 (03 August 2022)
+- [#22](https://github.com/StefH/RandomDataGenerator/pull/22) - Use static RandomValueGenerator [feature] contributed by [StefH](https://github.com/StefH)
+
 # 1.0.15 (21 April 2022)
 - [#21](https://github.com/StefH/RandomDataGenerator/pull/21) - Credit Card Number [feature] contributed by [StefH](https://github.com/StefH)
 - [#20](https://github.com/StefH/RandomDataGenerator/issues/20) - Credit card numbers [feature]
