@@ -2,29 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RandomDataGenerator.Generators
+namespace RandomDataGenerator.Generators;
+
+internal class RandomItemsFromListGenerator<T>
 {
-    internal class RandomItemsFromListGenerator<T>
+    private readonly RandomValueGenerator _randomValueGenerator;
+    private readonly T[] _list;
+
+    public RandomItemsFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool>? predicate = null)
     {
-        private readonly RandomValueGenerator _randomValueGenerator;
-        private readonly T[] _list;
+        _list = predicate == null ? list.ToArray() : list.Where(predicate).ToArray();
+        _randomValueGenerator = RandomValueGeneratorFactory.Create(seed);
+    }
 
-        public RandomItemsFromListGenerator(int? seed, IEnumerable<T> list, Func<T, bool>? predicate = null)
+    public List<T> Generate(int count)
+    {
+        var list = new List<T>(count);
+        for (int i = 0; i < count; i++)
         {
-            _list = predicate == null ? list.ToArray() : list.Where(predicate).ToArray();
-            _randomValueGenerator = new RandomValueGenerator(seed ?? Environment.TickCount);
+            int index = _randomValueGenerator.Next(0, _list.Length - 1);
+            list.Add(_list[index]);
         }
 
-        public List<T> Generate(int count)
-        {
-            var list = new List<T>(count);
-            for (int i = 0; i < count; i++)
-            {
-                int index = _randomValueGenerator.Next(0, _list.Length - 1);
-                list.Add(_list[index]);
-            }
-
-            return list;
-        }
+        return list;
     }
 }

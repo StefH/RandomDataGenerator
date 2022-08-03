@@ -13,7 +13,7 @@ namespace RandomDataGenerator.Generators
     internal class RandomValueGenerator
     {
         private const double Tolerance = double.Epsilon;
-        private Random _rnf;
+        private Random _rnf = new();
         private double _storedUniformDeviate;
         private bool _storedUniformDeviateIsGood;
 

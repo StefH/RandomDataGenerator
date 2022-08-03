@@ -9,7 +9,7 @@ namespace RandomDataGenerator.Randomizers;
 
 public static class RandomizerFactory
 {
-    private static readonly ConcurrentDictionary<string, object> Cache = new ConcurrentDictionary<string, object>();
+    private static readonly ConcurrentDictionary<string, object> Cache = new();
 
     public static IRandomizerBytes GetRandomizer(IFieldOptionsBytes fieldOptions)
     {
@@ -72,7 +72,7 @@ public static class RandomizerFactory
         string typeName;
         if (fieldOptionsType.GetTypeInfo().BaseType?.Name.EndsWith("Number`1") == true)
         {
-            Type genericType = fieldOptionsType.GetTypeInfo().BaseType.GetTypeInfo().GetGenericTypeArguments().FirstOrDefault();
+            var genericType = fieldOptionsType.GetTypeInfo().BaseType.GetTypeInfo().GetGenericTypeArguments().FirstOrDefault();
             if (RandomValueGenerator.SupportedTypes.Contains(genericType))
             {
                 typeName = fieldOptionsFullName.Replace($"FieldOptions.{fieldOptionsType.Name}", $"Randomizers.RandomizerNumber`1[{genericType}]");
@@ -88,7 +88,6 @@ public static class RandomizerFactory
         }
 
         var type = Type.GetType(typeName, true);
-
-        return Activator.CreateInstance(type, fieldOptions);
+        return Activator.CreateInstance(type!, fieldOptions);
     }
 }

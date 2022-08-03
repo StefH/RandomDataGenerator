@@ -1,9 +1,8 @@
-﻿using RandomDataGenerator.Data;
+﻿using System.Collections.Generic;
+using RandomDataGenerator.Data;
 using RandomDataGenerator.Extensions;
 using RandomDataGenerator.FieldOptions;
 using RandomDataGenerator.Generators;
-using System;
-using System.Collections.Generic;
 
 namespace RandomDataGenerator.Randomizers;
 
@@ -14,8 +13,7 @@ public class RandomizerTextWords : RandomizerAbstract<FieldOptionsTextWords>, IR
 
     public RandomizerTextWords(FieldOptionsTextWords options) : base(options)
     {
-        _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
-
+        _randomValueGenerator = RandomValueGeneratorFactory.Create(options.Seed);
         _generator = new RandomStringFromListGenerator(ListData.Instance.LoremIpsumWords, options.Seed);
     }
 

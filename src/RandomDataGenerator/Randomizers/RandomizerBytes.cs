@@ -12,7 +12,7 @@ public class RandomizerBytes : RandomizerAbstract<FieldOptionsBytes>, IRandomize
     public RandomizerBytes(FieldOptionsBytes options)
         : base(options)
     {
-        _randomValueGenerator = new RandomValueGenerator(Options.Seed ?? Environment.TickCount);
+        _randomValueGenerator = RandomValueGeneratorFactory.Create(options.Seed);
     }
 
     public byte[] Generate()
