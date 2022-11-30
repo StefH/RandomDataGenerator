@@ -39,6 +39,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomDataGenerator.Gui3", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{13262322-06A6-4CB7-AABC-78DA60730E07}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{51B9C7D7-C306-485A-8EA9-38B32E928E95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomDataGenerator.Tests", "RandomDataGenerator.Tests\RandomDataGenerator.Tests.csproj", "{C0EFF0D6-C214-45B2-9406-D7E4343614DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{13262322-06A6-4CB7-AABC-78DA60730E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13262322-06A6-4CB7-AABC-78DA60730E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13262322-06A6-4CB7-AABC-78DA60730E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0EFF0D6-C214-45B2-9406-D7E4343614DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0EFF0D6-C214-45B2-9406-D7E4343614DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0EFF0D6-C214-45B2-9406-D7E4343614DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0EFF0D6-C214-45B2-9406-D7E4343614DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{94DA986E-B36A-4A9A-8B1E-F5BBAE82BEE7} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
 		{89571CAF-8CA9-44C2-98AB-D476CA2458DF} = {CD43A6FA-4DEF-47B3-A430-9E7FFAD6B035}
 		{13262322-06A6-4CB7-AABC-78DA60730E07} = {F8306255-6F4A-4E70-9932-06B2A3C9DF78}
+		{C0EFF0D6-C214-45B2-9406-D7E4343614DB} = {51B9C7D7-C306-485A-8EA9-38B32E928E95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F00DE8F4-BF0D-49C3-8854-600E8142BE41}
