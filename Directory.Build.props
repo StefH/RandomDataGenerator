@@ -4,8 +4,8 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <VersionPrefix>1.0.16</VersionPrefix>
-        <LangVersion>10.0</LangVersion>
+        <VersionPrefix>1.0.17</VersionPrefix>
+        <LangVersion>11</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 </Project>

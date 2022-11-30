@@ -1,3 +1,7 @@
+# 1.0.17 (30 November 2022)
+- [#26](https://github.com/StefH/RandomDataGenerator/pull/26) - Fix for non-uniform random value generators [bug] contributed by [DarekDan](https://github.com/DarekDan)
+- [#25](https://github.com/StefH/RandomDataGenerator/issues/25) - Location generator distribution seems to be a bit skewed [bug]
+
 # 1.0.16 (03 August 2022)
 - [#22](https://github.com/StefH/RandomDataGenerator/pull/22) - Use static RandomValueGenerator [feature] contributed by [StefH](https://github.com/StefH)
 
