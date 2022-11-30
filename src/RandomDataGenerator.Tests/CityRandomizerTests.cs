@@ -8,8 +8,8 @@ namespace RandomDataGenerator.Tests
 	public class CityRandomizerTests
 	{
 		private readonly ITestOutputHelper _output;
-		static Random random = new System.Random(420);
-		static object randLock = new object();
+		static readonly Random random = new System.Random(420);
+		static readonly object randLock = new object();
 
 		public CityRandomizerTests(ITestOutputHelper output)
 		{
