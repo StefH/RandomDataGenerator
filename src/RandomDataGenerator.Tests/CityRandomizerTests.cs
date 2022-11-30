@@ -8,6 +8,8 @@ namespace RandomDataGenerator.Tests
 	public class CityRandomizerTests
 	{
 		private readonly ITestOutputHelper _output;
+		static Random random = new System.Random(420);
+		static object randLock = new object();
 
 		public CityRandomizerTests(ITestOutputHelper output)
 		{
@@ -15,14 +17,19 @@ namespace RandomDataGenerator.Tests
 		}
 
 
-		[Fact]
-		public void CityDistributionMustBeUniform()
+		[Theory]
+		[InlineData(1)]
+		[InlineData(2)]
+		[InlineData(4)]
+		[InlineData(8)]
+		public void CityDistributionMustBeUniform(int degree)
 		{
 			var locationGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsCity { ValueAsString = true, UseNullValues = false });
 			var concurrentDictionary = new ConcurrentDictionary<string, long>();
-			Parallel.For(0, 1000, i =>
+			var options = new ParallelOptions { MaxDegreeOfParallelism = degree };
+			Parallel.For(0, 1000, options, i =>
 			{
-				Parallel.For(0, 1000, j =>
+				Parallel.For(0, 1000, options, j =>
 				{
 					var location = locationGenerator.Generate();
 					concurrentDictionary.AddOrUpdate(location, _ => 1, (k, v) => v + 1);
@@ -33,6 +40,42 @@ namespace RandomDataGenerator.Tests
 			_output.WriteLine($"{topCount}");
 			_output.WriteLine($"{bottomCount}");
 			Assert.True(topCount.Value/bottomCount.Value<2);
+			Assert.NotEqual(topCount.Key, bottomCount.Key);
+		}
+
+		[Fact]
+		public void TwoRandomCitiesMustNotBeTheSame()
+		{
+			var locationGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsCity { ValueAsString = true, UseNullValues = false });
+			var locationOne = locationGenerator.Generate();
+			var locationTwo = locationGenerator.Generate();
+			Assert.NotEqual(locationOne, locationTwo);
+		}
+
+		[Fact]
+		public void SystemRandomDistributionMustBeUniform()
+		{
+			var concurrentDictionary = new ConcurrentDictionary<int, long>();
+			Parallel.For(0, 1000, i =>
+			{
+				Parallel.For(0, 1000, j =>
+				{
+					int index;
+					lock (randLock)
+					{
+						index = random.Next(0, 2000);
+					}
+
+					concurrentDictionary.AddOrUpdate(index, _ => 1, (k, v) => v + 1);
+				});
+			});
+			var topCount = concurrentDictionary.OrderByDescending(pair => pair.Value).First();
+			var bottomCount = concurrentDictionary.OrderBy(pair => pair.Value).First();
+			_output.WriteLine($"{topCount}");
+			_output.WriteLine($"{bottomCount}");
+			Assert.True(topCount.Value / bottomCount.Value < 2);
+			Assert.NotEqual(topCount.Key, bottomCount.Key);
+
 		}
 	}
 }
