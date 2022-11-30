@@ -13,7 +13,8 @@ namespace RandomDataGenerator.Generators
     internal class RandomValueGenerator
     {
         private const double Tolerance = double.Epsilon;
-        private Random _rnf = new();
+        static Random _rnf = new();
+        static readonly object RandomLock = new object();
         private double _storedUniformDeviate;
         private bool _storedUniformDeviateIsGood;
 
@@ -27,7 +28,10 @@ namespace RandomDataGenerator.Generators
 
         public void Reset(int seed)
         {
-            _rnf = new Random(seed);
+	        lock (RandomLock)
+	        {
+		        _rnf = new Random(seed);
+	        }
         }
         #endregion
 
@@ -38,7 +42,10 @@ namespace RandomDataGenerator.Generators
         /// </summary>
         public double Next()
         {
-            return _rnf.NextDouble();
+	        lock (RandomLock)
+	        {
+		        return _rnf.NextDouble();
+	        }
         }
 
         /// <summary>
@@ -46,7 +53,10 @@ namespace RandomDataGenerator.Generators
         /// </summary>
         public bool NextBoolean()
         {
-            return _rnf.Next(0, 2) != 0;
+	        lock (RandomLock)
+	        {
+		        return _rnf.Next(0, 2) != 0;
+	        }
         }
 
         /// <summary>
@@ -54,7 +64,10 @@ namespace RandomDataGenerator.Generators
         /// </summary>
         public double NextDouble()
         {
-            return _rnf.NextDouble();
+	        lock (RandomLock)
+	        {
+		        return _rnf.NextDouble();
+	        }
         }
 
         /// <summary>
@@ -68,7 +81,10 @@ namespace RandomDataGenerator.Generators
             int arrayLength = Next(min, max);
 
             byte[] bytes = new byte[arrayLength];
-            _rnf.NextBytes(bytes);
+            lock (RandomLock)
+            {
+	            _rnf.NextBytes(bytes);
+            }
 
             return bytes;
         }
@@ -140,8 +156,11 @@ namespace RandomDataGenerator.Generators
                 throw new ArgumentException("Max must be greater than min.");
             }
 
-            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
-            return Convert.ToByte(rn);
+            lock (RandomLock)
+            {
+	            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
+	            return Convert.ToByte(rn);
+            }
         }
 
         /// <summary>
@@ -154,8 +173,11 @@ namespace RandomDataGenerator.Generators
                 throw new ArgumentException("Max must be greater than min.");
             }
 
-            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
-            return Convert.ToInt16(rn);
+            lock (RandomLock)
+            {
+	            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
+	            return Convert.ToInt16(rn);
+            }
         }
 
         /// <summary>
@@ -163,7 +185,10 @@ namespace RandomDataGenerator.Generators
         /// </summary>
         public int Next(int min, int max)
         {
-            return _rnf.Next(min, max);
+	        lock (RandomLock)
+	        {
+		        return _rnf.Next(min, max);
+	        }
         }
 
         /// <summary>
@@ -176,8 +201,11 @@ namespace RandomDataGenerator.Generators
                 throw new ArgumentException("Max must be greater than min.");
             }
 
-            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
-            return Convert.ToInt64(rn);
+            lock (RandomLock)
+            {
+	            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
+	            return Convert.ToInt64(rn);
+            }
         }
 
         /// <summary>
@@ -190,8 +218,11 @@ namespace RandomDataGenerator.Generators
                 throw new ArgumentException("Max must be greater than min.");
             }
 
-            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
-            return Convert.ToSingle(rn);
+            lock (RandomLock)
+            {
+	            double rn = (max * 1.0 - min * 1.0) * _rnf.NextDouble() + min * 1.0;
+	            return Convert.ToSingle(rn);
+            }
         }
 
         /// <summary>
@@ -204,8 +235,11 @@ namespace RandomDataGenerator.Generators
                 throw new ArgumentException("Max must be greater than min.");
             }
 
-            double rn = (max - min) * _rnf.NextDouble() + min;
-            return rn;
+            lock (RandomLock)
+            {
+	            double rn = (max - min) * _rnf.NextDouble() + min;
+	            return rn;
+            }
         }
 
         /// <summary>
@@ -220,10 +254,13 @@ namespace RandomDataGenerator.Generators
 
             long minTicks = min.Ticks;
             long maxTicks = max.Ticks;
-            double rn = (Convert.ToDouble(maxTicks)
-                - Convert.ToDouble(minTicks)) * _rnf.NextDouble()
-                + Convert.ToDouble(minTicks);
-            return new DateTime(Convert.ToInt64(rn));
+            lock (RandomLock)
+            {
+	            double rn = (Convert.ToDouble(maxTicks)
+	                         - Convert.ToDouble(minTicks)) * _rnf.NextDouble()
+	                        + Convert.ToDouble(minTicks);
+	            return new DateTime(Convert.ToInt64(rn));
+            }
         }
 
         /// <summary>
@@ -238,10 +275,13 @@ namespace RandomDataGenerator.Generators
 
             long minTicks = min.Ticks;
             long maxTicks = max.Ticks;
-            double rn = (Convert.ToDouble(maxTicks)
-                - Convert.ToDouble(minTicks)) * _rnf.NextDouble()
-                + Convert.ToDouble(minTicks);
-            return new TimeSpan(Convert.ToInt64(rn));
+            lock (RandomLock)
+            {
+	            double rn = (Convert.ToDouble(maxTicks)
+	                         - Convert.ToDouble(minTicks)) * _rnf.NextDouble()
+	                        + Convert.ToDouble(minTicks);
+	            return new TimeSpan(Convert.ToInt64(rn));
+            }
         }
 
         /// <summary>
