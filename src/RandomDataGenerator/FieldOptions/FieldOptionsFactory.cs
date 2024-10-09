@@ -19,8 +19,8 @@ public static class FieldOptionsFactory
 
     public static FieldOptionsAbstract GetFieldOptions(string name, Dictionary<string, object> properties)
     {
-        Guard.NotNullOrEmpty(name, nameof(name));
-        Guard.NotNull(properties, nameof(properties));
+        Guard.NotNullOrEmpty(name);
+        Guard.NotNull(properties);
 
         // Generate classname
         var className = !name.StartsWith("FieldOptions") ? $"FieldOptions{name}" : name;
