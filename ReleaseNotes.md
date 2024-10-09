@@ -1,3 +1,6 @@
+# 1.0.18 (09 October 2024)
+- [#27](https://github.com/StefH/RandomDataGenerator/pull/27) - Upgrade System.Text.RegularExpressions to 4.3.1 to solve CVE [bug] contributed by [StefH](https://github.com/StefH)
+
 # 1.0.17 (30 November 2022)
 - [#26](https://github.com/StefH/RandomDataGenerator/pull/26) - Fix for non-uniform random value generators [bug] contributed by [DarekDan](https://github.com/DarekDan)
 - [#25](https://github.com/StefH/RandomDataGenerator/issues/25) - Location generator distribution seems to be a bit skewed [bug]
