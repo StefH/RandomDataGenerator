@@ -3,7 +3,7 @@ This is a simple generator to create random data.
 
 ## NuGet
 
-[![NuGet Badge](https://buildstats.info/nuget/RandomDataGenerator.Net)](https://www.nuget.org/packages/RandomDataGenerator.Net)
+[![NuGet Badge](https://img.shields.io/nuget/v/RandomDataGenerator.Net)](https://www.nuget.org/packages/RandomDataGenerator.Net)
 
 ## Supported Random Data 
 

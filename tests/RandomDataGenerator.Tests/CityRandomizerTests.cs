@@ -30,7 +30,7 @@ public class CityRandomizerTests
         {
             Parallel.For(0, 1000, options, j =>
             {
-                var location = locationGenerator.Generate();
+                var location = locationGenerator.Generate() ?? string.Empty;
                 concurrentDictionary.AddOrUpdate(location, _ => 1, (k, v) => v + 1);
             });
         });
