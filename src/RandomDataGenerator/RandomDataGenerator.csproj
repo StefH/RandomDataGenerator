@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.0.19</Version>
     <AssemblyTitle>Random Data Generator</AssemblyTitle>
     <Title>Random Data Generator</Title>
     <PackageDescription>This is a configurable generator to create random data like Lorum Ipsum Text, Words, Text Patterns, First/Last Names, IP-Addresses, Guids, DateTime and more.</PackageDescription>
@@ -29,11 +30,6 @@
     <PathMap>$(MSBuildProjectDirectory)=/</PathMap>-->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Data\Text\LoremIpsum.txt" />
-    <None Remove="Data\Text\LorumIpsumWords.txt" />
-  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Text\CityNames.txt" />
