@@ -1,3 +1,7 @@
+# 1.0.19 (10 June 2025)
+- [#29](https://github.com/StefH/RandomDataGenerator/pull/29) - Fix dll version for .NET Framework 4.5 [bug] contributed by [StefH](https://github.com/StefH)
+- [#28](https://github.com/StefH/RandomDataGenerator/issues/28) - Possible version number error with 1.0.18 release [bug]
+
 # 1.0.18 (09 October 2024)
 - [#27](https://github.com/StefH/RandomDataGenerator/pull/27) - Upgrade System.Text.RegularExpressions to 4.3.1 to solve CVE [bug] contributed by [StefH](https://github.com/StefH)
 
