@@ -1,11 +1,7 @@
-# ![Project-Icon](./resources/icon_32x32.png) RandomDataGenerator.Net
+## RandomDataGenerator.Net
 This is a simple generator to create random data.
 
-## NuGet
-
-[![NuGet Badge](https://img.shields.io/nuget/v/RandomDataGenerator.Net)](https://www.nuget.org/packages/RandomDataGenerator.Net)
-
-## Supported Random Data 
+### Supported Random Data 
 
 - Bytes
 - Cities
@@ -24,7 +20,7 @@ This is a simple generator to create random data.
 - Text Regex Patterns
 - Words
 
-## Usage
+### Usage
 
 ``` csharp
 // Generate a random text with a Regular expression
@@ -40,27 +36,7 @@ var randomizerText = RandomizerFactory.GetRandomizer(new FieldOptionsText { UseN
 string text = randomizerText.Generate();
 ```
 
-## Usage (as SQL Data Generator GUI)
-You can also use a UI to generate SQL insert table statements.
-![Random Data Generator - 1](./resources/screen-01.png "Screen 1")
-
-![Random Data Generator - 2](./resources/screen-02.png "Screen 2")
-
-
-## Copyright
-
-### Referenced files / projects
-- https://github.com/gustavofrizzo/CreditCardValidator
-- http://www.cambiaresearch.com/articles/13/csharp-randomprovider-class
-- http://www.codeproject.com/Articles/423229/CsharpRandomStringGenerator
-- https://github.com/SaladLab/NetLegacySupport/tree/master/core/ConcurrentDictionary/System/Collections/Concurrent
-- https://raw.githubusercontent.com/SimonCropp/NaughtyStrings/master/src/NaughtyStrings/TheNaughtyStrings.cs
-
-### NuGet dependencies
-- [Fare](https://github.com/moodmosaic/Fare)
-
-
-## Sponsors
+### Sponsors
 
 [Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=StefH) and [Dapper Plus](https://dapper-plus.net/?utm_source=StefH) are major sponsors and proud to contribute to the development of **RandomDataGenerator.Net**.
 

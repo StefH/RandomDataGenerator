@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 	ProjectSection(SolutionItems) = preProject
 		..\Directory.Build.props = ..\Directory.Build.props
 		..\Generate-ReleaseNotes.bat = ..\Generate-ReleaseNotes.bat
+		..\PackageReadme.md = ..\PackageReadme.md
 		RandomDataGenerator Solution.sln.DotSettings = RandomDataGenerator Solution.sln.DotSettings
 		..\README.md = ..\README.md
 		..\ReleaseNotes.md = ..\ReleaseNotes.md

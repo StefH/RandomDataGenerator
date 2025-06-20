@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>1.0.19</Version>
+    <Version>1.0.19.1</Version>
     <AssemblyTitle>Random Data Generator</AssemblyTitle>
     <Title>Random Data Generator</Title>
     <PackageDescription>This is a configurable generator to create random data like Lorum Ipsum Text, Words, Text Patterns, First/Last Names, IP-Addresses, Guids, DateTime and more.</PackageDescription>
@@ -11,7 +11,7 @@
     <PackageId>RandomDataGenerator.Net</PackageId>
     <PackageTags>Random;Data;Text;Lipsum</PackageTags>
     <PackageReleaseNotes>See ReleaseNotes.md</PackageReleaseNotes>
-    <PackageIconUrl>https://raw.githubusercontent.com/StefH/RandomDataGenerator/master/resources/icon_64x64.png</PackageIconUrl>
+    <PackageIcon>icon_64x64.png</PackageIcon>
     <PackageProjectUrl>https://github.com/StefH/RandomDataGenerator</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
@@ -22,6 +22,7 @@
     <ApplicationIcon>../../resources/icon.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>RandomDataGenerator.snk</AssemblyOriginatorKeyFile>
+    <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -30,6 +31,11 @@
     <PathMap>$(MSBuildProjectDirectory)=/</PathMap>-->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../resources/icon_64x64.png" Pack="true" PackagePath="" />
+    <None Include="../../PackageReadme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Text\CityNames.txt" />
