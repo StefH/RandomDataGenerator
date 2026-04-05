@@ -22,10 +22,11 @@ public static class Luhn
             throw new ArgumentException("Invalid number. Just numbers and white spaces are accepted in the string.");
         }
 
-        var digitsSum = number
+        var charArray = number
             .RemoveWhiteSpace()
-            .ToCharArray()
-            .Reverse()
+            .ToCharArray();
+
+        var digitsSum = Enumerable.Reverse(charArray)
             .Select(CharToInt)
             .Select((digit, index) => IsEven(index) ? DoubleDigit(digit) : digit)
             .Sum();
